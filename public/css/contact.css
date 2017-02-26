@@ -1,0 +1,98 @@
+#email-form{
+	position: relative;
+	top: 5%;
+	height: 50%;
+	width: 100%;
+	
+}
+	input, textarea{
+		background: transparent;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		border-color: white;
+		width: 50%;
+		margin-top: 15px;
+		font-family: Calibri;	
+		cursor: pointer;
+		font-size: 1.5em;
+		padding: 15px;
+		color: white;
+		outline: none;
+		min-height: 100px;
+	}
+	input{
+		border-right: none;
+		border-left: none;
+		border-top: none;
+	}
+	#send{
+		cursor: pointer;
+		letter-spacing: 4px;
+		font-size: .8em;
+		font-weight: bolder;
+		display: block;
+		width: 5%;
+		text-align: center;
+		padding: 15px;
+		border-style: solid;
+		border-color: white;
+		border-width: 2px;
+		margin-top: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		color: white;
+		transition: all .7s ease;
+		min-width: 200px;
+	}
+	#send:hover{
+		background-color: white;
+		color: black;
+	}
+	#error{
+		opacity: 0;
+		position: relative;
+		width: 25%;
+		padding: 15px;
+		top: -50%;
+		text-align: center;
+		border-style: solid;
+		border-left: none;
+		border-right: none;
+		border-color: #F5ECCE;
+		border-width: 1px;
+		color: #F5ECCE;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		font-weight: bolder;
+	}
+	#message{
+		display: block;
+		width: 95%;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+		color: white;
+		font-size: 2em;
+	}
+	#sendSMS, #terms{
+		display: block;
+		margin: 0 auto;
+		width: 20%;
+		background-color: blue;
+	}
+/*STYLE PLACEHOLDER*/
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
+}
+

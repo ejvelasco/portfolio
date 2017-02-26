@@ -1,0 +1,117 @@
+body{
+	font-family: 'Raleway', sans-serif;	
+}
+#home, #about-container-1, #about-container-2, #projects-container, #contact-container{
+	font-size: 1.5em;
+	/*height: 1000px;*/
+	/*position: fixed;*/
+}
+#home{
+	height: 500px;
+	background-color: white;
+	color: white;
+	background-position: right center;
+	font-weight: bolder;
+	text-align: center;
+	background-size: cover;
+	overflow: hidden;
+	background: url('/img/gradient-3.jpg');
+}
+	#logo{
+		position: absolute;
+		top: 200px;
+		right: 0;
+		left: 0;
+		height: 180px;
+		width: 180px;
+		display: block;
+		margin: 0 auto;
+		background: url('/img/logo-2.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	#bar{
+		position: relative;
+		width: 100%;
+		height: 100px;
+		border-style: solid;
+		border-color: #acc5d3;
+		border-width: 2px;
+		border-left: none;
+		border-right: none;
+		background-color: white;
+		border-bottom: none;
+	}
+		#circle{
+			display: block;
+			position: relative;
+			top: -25%;
+			height: 50px;
+			width: 50px;
+			background: url('/img/down-arrow.png');
+			background-size: cover;
+			border-radius: 50px;
+			margin: 0 auto;
+		}
+	#home p{
+		position: absolute;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+		font-size: .4em;
+		letter-spacing: 4px;
+		overflow: hidden;
+	}
+#about-container-2{
+	background-color: #4d5e78;
+	/*position: absolute;*/
+	overflow: hidden;
+	font-size: 1.5em;
+}
+#about-1, #about-2{
+	width: 75%;
+	margin: 0 auto;
+	font-size: .7em;
+	line-height: 35px;
+	/*text-align: justify;*/
+}
+#about-2{
+	margin-top: 10%;
+}
+#about-2 .about{
+	color: white;
+}
+#about-2 .title{
+	font-weight: bold;
+	letter-spacing: 4px;
+}
+#about-1{
+}
+#projects-container{
+}
+#contact-container{
+	text-align: center;
+	background-color: #4d5e78;
+	color: white;
+}
+	input, textarea{
+		display: block;
+		margin: 0 auto;
+		outline: none;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-color: white;
+		background-color: transparent;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+#profile{
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	width: 40%;
+	border-radius: 10px;
+	-webkit-box-reflect: below 0px
+	-webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(75%, transparent) , to(rgba(250, 250, 250, 0.4)));
+}

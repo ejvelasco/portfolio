@@ -1,0 +1,36 @@
+extends layout
+block head
+    title='Eduardo Velasco'
+    //- link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', \='')
+    link(rel='stylesheet', href='/css/main-mobile.css', \='')
+    //- link(rel='stylesheet', href='/css/menu-mobile.css', \='')
+    //- link(rel='stylesheet', href='/css/home-mobile.css', \='')
+    //- link(rel='stylesheet', href='/css/about-mobile.css', \='')
+    //- link(rel='stylesheet', href='/css/contact.css', \='')
+    link(rel='icon' href='/img/logo-2.png')
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
+block content
+    body
+        //- div(id='about-me' class='container')
+        //-     p.head I'm Eduardo, and I love to #[span(id='code') ]
+        //-     p.title BACK END
+        //-     p.about I aim to develop applications that are scalable, reliable, and mantainable. I like to work with Node.js and the rich ecosystem of libraries that the NPM offers. I'm currently developing an application that interacts with the IBM Watson - Conversation API. 
+        //-     p.title FRONT END
+        //-     p.about I strive to implement applications that look and feel great across devices. Anytime design is involved, I let my creativity run free to create elegant interfaces that feature a smooth user experience.
+        include partials-mobile/home
+        include partials-mobile/about
+        include partials-mobile/projects
+        include partials-mobile/contact
+        //- div(id='projects' class='container-fluid')
+        //- include partials-mobile/menu
+        
+        //- include partials-desk/projects
+        //- include partials-desk/contact
+        
+        //- script(src='http://code.jquery.com/jquery-migrate-3.0.0.js')
+        //- script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        //- script(src='http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js')
+        script(src='/ng/emailApp.js')
+        //- script(src='/js/menu-mobile.js')
+        script(src='/js/home-mobile.js')
+        //- script(src='/js/about-mobile.js')

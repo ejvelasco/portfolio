@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Personal website of Eduardo J. Velasco",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "file-system": "^2.2.2",
+    "fs": "^0.0.1-security",
+    "mo-js": "^0.288.1",
+    "mojs": "^0.2.0",
+    "nodemailer": "^3.0.0",
+    "pug": "^2.0.0-beta6",
+    "ua-parser": "^0.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Eduardo J. Velasco",
+  "license": "MIT"
+}
