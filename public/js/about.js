@@ -1,12 +1,14 @@
 (function(){
 	'use-strict';
-	$('#about').on('click', function(event){
-		$('#btn-one').addClass('btn-active');
-		$('#btn-two').removeClass('btn-active');
-		console.log('ok');
-		$('#one').fadeOut('slow');
-		$('#two').fadeIn('slow');
-		$('#about-more').fadeIn('slow');
+	$('#code').typed({
+		strings: ['dream', 'design', 'innovate', 'program.'],
+		typeSpeed: 30,
+		backSpeed: 30,
+		callback: function(){
+			if($('#two').css('display') !== 'block'){
+				$('.typed-cursor').fadeOut('slow');
+			}
+		}
 	});
 	$('#btn-two').click(function(){
 		$('#btn-one').removeClass('btn-active');
@@ -25,6 +27,23 @@
 				$('#code2').each(function(i, block) {
 			  		hljs.highlightBlock(block);
 				});	
+			}
+		}); 
+	});
+	$('#btn-one').click(function(){
+		$('#btn-one').addClass('btn-active');
+		$('#btn-two').removeClass('btn-active');
+		$('#two').fadeOut('slow');
+		$('#about-more').fadeOut('slow');
+		$('#one').fadeIn('slow');
+		$('#code').typed({
+			strings: ['dream', 'design', 'innovate', 'program.'],
+			typeSpeed: 30,
+			backSpeed: 30,
+			callback: function(){
+				if($('#two').css('display') !== 'block'){
+					$('.typed-cursor').fadeOut('slow');
+				}
 			}
 		}); 
 	});

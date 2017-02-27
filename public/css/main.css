@@ -11,12 +11,15 @@
 	height: 100%; 
 }
 #projects{
-	background: url('/img/gradient-4.jpg');
-	background-size: cover;
-	opacity: .6;
+	/*background: url('/img/gradient.jpg');*/
+	/*filter: saturate(0);*/
+	/*background-size: cover;*/
+	/*opacity: .3;*/
 }
 #contact{
-	background: url('/img/gradient-3.jpg');
+	background: url('/img/gradient.jpg');
+	filter: hue-rotate(50deg);
+	/*transform: rotate(180deg);*/
 	background-size: cover;
 	opacity: .7;
 }

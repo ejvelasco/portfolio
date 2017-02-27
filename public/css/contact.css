@@ -13,13 +13,14 @@
 		border-color: white;
 		width: 50%;
 		margin-top: 15px;
-		font-family: Calibri;	
+		font-family: Calibri;
+		font-weight: lighter;	
 		cursor: pointer;
 		font-size: 1.5em;
-		padding: 15px;
+		padding: 12px;
 		color: white;
 		outline: none;
-		min-height: 100px;
+		/*min-height: 100px;*/
 	}
 	input{
 		border-right: none;
@@ -49,12 +50,24 @@
 		background-color: white;
 		color: black;
 	}
+		#loading{
+			position: absolute;
+			display: none;
+			right: 0;
+			left: 0;
+			margin: 0 auto;
+			bottom: -54%;
+			height: 20px;
+			width: 20px;
+			background-image: url('/img/default.gif');
+			background-size: cover;
+		}
 	#error{
 		opacity: 0;
 		position: relative;
 		width: 25%;
 		padding: 15px;
-		top: -50%;
+		top: -60%;
 		text-align: center;
 		border-style: solid;
 		border-left: none;

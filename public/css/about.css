@@ -4,6 +4,7 @@
 	width: 100%;
 	position: absolute;
 	background-image: url('/img/gradient.jpg');
+	filter: hue-rotate(330deg);
 	background-size: cover;
 	opacity: .8;
 }
@@ -14,7 +15,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		min-width: 600px;
-		top: 10%;
+		top: 7%;
 		width: 50%;
 		font-size: 1em;
 	}
@@ -53,7 +54,8 @@
 	display: none;
 	height: 100%;
 	width: 100%;
-	background-image: url('/img/gradient-2.jpg');
+	background-image: url('/img/gradient.jpg');
+	filter: hue-rotate(270deg);
 	opacity: .7;
 }
 	.snippet{
@@ -63,6 +65,7 @@
 		color: white;
 		font-size: 1.1em;
 		line-height: 20px;
+		filter: hue-rotate(-600deg);
 	}
 		#code2{
 			width: 40%;
@@ -135,7 +138,7 @@
 		transition: all .4s ease;
 		background-color: white;
 	}
-	#resume:active{
+	#resume:hover{
 		color: white;
 		background-color: #585858;
 	}

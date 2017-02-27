@@ -39,11 +39,11 @@
 		#social-menu div{
 			  font-family: 'brandico', sans-serif;
 			  display: inline-block;
-			  width: 50px;
-			  height: 50px;
+			  width: 45px;
+			  height: 45px;
 			  margin-left: 20px;
-			  line-height: 50px;
-			  font-size: 25px;
+			  line-height: 47px;
+			  font-size: 22px;
 			  text-align: center;
 			  color: black;
 			  border-radius: 10px;
@@ -52,7 +52,7 @@
 			  cursor: pointer;
 			  transition: all .6s ease;
 			}
-			#social-menu div:active{
+			#social-menu div:hover{
 				color: white;
 				background-color: #585858;
 			}
@@ -79,8 +79,8 @@
 				color: black;
 				font-weight: bolder;
 				text-decoration: none;
-				padding-left: 30px;
-				padding-right: 30px;
+				padding-left: 23px;
+				padding-right: 23px;
 				padding-top: 27.5px; 
 				padding-bottom: 32px;
 				transition: all .3s ease;

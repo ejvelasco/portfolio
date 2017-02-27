@@ -6,11 +6,15 @@ var emailApp = angular.module('emailApp', [])
 			msg: ''
 		};
 		$scope.sendEmailF = function(){
-			console.log($scope)
+			if($('#send').text() === 'SENT'){
+				return;
+			} else{
+			$('#send').text('SENDING..');
 			$http.post('/send-email', $scope.details)
 			.success(function(data){
 				console.log(data);
 				if(data.error){
+					$('#send').text('SEND');
 					if(data.error != 'msg'){
 						$('#error').text('Whoops! Please enter a valid '+data.error+'.');
 						$('#error').fadeTo(500, .8);
@@ -33,13 +37,14 @@ var emailApp = angular.module('emailApp', [])
 						$('#send').css('background-color', '#67FABD');
 						$('#send').css('border-color', 'black');
 						$('#send').css('color', 'black');
-						$('#send').text('SENT')
+						$('#send').text('SENT');
+
 					}
 				}
 			})
 			.error(function(data){
 				console.log("error");
 			})
+			}
 		};
-		
 	}]);
