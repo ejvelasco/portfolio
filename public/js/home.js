@@ -34,6 +34,9 @@
             $('.circle-hrs').css('stroke-dashoffset', 2*Math.PI*circleHrsHeight*(1-hrsPercent));
             $('.circle-mins').css('stroke-dashoffset', 2*Math.PI*circleMinsHeight*(1-minsPercent));
             $('.circle-secs').css('stroke-dashoffset', 2*Math.PI*circleSecsHeight*(1-secsPercent));
+            if($('#content-wrapper').css('display') === 'none'){
+                $('#content-wrapper, #time, canvas').fadeIn('slow');
+            }
             deg = deg+.2;
         }, 30);
     }

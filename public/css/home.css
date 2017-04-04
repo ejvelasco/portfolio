@@ -13,6 +13,7 @@ body { margin: 0; }
 	color: white;
 	opacity: .9;
 	font-family: 'Helvetica';
+	display: none;
 }
 #msg{
 	position: absolute;
@@ -43,8 +44,9 @@ body { margin: 0; }
 	margin: 0 auto;
 	top: 60%;
 	transform: translateY(-50%);
+	display: none;
 }
 .circle-hrs, .circle-mins, .circle-secs{
 	opacity: .4;
 }
-canvas { width: 700px; height: 700px; background-color: transparent !important; color: black; position: absolute; right: 0; left: 0; margin: 0 auto; top: 60%; transform: translateY(-50%);}
+canvas { width: 700px; height: 700px; background-color: transparent !important; color: black; position: absolute; right: 0; left: 0; margin: 0 auto; top: 60%; transform: translateY(-50%); display: none;}
