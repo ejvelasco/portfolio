@@ -8,7 +8,7 @@
 	padding: 30px;
 	cursor: pointer;
 	transition: padding .4s ease, color .4s ease, background .4s ease;
-	display: none;
+	/*display: none;*/
 
 }
 #new-menu .container{
