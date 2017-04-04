@@ -15,7 +15,10 @@
     "pug": "^2.0.0-beta6",
     "ua-parser": "^0.3.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "reload": "^1.1.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

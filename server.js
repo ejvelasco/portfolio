@@ -3,7 +3,7 @@ var path = require('path');
 var bodyParser = require('body-parser')
 var nodemailer = require('nodemailer');
 var port = process.env.PORT || 8000;
-var p = require('ua-parser');
+// var p = require('ua-parser');
 //EXPRESS
 var app = express();
 //MIDDLEWARE
@@ -18,8 +18,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 //REQUIRE ROUTES
-require('./routes/get/views-get')(app, p);
+require('./routes/get/views-get')(app);
 require('./routes/post/send-email-post')(app, nodemailer);
 //START
-app.listen(port);
-console.log('Server running on port: ' + port);
+app.listen(port, function(){
+  console.log("Web server listening on port " + port);
+});
