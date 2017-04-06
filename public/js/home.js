@@ -1,7 +1,26 @@
 (function(){
     'use strict';
+    // $('#content-wrapper').css('display', 'block');
+    $('.circle-secs').hide();
+    $('.circle-secs').show();
+    const $div = $('#home-bg');
+    const bg = $div.css('background-image');
+    let src, $img;
+    let menuHeight = 80;
+    if (bg) {
+        src = bg.replace(/(^url\()|(\)$|[\"\'])/g, ''),
+            $img = $('<img>').attr('src', src).on('load', function() {
+            // do something, maybe:
+            $div.fadeIn(2000);
+            $('.loader').fadeOut(2000);
+            $('#content-wrapper, canvas, #time').fadeIn(3000);
+            $('#new-menu, #msg').fadeIn(1000);
+            window.sr = ScrollReveal({ origin: 'top', opacity: 0, duration: 1000 });
+            sr.reveal('#new-menu a', 100);
+        });
+    }
     let d, hrs, mins, secs, ms, updateClock, secsPercent, minsPercent, hrsPercent, circleHrsHeight, circleMinsHeight, circleSecsHeight;
-    let deg = 1;  
+    let deg = 1;
     //get time and format
     const getTime = function(){
         d = new Date();
@@ -34,11 +53,9 @@
             $('.circle-hrs').css('stroke-dashoffset', 2*Math.PI*circleHrsHeight*(1-hrsPercent));
             $('.circle-mins').css('stroke-dashoffset', 2*Math.PI*circleMinsHeight*(1-minsPercent));
             $('.circle-secs').css('stroke-dashoffset', 2*Math.PI*circleSecsHeight*(1-secsPercent));
-            if($('#content-wrapper').css('display') === 'none'){
-                $('#content-wrapper, #time, canvas').fadeIn('slow');
-            }
             deg = deg+.2;
         }, 30);
+        // $('#content-wrapper, #time, canvas').fadeIn('slow');
     }
     //redraw stroke 
     var formatDash = function(circleClass, height){
@@ -116,6 +133,8 @@
         strokeDasharray: '100%', 
         parent: $('#content-wrapper')[0]
     }).play();
+    //force webkit browsers to re-draw rings
+    $('.circle-hrs, .circle-mins, .circle-secs').css('transform', 'scale(1) rotate(-90)');
     //get ring heights
     circleHrsHeight = $('.circle-hrs ellipse').attr('rx');
     circleMinsHeight = $('.circle-mins ellipse').attr('rx');

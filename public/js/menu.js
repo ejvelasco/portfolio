@@ -1,10 +1,10 @@
 (function(){
 	'use strict';
 	let expanded = true;
-	let menuHeight = 80;
+	
 	//staggered menu effect
-	window.sr = ScrollReveal({ origin: 'top', opacity: 0, duration: 1000 });
-	sr.reveal('#new-menu a', 100);
+	// window.sr = ScrollReveal({ origin: 'top', opacity: 0, duration: 1000 });
+	// sr.reveal('#new-menu a', 100);
 	//change menu on scroll
 	$(window).scroll(function() {
 	    if ($(this).scrollTop() > 0 && expanded) {
