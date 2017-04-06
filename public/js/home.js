@@ -1,24 +1,29 @@
 (function(){
     'use strict';
-    // $('#content-wrapper').css('display', 'block');
-    $('.circle-secs').hide();
-    $('.circle-secs').show();
     const $div = $('#home-bg');
     const bg = $div.css('background-image');
     let src, $img;
     let menuHeight = 80;
+    //for chrome re-draw issue
+    $('.circle-secs').hide();
+    $('.circle-secs').show();
+    //wait until bg-image loads for effects
     if (bg) {
         src = bg.replace(/(^url\()|(\)$|[\"\'])/g, ''),
-            $img = $('<img>').attr('src', src).on('load', function() {
-            // do something, maybe:
+        $img = $('<img>').attr('src', src).on('load', function() {
+            //fade in content 
             $div.fadeIn(2000);
             $('.loader').fadeOut(2000);
             $('#content-wrapper, canvas, #time').fadeIn(3000);
             $('#new-menu, #msg').fadeIn(1000);
-            window.sr = ScrollReveal({ origin: 'top', opacity: 0, duration: 1000 });
-            sr.reveal('#new-menu a', 100);
+            //staggered menu
+            if($(window).scrollTop() === 0){
+                window.sr = ScrollReveal({ origin: 'top', opacity: 0, duration: 1000 });
+                sr.reveal('#new-menu a', 100);
+            }
         });
     }
+    //clock code
     let d, hrs, mins, secs, ms, updateClock, secsPercent, minsPercent, hrsPercent, circleHrsHeight, circleMinsHeight, circleSecsHeight;
     let deg = 1;
     //get time and format
@@ -133,8 +138,6 @@
         strokeDasharray: '100%', 
         parent: $('#content-wrapper')[0]
     }).play();
-    //force webkit browsers to re-draw rings
-    $('.circle-hrs, .circle-mins, .circle-secs').css('transform', 'scale(1) rotate(-90)');
     //get ring heights
     circleHrsHeight = $('.circle-hrs ellipse').attr('rx');
     circleMinsHeight = $('.circle-mins ellipse').attr('rx');

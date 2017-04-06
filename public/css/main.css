@@ -17,9 +17,5 @@
 	/*opacity: .3;*/
 }
 #contact{
-	background: url('/img/gradient.jpg');
-	filter: hue-rotate(50deg);
-	/*transform: rotate(180deg);*/
-	background-size: cover;
-	opacity: .7;
+	background-color: #ADADAD;
 }

@@ -19,7 +19,7 @@ module.exports = function(app, nodemailer){
 	        service: 'Gmail',
 	        auth: {
 	            user: 'velasco810@gmail.com',
-	            pass: 'getafe.22'
+	            pass: 'getafe.99'
 	        }
 	    });
 	    

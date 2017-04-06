@@ -25,18 +25,16 @@ body { margin: 0; }
 	display: none;
 }
 #home-bg{
-	background: url('/img/bg-3.jpg');
-	background-size: contain;
-	position: absolute;
+	background: url('/img/adventure-2.jpg');
+	background-size: cover;
+	position: fixed;
 	height: 100%;
 	width: 100%;
-	background-size: cover;
 	display: none;
-	filter: brightness(.6) saturate(.5) hue-rotate(180deg);
-	/*background-repeat: no-repeat;*/
+	filter: brightness(.6) saturate(.5);
 }
 #content-wrapper{
-	opacity: .6;
+	opacity: .4;
 	position: absolute;
 	right: 0;
 	left: 0;
@@ -46,7 +44,7 @@ body { margin: 0; }
 	display: none;
 }
 .circle-hrs, .circle-mins, .circle-secs{
-	opacity: .4;
+	opacity: .2;
 }
 .loader{
 	position: absolute;
@@ -60,6 +58,5 @@ body { margin: 0; }
 	z-index: 9999;
 	background: url('/img/logo-2.png') no-repeat;
 	background-size: contain;
-	/*transform: scale(.7);*/
 }
 canvas { width: 700px; height: 700px; background-color: transparent !important; color: black; position: absolute; right: 0; left: 0; margin: 0 auto; top: 60%; transform: translateY(-50%); display: none;}

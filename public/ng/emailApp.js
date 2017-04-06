@@ -38,6 +38,9 @@ var emailApp = angular.module('emailApp', [])
 						$('#send').css('border-color', 'black');
 						$('#send').css('color', 'black');
 						$('#send').text('SENT');
+						$scope.details.name = '';
+						$scope.details.email = '';
+						$scope.details.msg = '';
 
 					}
 				}
