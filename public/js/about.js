@@ -1,5 +1,5 @@
 (function(){
-	'use-strict';
+	'use strict';
 	$('#code').typed({
 		strings: ['dream', 'design', 'innovate', 'program.'],
 		typeSpeed: 30,

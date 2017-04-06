@@ -63,12 +63,12 @@
         // $('#content-wrapper, #time, canvas').fadeIn('slow');
     }
     //redraw stroke 
-    var formatDash = function(circleClass, height){
+    let formatDash = function(circleClass, height){
         $(circleClass).css('stroke-dasharray', 2*height*Math.PI);
         $(circleClass).css('stroke-dashoffset', 2*height*Math.PI);
     }
     //draw hours
-    function drawHours(ctx, radius) {
+    let drawHours = function(ctx, radius) {
         let ang;
         let num;
         ctx.font = radius*0.07 + "px arial";
@@ -86,7 +86,7 @@
         }
     }
     //draw minutes and seconds
-    function drawMinutes(ctx, radius) {
+    let drawMinutes = function(ctx, radius) {
         var ang;
         var num;
         ctx.font = radius*0.07 + "px arial";
@@ -159,8 +159,8 @@
     drawMinutes(ctx, radius);
     //scroll to div on click, clear clock interval, hide clock
     $('#new-menu a').on('click', function(){
-        var tab = $(this).attr('id');
-        var section = tab.replace('-t', '');
+        let tab = $(this).attr('id');
+        let section = tab.replace('-t', '');
         if(section != 'home'){
             console.log(updateClock)
             clearInterval(updateClock);
@@ -169,14 +169,20 @@
         if(section != 'home') {
             $('html, body').animate({
                     scrollTop: $("#"+section).offset().top-menuHeight+10
-            }, 1000);
+            },{
+                specialEasing: {scrollTop: 'easeOutQuint'},
+                duration: 1000
+            });
         }else{
             $('html, body').animate({
                     scrollTop: 0
-            }, 1000, function(){
-                $('#content-wrapper, #canvas, #time').fadeIn('fast');
-                drawClock();
-            });
+            }, {
+                specialEasing: {scrollTop: 'easeOutQuint'},
+                duration: 1000, 
+                complete: function(){
+                    $('#content-wrapper, #canvas, #time').fadeIn('fast');
+                    drawClock();
+                }});
         }
     });
 })();

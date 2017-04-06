@@ -11,10 +11,7 @@
 	height: 100%; 
 }
 #projects{
-	/*background: url('/img/gradient.jpg');*/
-	/*filter: saturate(0);*/
-	/*background-size: cover;*/
-	/*opacity: .3;*/
+	background-color: white;
 }
 #contact{
 	background-color: #ADADAD;

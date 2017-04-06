@@ -1,0 +1,66 @@
+#projects-bg{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: url('/img/metal-pattern.jpg');
+	filter:  saturate(0) opacity(.5) brightness(1.2);
+}
+.subtitle{
+    /*padding: 15px;*/
+    margin-top: 20px;
+    font-size: 30px;
+    display: block;
+    width: 100%;
+    padding-left: 30px;
+}
+.project-title{
+    margin-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    letter-spacing: 4px;
+    font-size: .9em;
+    text-transform: uppercase;
+    font-weight: bolder;
+    /*text-align: center;*/
+}
+.project-desc {
+    /*margin-top: 20px;*/
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 10px;
+    font-family: Helvetica; 
+}
+.project-info{
+    position: relative;
+}
+* {
+    box-sizing: border-box;
+}
+.responsive {
+    float: left;
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 23%;
+    height: 200px;
+    background: url('/img/adventure-2.jpg');
+    background-size: cover;
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        /*margin: 6px 0;*/
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}

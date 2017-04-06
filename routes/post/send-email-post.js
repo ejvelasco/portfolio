@@ -1,5 +1,6 @@
 module.exports = function(app, nodemailer){
 	app.post('/send-email', function(req, res){
+	    //mini input authentication
 	    var details = req.body;
 	    var re = {
 	    	name: /^[a-zA-Z ]+$/, 

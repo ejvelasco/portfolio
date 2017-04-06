@@ -1,1 +1,15 @@
-#projects
+#projects(ng-controller="projectsGallery")
+	//- #projects-bg
+	p(class="subtitle") Here are some of my projects:
+	div(class="responsive" ng-repeat="project in projectsOwned")
+		div(class="project-item")
+			div(class="project-info")
+				div(class="project-title") {{project.title}}
+				div(class="project-desc") {{project.desc}}
+	p(class="subtitle") Here are some projects I've worked on:
+	div(class="responsive" ng-repeat="project in projectsWorked")
+		div(class="project-item")
+			div(class="project-info")
+				div(class="project-title") {{project.title}}
+				div(class="project-desc") {{project.desc}}
+	div(class="clearfix")

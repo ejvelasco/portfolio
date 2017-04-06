@@ -1,0 +1,25 @@
+extends layout
+block head
+	title='Eduardo Velasco'
+	link(rel='stylesheet', href='/css/main.css', \='')
+	link(rel='stylesheet', href='/css/menu.css', \='')
+	link(rel='stylesheet', href='/css/home.css', \='')
+	link(rel='stylesheet', href='/css/about.css', \='')
+	link(rel='stylesheet', href='/css/contact.css', \='')
+	link(rel='stylesheet', href='/css/projects.css', \='')
+	link(rel='stylesheet', href='/css/syntax-highlight.css', \='')
+block content
+	body(ng-app='portfolioApp')
+		div(class="loader")
+		include partials-desk/new-menu
+		include partials-desk/home
+		include partials-desk/about
+		include partials-desk/projects
+		include partials-desk/contact
+		script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/mo-js/0.288.1/mo.min.js')
+		script(src='/ng/portfolioApp.js')
+		script(src='/js/menu.js')
+		script(src='/js/home.js')
+		script(src='/js/typed.js')
+		script(src='/js/about.js')

@@ -38,7 +38,7 @@
 	#send{
 		cursor: pointer;
 		letter-spacing: 4px;
-		font-size: .8em;
+		font-size: .9em;
 		font-weight: bolder;
 		display: block;
 		width: 5%;
@@ -96,12 +96,6 @@
 		text-align: center;
 		color: white;
 		font-size: 2em;
-	}
-	#sendSMS, #terms{
-		display: block;
-		margin: 0 auto;
-		width: 20%;
-		background-color: blue;
 	}
 /*STYLE PLACEHOLDER*/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
