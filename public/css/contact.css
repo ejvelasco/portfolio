@@ -3,7 +3,7 @@
 	height: 100%;
 	width: 100%;
 	background: url('/img/metal-pattern.jpg');
-	filter: hue-rotate(180deg) saturate(1.9) opacity(.5);
+	filter: hue-rotate(175deg) saturate(1.9) opacity(.5);
 	opacity: .7;
 }
 #email-form{
@@ -22,8 +22,8 @@
 		width: 50%;
 		margin-top: 15px;
 		font-family: 'Helvetica';
-		font-weight: lighter;	
-		cursor: pointer;
+		font-weight: light;	
+		cursor: text;
 		font-size: 1.5em;
 		padding: 12px;
 		color: white;
@@ -82,7 +82,7 @@
 		border-right: none;
 		border-color: #6D5C37;
 		border-width: 1px;
-		color: #6D5C37;
+		color: #463623;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;

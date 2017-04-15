@@ -1,15 +1,17 @@
 #projects(ng-controller="projectsGallery")
 	//- #projects-bg
-	p(class="subtitle") Here are some of my projects:
-	div(class="responsive" ng-repeat="project in projectsOwned")
-		div(class="project-item")
-			div(class="project-info")
-				div(class="project-title") {{project.title}}
-				div(class="project-desc") {{project.desc}}
-	p(class="subtitle") Here are some projects I've worked on:
-	div(class="responsive" ng-repeat="project in projectsWorked")
-		div(class="project-item")
-			div(class="project-info")
-				div(class="project-title") {{project.title}}
-				div(class="project-desc") {{project.desc}}
-	div(class="clearfix")
+	div(class="horizontal-scroll-wrapper squares")
+		//- p(class="msg-4") SOME OF MY #[span(class="white") BEST PROJECTS] &amp; #[span(class="white") PROFESSIONAL EPERIENCE]
+		ul(class="images")
+			li(ng-repeat="project in projects")
+				div(class="project-img" id="project-img-{{$index}}")
+		#showcase
+			div(id="showcase-title") Hummingbird
+			div(id="showcase-subtitle") Enriching the Classroom Environment
+			div(id="showcase-desc") This is a web app that improves communication in the classroom. After registering, Instructors are able to create Classes and add Lectures via the Dashboard. Each Lecture Page comes with a stand alone Questions Page. Instructors can then share the Questions Page with their students, where they can ask questions, help each other, and take part in a fun and safe learning environment. The Questions Page features lecture-specific learning resources obtained through the Khan Academy (under development), YouTube, and Wolfram APIs. In the future, the application will allow instructors to create Quizzes, and keep track of their class’s performance.
+	#click-bar
+		div(class="bar-item" ng-repeat="project in projects")
+			div(class="project-item" id = "owned-{{$index}}")
+				div(class="project-info")
+					div(class="project-info-title") {{project.title}}
+				

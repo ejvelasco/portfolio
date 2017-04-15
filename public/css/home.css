@@ -1,4 +1,13 @@
-body { margin: 0; }
+body { 
+	margin: 0; 
+	background-color: black;
+}
+#code{
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+	white-space: pre;
+}
 #time{
 	position: absolute;
 	top: 60%;
@@ -15,23 +24,74 @@ body { margin: 0; }
 	font-family: 'Helvetica';
 	display: none;
 }
-#msg{
-	text-align: center;
+#msg-container{
+	width: auto;
+	padding: 100px;
 	position: relative;
-	color: white;
-	top: 15%;
-	font-size: 3.5em;
-	font-weight: bolder;
+	top: 7%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+.msg{
 	display: none;
 }
+.msg-1{
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	color: #B1B1B1;
+	font-size: 30px;
+	letter-spacing: 4px;
+	margin-bottom: 40px;
+	width: 817px;
+	/*background-color: blue;*/
+}
+.msg-2{
+	position: relative;
+	text-align: center;
+	color: white;
+}
+.msg-3{
+	/*padding-top: 50px;*/
+	padding-left: 150px;
+	position: relative;
+	top: -50;
+	text-align: left;
+	color: white;
+	font-size: 6em;
+}
+.button{
+	border: solid 1px #B1B1B1;
+	border-radius: 20px;
+	width: 160px;
+	padding: 7px;
+	position: relative;
+	top: -50;
+	color: white;
+	text-align: center;
+	font-family: Helvetica;
+	font-weight: bold;
+	letter-spacing: 2px;
+	transition: border-color .4s ease;
+	cursor: pointer;
+}
+.button:hover{
+	border-color: white;
+}
+.white{
+	color: white;
+	font-weight: bold;
+}
 #home-bg{
-	background: url('/img/adventure-2.jpg');
+	background: url('/img/office.jpg');
 	background-size: cover;
-	position: fixed;
+	position: absolute;
 	height: 100%;
 	width: 100%;
 	display: none;
-	filter: brightness(.6) saturate(.5);
+	filter: brightness(.4) saturate(.3) hue-rotate(140deg);
 }
 #content-wrapper{
 	opacity: .4;
@@ -44,7 +104,7 @@ body { margin: 0; }
 	display: none;
 }
 .circle-hrs, .circle-mins, .circle-secs{
-	opacity: .2;
+	/*opacity: .2;*/
 }
 .loader{
 	position: absolute;
@@ -59,4 +119,5 @@ body { margin: 0; }
 	background: url('/img/logo-2.png') no-repeat;
 	background-size: contain;
 }
-canvas { width: 700px; height: 700px; background-color: transparent !important; color: black; position: absolute; right: 0; left: 0; margin: 0 auto; top: 60%; transform: translateY(-50%); display: none;}
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+canvas { width: 700px; height: 700px; background-color: transparent !important; color: black; position: absolute; right: 0; left: 0; margin: 0 auto; top: 60%; transform: translateY(-50%); display: none; }

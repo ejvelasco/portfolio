@@ -5,27 +5,115 @@
     let src, $img;
     let menuHeight = 80;
     //for chrome re-draw issue
-    $('.circle-secs').hide();
-    $('.circle-secs').show();
+    $('#content-wrapper').show();
+    $('#content-wrapper').hide();
     //wait until bg-image loads for effects
     if (bg) {
         src = bg.replace(/(^url\()|(\)$|[\"\'])/g, ''),
         $img = $('<img>').attr('src', src).on('load', function() {
             //fade in content 
-            $div.fadeIn(2000);
-            $('.loader').fadeOut(2000);
-            $('#content-wrapper, canvas, #time').fadeIn(3000);
-            $('#new-menu, #msg').fadeIn(1000);
-            //staggered menu
-            if($(window).scrollTop() === 0){
+            $div.fadeIn(1000);
+            $('.loader').fadeOut(1500);
+            $('#content-wrapper').fadeIn(1000);
+           
+            // $('#new-menu').fadeIn(2000);
+            // setTimeout(function(){
+                // if($(window).scrollTop() === 0){
+                    
+                // } else{
+                //     $('#new-menu').fadeTo(1000, .6);
+                // }
+            // }, 1500)
+            
+            setTimeout(function(){
+                //get time before drawing rings
+                getTime();
+                secs++;
+                deg = deg%360;
+                //calculate offset percentage
+                secsPercent = (secs+ms*.001)/60;
+                minsPercent = mins/60+secs/3600;
+                hrsPercent = (hrs%12+mins/60)/12;
+                //draw rings
+                const circleHrs = new mojs.Shape({
+                    shape: 'circle',
+                    radius: 220,
+                    fill: 'none',
+                    className: 'circle-hrs',
+                    strokeWidth: 50,
+                    angle: -90,
+                    parent: $('#content-wrapper')[0],
+                    strokeOpacity: {.1: 1},
+                    stroke: {'transparent':'#4895FF'},
+                    duration: 2000
+                }).play();
+                const circleMins = new mojs.Shape({
+                    shape: 'circle',
+                    radius: 170,
+                    fill: 'none',
+                    className: 'circle-mins',
+                    angle: -90,
+                    strokeWidth: 50,
+                    parent: $('#content-wrapper')[0],
+                     strokeOpacity: {.1: 1},
+                    stroke: {'transparent':'white'},
+                    duration: 2000
+                }).play();
+                const circleSecs = new mojs.Shape({
+                    shape: 'circle',
+                    radius: 120,
+                    className: 'circle-secs',
+                    angle: -90,
+                    fill: 'none',
+                    strokeWidth: 50,
+                    parent: $('#content-wrapper')[0],
+                    strokeOpacity: {.1: 1},
+                    stroke: {'transparent':'#00FFB2'},
+                    duration: 2000
+                }).play();
+                //get ring heights
+                circleHrsHeight = $('.circle-hrs ellipse').attr('rx');
+                circleMinsHeight = $('.circle-mins ellipse').attr('rx');
+                circleSecsHeight = $('.circle-secs ellipse').attr('rx');
+                //format offset initially
+                formatDash('.circle-hrs', circleHrsHeight);
+                formatDash('.circle-mins', circleMinsHeight);
+                formatDash('.circle-secs', circleSecsHeight);
+                //update the ring offset
+                $('.circle-hrs').animate({'stroke-dashoffset': 2*Math.PI*circleHrsHeight*(1-hrsPercent)}, 1000);
+                $('.circle-mins').animate({'stroke-dashoffset': 2*Math.PI*circleMinsHeight*(1-minsPercent)}, 1000);
+                $('.circle-secs').animate({'stroke-dashoffset': 2*Math.PI*circleSecsHeight*(1-secsPercent)}, 1000);
+                drawClock();
+                if($(window).scrollTop() === 0){
+                    $('#new-menu').fadeIn(2000);        
+                } else{
+                    $('#new-menu').fadeIn(1000);
+                }
+                $('#time, #canvas').fadeIn(2000);
+                $('#new-menu').fadeIn(2000);
+                $('.msg').show();
                 window.sr = ScrollReveal({ origin: 'top', opacity: 0, duration: 1000 });
-                sr.reveal('#new-menu a', 100);
-            }
+                // sr.reveal('.navbar-nav a', 300);
+                sr.reveal('.msg', {delay: 1000, distance:'50px'}, 350);
+                setTimeout(function(){
+                    $('#code').typed({
+                        strings: ['innovate', 'design', 'program', 'seize the day.'],
+                        typeSpeed: 20,
+                        backSpeed: 20,
+                        callback: function(){
+                            if($('#two').css('display') !== 'block'){
+                                $('.typed-cursor').fadeOut('slow');
+                            }
+                        }
+                    });
+                }, 2500)
+            }, 1000);             
         });
     }
     //clock code
     let d, hrs, mins, secs, ms, updateClock, secsPercent, minsPercent, hrsPercent, circleHrsHeight, circleMinsHeight, circleSecsHeight;
     let deg = 1;
+    let updatedClock = false;
     //get time and format
     const getTime = function(){
         d = new Date();
@@ -42,22 +130,30 @@
     }
     //draw clock
     const drawClock = function(){
-        updateClock = setInterval(function(){
+            updateClock = setInterval(function(){
             //get new time
             getTime();
             deg = deg%360;
             //calculate offset percentage
+            //account for animation time
+            // secs--;
             secsPercent = (secs+ms*.001)/60;
             minsPercent = mins/60+secs/3600;
             hrsPercent = (hrs%12+mins/60)/12;
             //set new time
             $('#time').html(hrs+' : '+mins);
             //slightly change color
+            // $('#home-bg').css('filter', 'hue-rotate('+deg+'deg) brightness(.4) saturate(.3)');
             $('.circle-hrs, .circle-mins, .circle-secs').css('filter', 'hue-rotate('+deg+'deg)');
             //set new offset
+            // console.log($('circle-hrs'));
+            // if(updatedClock === false){
+            //     $('.circle-secs').animate({'stroke-dashoffset': 2*Math.PI*circleSecsHeight*(1-secsPercent)}, 30);
+            //     updatedClock = true;
+            // }
             $('.circle-hrs').css('stroke-dashoffset', 2*Math.PI*circleHrsHeight*(1-hrsPercent));
             $('.circle-mins').css('stroke-dashoffset', 2*Math.PI*circleMinsHeight*(1-minsPercent));
-            $('.circle-secs').css('stroke-dashoffset', 2*Math.PI*circleSecsHeight*(1-secsPercent));
+            $('.circle-secs').css({'stroke-dashoffset': 2*Math.PI*circleSecsHeight*(1-secsPercent)});
             deg = deg+.2;
         }, 30);
         // $('#content-wrapper, #time, canvas').fadeIn('slow');
@@ -71,7 +167,7 @@
     let drawHours = function(ctx, radius) {
         let ang;
         let num;
-        ctx.font = radius*0.07 + "px arial";
+        ctx.font = radius*0.07 + "px Helvetica";
         ctx.textBaseline = "middle";
         ctx.textAlign = "center";
         for(num = 1; num < 13; num++){
@@ -94,7 +190,7 @@
         ctx.textAlign="center";
         for(num = 1; num < 61; num++){
             if(num%5 === 0){
-                ctx.font = radius*0.07 + "px arial";   
+                ctx.font = 'bold '+radius*0.07 + "px arial";   
             }else{
                 ctx.font = radius*0.03 + "px arial";
             }
@@ -106,48 +202,6 @@
             ctx.rotate(-ang);
         }
     }
-    //draw rings
-    const circleHrs = new mojs.Shape({
-        shape: 'circle',
-        radius: 220,
-        fill: 'none',
-        stroke: '#FFC500',
-        className: 'circle-hrs',
-        strokeWidth: 50,
-        angle: -90,
-        parent: $('#content-wrapper')[0]
-    }).play();
-    const circleMins = new mojs.Shape({
-        shape: 'circle',
-        radius: 170,
-        fill: 'none',
-        className: 'circle-mins',
-        angle: -90,
-        stroke: 'white',
-        strokeWidth: 50,
-        parent: $('#content-wrapper')[0]
-    }).play();
-    const circleSecs = new mojs.Shape({
-        shape: 'circle',
-        radius: 120,
-        className: 'circle-secs',
-        angle: -90,
-        fill: 'none',
-        stroke: '#00FFB2',
-        strokeWidth: 50,
-        strokeDasharray: '100%', 
-        parent: $('#content-wrapper')[0]
-    }).play();
-    //get ring heights
-    circleHrsHeight = $('.circle-hrs ellipse').attr('rx');
-    circleMinsHeight = $('.circle-mins ellipse').attr('rx');
-    circleSecsHeight = $('.circle-secs ellipse').attr('rx');
-    //format offset initially
-    formatDash('.circle-hrs', circleHrsHeight);
-    formatDash('.circle-mins', circleMinsHeight);
-    formatDash('.circle-secs', circleSecsHeight);
-    //draw clock
-    drawClock();
     //draw minutes and seconds
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
@@ -162,27 +216,23 @@
         let tab = $(this).attr('id');
         let section = tab.replace('-t', '');
         if(section != 'home'){
-            console.log(updateClock)
-            clearInterval(updateClock);
+            // clearInterval(updateClock);
             $('#content-wrapper, #canvas, #time').fadeOut('fast');
-        }
-        if(section != 'home') {
-            $('html, body').animate({
-                    scrollTop: $("#"+section).offset().top-menuHeight+10
-            },{
-                specialEasing: {scrollTop: 'easeOutQuint'},
-                duration: 1000
+            $('html, body').animate(
+                {scrollTop: $("#"+section).offset().top - 1},
+                {duration: 1000
             });
         }else{
             $('html, body').animate({
-                    scrollTop: 0
+                    scrollTop: -1
             }, {
-                specialEasing: {scrollTop: 'easeOutQuint'},
-                duration: 1000, 
-                complete: function(){
-                    $('#content-wrapper, #canvas, #time').fadeIn('fast');
-                    drawClock();
-                }});
+                duration: 1000
+                // , 
+                // complete: function(){
+                //     $('#content-wrapper, #canvas, #time').fadeIn('fast');
+                //     drawClock();
+                // }
+            });
         }
     });
 })();

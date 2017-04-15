@@ -1,17 +1,27 @@
-#home, #about,#projects,#contact{
+#home, #about,#contact{
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 93%;
+	height: 100%;
 	font-family: 'Raleway', sans-serif;	
 	overflow: hidden;
+}
+#projects{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-family: 'Raleway', sans-serif;	
 }
 #home{	
 	width: 100%;
 	height: 100%; 
 }
 #projects{
-	background-color: white;
+	/*width: 500%;*/
+	background-color: black;
+	/*overflow-x: scroll;*/
+	/*overflow-y: hidden; */
 }
 #contact{
 	background-color: #ADADAD;
