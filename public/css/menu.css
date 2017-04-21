@@ -2,7 +2,7 @@
 	position: fixed;
 	width: 100%;
 	background-color: transparent;
-	z-index: 3;
+	z-index: 9999;
 	border: none;
 	border-radius: 0px;
 	padding-top: 50px;

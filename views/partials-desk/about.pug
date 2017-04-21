@@ -1,25 +1,28 @@
 #about
+
     #one
         #one-bg    
-        #about-me
+        div(class = 'about-me' id='about-me')
             P.head #[span(class='glyphicon glyphicon-console')] &nbsp;Let's get technical. 
             p.title BACK END
-            p.about I aim to develop applications that are scalable, reliable, and mantainable. I like to work with Node and the rich ecosystem of libraries that the NPM offers. I have built apps with the powerful Meteor framework, but I prefer the classic Express. To use, or not to use a relational data model? No problem! I am comfortable with MongoDB and MySQL. 
+            p.about I aim to develop applications that are scalable, reliable, and mantainable. I like to work with Node and the rich ecosystem of libraries that the NPM offers. I have built apps with the powerful Meteor framework, but I prefer classic Express. To use, or not to use a relational data model? No problem! I am comfortable with MongoDB and MySQL. 
             p.title FRONT END
-            p.about I strive to implement applications that look and feel great across devices. Anytime design is involved, I let my creativity run free to create elegant interfaces that feature a smooth user experience. I usually let Angular and jQuery do the power lifting, but I have a feeling I'll be trying out React and Vue in the very near future. Frameworks are friends, but sometimes pure JS is the way to go.     
+            p.about I strive to implement applications that look and feel great across devices. Anytime design is involved, I let my creativity run free to create elegant interfaces that feature a smooth user experience. I usually let Angular and jQuery do the power lifting, but I have a feeling I'll be trying out React and Vue in the very near future. Frameworks are sweet, but sometimes pure JS is the way to go.
+    
     #two
         #two-bg
-        #flags
+        //- #flags
             img.flag(src='/img/mexico.png')
-            span(class="glyphicon glyphicon-arrow-right")
+            //- span(class="glyphicon glyphicon-arrow-right")
             img.flag(src='/img/us.png')
-            span(class="glyphicon glyphicon-arrow-right")
+            //- span(class="glyphicon glyphicon-arrow-right")
             img.flag(src='/img/texas.png')    
-        p.snippet var myDevInterests = {<br> &nbsp;&nbsp;   one: "Progressive Web Apps",<br> &nbsp;&nbsp;   two: "API Design",<br> &nbsp;&nbsp;&nbsp;  three: "Research-Oriented Development",<br> &nbsp;&nbsp;   four: "Machine Learning",<br> &nbsp;&nbsp;   five: "Software Entrepreneurship",<br> &nbsp;&nbsp;   humor() {<br> &nbsp;&nbsp;&nbsp;&nbsp;      if(naughty === true){<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        God.sentence.start("callback-hell");<br> &nbsp;&nbsp;      }<br>   } };
-    #about-more
-        img(id='profile' src='/img/prof.png')
-        p.title A LITTLE ABOUT ME 
-        p.about-more I'm a twenty-two year old programmer from Cuernavaca, Mexico. I'm currently based in Dallas, but I call Austin, Texas home. Don't let my portfolio fool you into thinking I'm only about CS! I'm actually really interested in mathematics as well, and I do not rule out the possibility of a mathematical career in the future. I have a penchant for treating programming problems mathematically and solving them analytically. Here's a #[a(class='fibo-link') cool] example. When I'm away from the keyboard, I like to stay fit, read anything from non-fiction to high fantasy, and play chess.
+        p.snippet var myDevInterests = {<br> &nbsp;&nbsp;   one: "Algorithm Design",<br> &nbsp;&nbsp;   two: "Progressive Web Apps",<br> &nbsp;&nbsp;&nbsp;  three: "Research-Oriented Development",<br> &nbsp;&nbsp;   four: "Machine Learning",<br> &nbsp;&nbsp;   five: "Software Entrepreneurship",<br> &nbsp;&nbsp;   humor() {<br> &nbsp;&nbsp;&nbsp;&nbsp;      if(naughty === true){<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        God.sentence.start("callback-hell");<br> &nbsp;&nbsp;      }<br>   } };
+    div(class = 'about-me' id='about-more')
+        p.head #[span(class='glyphicon glyphicon-console')] &nbsp;A Little About Me
+        p.title MY STORY 
+        p.about I'm a twenty-two year old programmer from Cuernavaca, Mexico. I'm currently based in Dallas, but I call Austin, Texas home. Don't let my portfolio fool you into thinking I'm only about CS! I'm actually really interested in mathematics as well, and I do not rule out the possibility of a mathematical career in the future. I like to take an analytical approach when solving programming problems. Here's a cool #[a(class='link') example.] When I'm away from the keyboard, I like to stay fit, read anything from non-fiction to high fantasy, and play chess.
+        p.prof-p #[img(id='profile' src='/img/prof.png')]
     #bar
     #bar-about
         p#resume FEATURED PROJECT
@@ -27,3 +30,13 @@
     #slides
         div(id='btn-one' class='btn-active')
         div(id='btn-two')
+    div(class="marvel-device iphone6 silver")
+        div(class="top-bar")
+        div(class="sleep")
+        div(class="volume")
+        div(class="camera")
+        div(class="sensor")
+        div(class="speaker")
+        div(class="screen")
+        div(class="home")
+        div(class="bottom-bar") 

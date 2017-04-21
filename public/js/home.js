@@ -218,13 +218,13 @@
         if(section != 'home'){
             // clearInterval(updateClock);
             $('#content-wrapper, #canvas, #time').fadeOut('fast');
-            $('html, body').animate(
-                {scrollTop: $("#"+section).offset().top - 1},
+            $('html, body').stop().animate(
+                {scrollTop: $("#"+section).offset().top - 50},
                 {duration: 1000
             });
         }else{
-            $('html, body').animate({
-                    scrollTop: -1
+            $('html, body').stop().animate({
+                    scrollTop: - 50
             }, {
                 duration: 1000
                 // , 
