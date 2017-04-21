@@ -8,10 +8,10 @@
 	position: absolute;
 	background-color: #3B2E73;
 }	.iphone6{
-	transform: scale(.6);
+	transform: scale(.7);
 	float: right;
 	top: -5%;
-	margin-right: 7%
+	margin-right: 7%;
 	}
 	#one-bg{
 		height: 100%;
@@ -104,7 +104,7 @@
 		float: right;
 		color: white;
 		margin-right: 50px;
-		margin-top: 10%;
+		margin-top: 12%;
 		font-size: 1.3em;
 		line-height: 30px;
 		font-family: 'Courier';
@@ -198,6 +198,10 @@
 	}
 	.btn-active{
 		 background-color: white !important;
+	}
+	.screen{
+		background: url('/img/linkedin-prof.jpeg');
+		background-size: cover;
 	}
 	#btn-one:hover, #btn-two:hover{
 		background-color: white;

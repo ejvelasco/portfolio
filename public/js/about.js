@@ -10,6 +10,7 @@
 	// 		}
 	// 	}
 	// });
+	$('.marvel-device').hide();
 	$('.snippet').each(function(i, block) {
 			  		hljs.highlightBlock(block);
 				});	
@@ -17,12 +18,12 @@
 	// sr.reveal('.navbar-nav a', 300);
 	// sr.reveal('.head', { distance:'50px'}, 350);
 	$('#btn-two').click(function(){
-		$('#btn-one').removeClass('btn-active');
-		$('#btn-two').addClass('btn-active');
-		$('#two').fadeIn('slow');
-		$('#one').fadeOut('slow');
-		$('.marvel-device').fadeOut('slow');
-		$('#about-more').fadeIn('slow');
+		$('#btn-one').stop().removeClass('btn-active');
+		$('#btn-two').stop().addClass('btn-active');
+		$('#two').stop().fadeIn('slow');
+		$('#one').stop().fadeOut('slow');
+		$('.marvel-device').stop().show();
+		$('#about-more').stop().fadeIn('slow');
 		// $('#two').fadeIn(3000);
 		// $('#code2').typed({
 		// 	strings: ['var myInterests = {\n   one: "Application Architecture",\n   two: "Application Design",\n   three: "Research-Oriented Software",\n   four: "Artificial Intelligence",\n   five: "Game Design",\n   humor() {\n      if(naughty === true){\n         God.sentence.start("callback-hell");\n      }\n   } \n};'],
@@ -39,13 +40,13 @@
 		// }); 
 	});
 	$('#btn-one').click(function(){
-		$('#btn-one').addClass('btn-active');
-		$('#btn-two').removeClass('btn-active');
-		$('#two').fadeOut('slow');
-		$('#about-more').fadeOut('slow');
-		$('#one').fadeIn('slow');
+		$('#btn-one').stop().addClass('btn-active');
+		$('#btn-two').stop().removeClass('btn-active');
+		$('#two').stop().fadeOut('slow');
+		$('#about-more').stop().fadeOut('slow');
+		$('#one').stop().fadeIn('slow');
 		setTimeout(function(){
-			$('.marvel-device').fadeIn('slow');
+			$('.marvel-device').stop().fadeOut('slow');
 		}, 1000);
 		// $('#code').typed({
 		// 	strings: ['dream', 'design', 'innovate', 'program.'],
