@@ -9,10 +9,10 @@ div{
   position:absolute;
   width:100%;
   margin: 0 auto;
-  height: 60%;
+  height: 61%;
   overflow-y: hidden;
   overflow-x: hidden;
-  top: 7%;
+  top: 8%;
   /*display: none;*/
   transition: all 1s ease;
  
@@ -27,7 +27,7 @@ div{
 .project-img{
     height: 100%;
     width: 500px;
-    left: 50%;
+    left: 250px;
     position: relative;
     filter: brightness(.3) saturate(1);
     transition: filter .9s ease;
@@ -51,7 +51,7 @@ div{
 #click-bar{
     display: none;
     position: absolute;
-    top: 66.9%;
+    top: 68.9%;
     right: 0;
     left: 0;
     text-align: center;
@@ -120,10 +120,56 @@ div{
     font-size: 1.1em;
     font-family: Helvetica;
 }
-@media only screen and (max-width: 700px){
+
+@media only screen and (max-width: 1500px){
+    .bar-item, .project-info{
+        height: 105px !important;
+        width: 187px !important;
+    }
+}
+@media only screen and (max-width: 1200px){
+    .bar-item, .project-info{
+        height: 70px !important;
+        width: 125px !important;
+        font-size: .8em;
+    }
+}
+@media only screen and (max-width: 800px){
+    .bar-item, .project-info{
+        height: 35px !important;
+        width: 50px !important;
+    }
+    .project-img{
+        left: 60px;
+        width: 200px;
+    }
+    .project-info-title{
+        display: none !important;
+    }
+    #showcase{
+        left: 80px;
+        width: 160px;
+        font-size: .5em;  
+         
+    }
+    #showcase-desc{
+        line-height: 13px;
+    }
+    #showcase-subtitle{
+        margin-top: -5px;
+    }
+    #click-bar{
+        top: 86%;
+    }
+    .horizontal-scroll-wrapper{
+        height: 80%;
+        top: 6%;
+    }
+}
+/*@media only screen and (max-width: 700px){
     
 }
 
 @media only screen and (max-width: 500px){
     
-}
+}*/

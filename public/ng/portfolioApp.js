@@ -63,7 +63,7 @@
 			{	
 				title: "Hummingbird", 
 				subtitle: "Enriching the classroom environment",
-				desc: "A web app that empowers students to comfortably ask questions and help each other:\n\t1. Instructors create virtual Classes via a Dashboard.\n\t2. Whenever an instructor adds a Lecture to the Class,\n\ta Questions Page is created for that Lecture.\n\t3. The Questions Page is where the students take part\n\tin a fun and safe learning setting.\n\t4. Hummingbird offers lecture-specific resources from\n\ta rich variety of educational APIs.", 
+				desc: "A web app that empowers students to comfortably ask questions and help each other:\n1. Instructors create virtual Classes via a Dashboard.\n2. Whenever an instructor adds a Lecture to the Class,\na Questions Page is created for that Lecture.\n3. The Questions Page is where the students take part\nin a fun and safe learning setting.\n4. Hummingbird offers lecture-specific resources from\na rich variety of educational APIs.", 
 				img: "/img/hummingbird.jpg", 
 				url:"https://github.com/velascoDev/hummingbird-dashboard"
 			},
@@ -115,6 +115,9 @@
 			let projectId;
 			let lastProjectId = 0;
 			let projectIdThumb;
+			let widthImg = $('#project-img-0').width();
+			let leftMarginImg = Number($('#project-img-0').css('left').replace('px', ''));
+			// console.log($('#project-img-0').css('left'))
 			$('.bar-item').css('background-size', 'center');
 			$('.bar-item').on('mouseenter', function(event){
 				projectIdThumb = $(event.currentTarget).children().attr('id');
@@ -129,7 +132,10 @@
 			$('.bar-item').on('click', function(event){
 				projectId = $(event.currentTarget).children().attr('id');
 				projectId = projectId.replace('owned-', '');
-				$('.project-img').stop().animate({left:-500*Number(projectId) + 250}, 900, 'easeInOutCubic');
+				
+				console.log(leftMarginImg);
+				console.log(widthImg)
+				$('.project-img').stop().animate({left:-widthImg*Number(projectId) + leftMarginImg}, 900, 'easeInOutCubic');
 				$('#project-img-'+lastProjectId).removeClass('bright');
 				$('#showcase').stop().fadeOut(500, function(){
 					$('#project-img-'+projectId).addClass('bright');

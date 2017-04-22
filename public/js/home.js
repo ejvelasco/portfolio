@@ -14,21 +14,22 @@
             //fade in content 
             $div.fadeIn(1000);
             $('.loader').fadeOut(1500);
-            
             $('#content-wrapper').fadeIn(1000);
-            setTimeout(function(){
-                $('.msg-mobile').fadeIn('slow');
+            if($(window).width() < 800){
                 setTimeout(function(){
-                    $('#code-mobile').typed({
-                        strings: ['innovate', 'design', 'program', 'seize the day.'],
-                        typeSpeed: 25,
-                        backSpeed: 25,
-                        callback: function(){
-                            $('.typed-cursor').fadeOut('slow');
-                        }
-                    });
-                }, 500);
-            }, 600)
+                    $('.msg-mobile').fadeIn('slow');
+                    setTimeout(function(){
+                        $('#code-mobile').typed({
+                            strings: ['innovate', 'design', 'program', 'seize the day.'],
+                            typeSpeed: 25,
+                            backSpeed: 25,
+                            callback: function(){
+                                $('.typed-cursor').fadeOut('slow');
+                            }
+                        });
+                    }, 500);
+                }, 600);
+            }
             // window.sr = ScrollReveal({ origin: 'top', opacity: 0, duration: 1000 });
             // sr.reveal('.msg-mobile', {delay: 1000, distance:'50px'}, 350);
             // setTimeout(function(){

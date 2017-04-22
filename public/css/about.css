@@ -10,7 +10,7 @@
 }	.iphone6{
 	transform: scale(.7);
 	float: right;
-	top: -5%;
+	top: -3%;
 	margin-right: 7%;
 	}
 	#one-bg{
@@ -206,7 +206,7 @@
 	#btn-one:hover, #btn-two:hover{
 		background-color: white;
 	}
-	@media (max-width: 1680px) {
+	@media (max-width: 1550px) {
 	  .snippet {
 	    display: none;
 	  }
