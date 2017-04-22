@@ -8,7 +8,7 @@
 	position: absolute;
 	background-color: #3B2E73;
 }	.iphone6{
-	transform: scale(.7);
+	transform: scale(.65);
 	float: right;
 	top: -5%;
 	margin-right: 7%;
@@ -70,7 +70,7 @@
 			color: white;
 			margin-top: 3px;
 			margin-bottom: 3px;
-			font-size: 1.3em;
+			font-size: 1.2em;
 			line-height: 38px;
 			text-align: justify;
 		}
