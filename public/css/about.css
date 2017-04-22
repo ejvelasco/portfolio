@@ -188,7 +188,7 @@
 		 background-color: black;
 		 border-radius: 15px;
 		 display: inline-block;
-		 opacity: .1;
+		 opacity: .3;
 		 border: solid 2px black;
 		 transition: background .4s ease;
 	}
