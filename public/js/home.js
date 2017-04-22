@@ -14,8 +14,33 @@
             //fade in content 
             $div.fadeIn(1000);
             $('.loader').fadeOut(1500);
+            
             $('#content-wrapper').fadeIn(1000);
-           
+            setTimeout(function(){
+                $('.msg-mobile').fadeIn('slow');
+                setTimeout(function(){
+                    $('#code-mobile').typed({
+                        strings: ['innovate', 'design', 'program', 'seize the day.'],
+                        typeSpeed: 25,
+                        backSpeed: 25,
+                        callback: function(){
+                            $('.typed-cursor').fadeOut('slow');
+                        }
+                    });
+                }, 500);
+            }, 600)
+            // window.sr = ScrollReveal({ origin: 'top', opacity: 0, duration: 1000 });
+            // sr.reveal('.msg-mobile', {delay: 1000, distance:'50px'}, 350);
+            // setTimeout(function(){
+            //     $('#code-mobile').typed({
+            //         strings: ['innovate', 'design', 'program', 'seize the day.'],
+            //         typeSpeed: 25,
+            //         backSpeed: 25,
+            //         callback: function(){
+            //             $('.typed-cursor').fadeOut('slow');
+            //         }
+            //     });
+            // }, 500);
             // $('#new-menu').fadeIn(2000);
             // setTimeout(function(){
                 // if($(window).scrollTop() === 0){
@@ -94,16 +119,14 @@
                 $('.msg').show();
                 window.sr = ScrollReveal({ origin: 'top', opacity: 0, duration: 1000 });
                 // sr.reveal('.navbar-nav a', 300);
-                sr.reveal('.msg', {delay: 1000, distance:'50px'}, 350);
+                sr.reveal('.msg-desk', {delay: 1000, distance:'50px'}, 350);
                 setTimeout(function(){
-                    $('#code').typed({
+                    $('.code-desk').typed({
                         strings: ['innovate', 'design', 'program', 'seize the day.'],
-                        typeSpeed: 20,
-                        backSpeed: 20,
+                        typeSpeed: 25,
+                        backSpeed: 25,
                         callback: function(){
-                            if($('#two').css('display') !== 'block'){
-                                $('.typed-cursor').fadeOut('slow');
-                            }
+                            $('.typed-cursor').fadeOut('slow');
                         }
                     });
                 }, 2500)
@@ -215,14 +238,20 @@
     $('#new-menu a').on('click', function(){
         let tab = $(this).attr('id');
         let section = tab.replace('-t', '');
-        if(section != 'home'){
+        if(section === 'about'){
             // clearInterval(updateClock);
             $('#content-wrapper, #canvas, #time').fadeOut('fast');
             $('html, body').stop().animate(
                 {scrollTop: $("#"+section).offset().top - 50},
                 {duration: 1000
             });
-        }else{
+        }else if(section === 'projects'){
+            $('html, body').stop().animate(
+                {scrollTop: $("#"+section).offset().top - 200},
+                {duration: 1000
+            });
+        }
+        else{
             $('html, body').stop().animate({
                     scrollTop: - 50
             }, {

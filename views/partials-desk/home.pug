@@ -1,7 +1,10 @@
 #home
 	#home-bg
 	#msg-container
-		p(class='msg msg-1') I AM #[span(class="white") EDUARDO] AND I WILL #[span(id='code') ]
+		p(class='msg msg-1 msg-desk') I AM #[span(class="white") EDUARDO] AND I WILL #[span(class='code code-desk') ]
+		.mobile-msg
+			p(class='msg msg-1 msg-mobile') I AM #[span(class="white") EDUARDO] AND I WILL
+			p(class='msg msg-1') #[span(class='code' id="code-mobile") ]
 		//- div(class="button msg") MY PROJECTS
 	#content-wrapper
 	canvas(id="canvas" width="800" height="800")

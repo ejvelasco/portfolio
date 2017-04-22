@@ -206,12 +206,34 @@
 	#btn-one:hover, #btn-two:hover{
 		background-color: white;
 	}
-
-
-
-
-
-	
+	@media (max-width: 1680px) {
+	  .snippet {
+	    display: none;
+	  }
+	  .about-me{
+	  	right: 0;
+	  	left: 0;
+	  	margin: 0 auto;
+	  	width: 90%;
+	  }
+	  .marvel-device{
+	  	display: none !important;
+	  }
+	}
+	@media (max-width: 750px){
+		#bar,#bar-about{
+			display: none;
+		}
+		#about{
+			font-size: .7em;
+		}
+		.about{
+			line-height: 23px;
+		}
+		#slides{
+			bottom: 2.5%;
+		}
+	}
 	
 	
 	

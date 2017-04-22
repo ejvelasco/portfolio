@@ -16,6 +16,11 @@
 #new-menu .container{
 	margin-left: 30px;
 }
+#mobile-brand{
+	top: 55;
+	display: none;
+  background-color: transparent !important;
+}
 #new-menu a{
 	font-family: 'Raleway', sans-serif;	
 	margin-right: 20px;
@@ -40,27 +45,16 @@
 #empty{
 	margin: 0 !important;
 }
+.mobile-msg{
+  display: none;
+}
 
-@media only screen 
-  and (min-device-width: 375px) 
+@media only screen  
   and (max-device-width: 800px) { 
   #new-menu{
+  	display: none !important;
   }
-  .navbar-nav{
-  	width: 100%;
-  	text-align: center;
-  }
-  .navbar-toggle{
-  	left: 30;
-  	border: none;
-  	transform: scaleX(1.2);
-  	background-color: transparent !important;
-  	position: absolute !important;
-  }
-  .navbar-brand{
-  	width: 100%;
-  	border: none;
-  	text-align: center;
-  	font-size: 1em !important;
+  .mobile-msg{
+    display: block;
   }
 }
