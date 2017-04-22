@@ -63,7 +63,7 @@
                 //draw rings
                 const circleHrs = new mojs.Shape({
                     shape: 'circle',
-                    radius: 220,
+                    radius: 159,
                     fill: 'none',
                     className: 'circle-hrs',
                     strokeWidth: 50,
@@ -75,7 +75,7 @@
                 }).play();
                 const circleMins = new mojs.Shape({
                     shape: 'circle',
-                    radius: 170,
+                    radius: 109,
                     fill: 'none',
                     className: 'circle-mins',
                     angle: -90,
@@ -87,7 +87,7 @@
                 }).play();
                 const circleSecs = new mojs.Shape({
                     shape: 'circle',
-                    radius: 120,
+                    radius: 60,
                     className: 'circle-secs',
                     angle: -90,
                     fill: 'none',
