@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer');
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 ///express
 const app = express();
 //middleware
