@@ -1,14 +1,37 @@
 #home
-	#home-bg
-	p(id='time')
-	#msg-container
-		p(class='msg msg-1 msg-desk') I AM #[span(class="white") EDUARDO] AND I WILL #[span(class='code code-desk') ]
-		.mobile-msg
-			p(class='msg msg-1 msg-mobile') I AM #[span(class="white") EDUARDO] AND I WILL
-			p(class='msg msg-1') #[span(class='code' id="code-mobile") ]
-		//- div(class="button msg") MY PROJECTS
-	#content-wrapper
-	canvas(id="canvas" width="800" height="800")
-	
+    #home-bg
+    #msg-container
+        p(class='msg msg-1 msg-desk') I AM #[span(class="white") EDUARDO] &amp; 
+        p(class='msg msg-1 msg-desk') I WILL #[span(class="white") SEIZE] THE #[span(class="white") DAY]
+        div(id="bio-container" class="msg")
+        div(id="bio-overlay" class="msg")
+            div(id="prof-pic")
+            div(id="bio")
+                p(class="bio") MY MISSION:  
 
-	
+                ul(class="mission")
+                    li
+                        img(id="caffeine" src="/img/caffeine.png")
+                    li
+                        p(class="bio right")
+                            span(class="glyphicon glyphicon-chevron-right right")
+                    li
+                        p.snippet-1 //find nth fibonacci term <br>function fb(num,memo){<br>&nbsp;&nbsp;memo = memo || {}; <br>&nbsp;&nbsp;if(memo[num]){<br>&nbsp;&nbsp;&nbsp;&nbsp;return memo[num];<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;if(num&lt;=1){<br>&nbsp;&nbsp;&nbsp;&nbsp;return 1;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;let t = fb(num-1,memo)+fb(num-2,memo);<br>&nbsp;&nbsp;return memo[num] = t; <br> }
+                    
+                
+                    
+    #arrow
+        span(class="glyphicon glyphicon-menu-down")
+    
+    //- p(id='time')
+    
+        //- p(class='msg msg-1 msg-desk') I WILL #[span(class='code code-desk') ]
+        //- .mobile-msg
+            p(class='msg msg-1 msg-mobile') I AM #[span(class="white") EDUARDO] AND I WILL
+            p(class='msg msg-1') #[span(class='code' id="code-mobile") ]
+        //- div(class="button msg") MY PROJECTS
+    //- #content-wrapper
+    //- canvas(id="canvas" width="800" height="800")
+    
+
+    

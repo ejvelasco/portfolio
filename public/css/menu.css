@@ -25,13 +25,14 @@
 	font-family: 'Raleway', sans-serif;	
 	margin-right: 20px;
 	letter-spacing: 5px;
-	color: white;
+	color: #02303E;
 	font-weight: bolder;
 	font-size: .9em;
-	transition: all .4s ease;
+	transition: all .2s ease-out;
 }
 #new-menu a:hover, .navbar-brand{
-	color: #BABABA !important;
+	letter-spacing: 7px;
+	opacity: .6;
 }
 #home-t{
 	background: url('/img/logo-2.png');
@@ -40,7 +41,12 @@
 	margin: 0 !important;
 	padding: 0 !important;
 	transform: translateY(-18%);
+	opacity: .8;
 	background-size: cover;
+	transition: all .7s ease-out;
+}
+#home-t:hover{
+	opacity: .4;
 }
 #empty{
 	margin: 0 !important;
