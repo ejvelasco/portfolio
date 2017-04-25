@@ -2,31 +2,43 @@
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background: url('/img/metal-pattern.jpg');
-	filter: hue-rotate(175deg) saturate(1.9) opacity(.5);
-	opacity: .7;
+	background: url('/img/bg-pattern.png');
+	box-shadow: 20px 20px 90px rgba(0,0,0, .2);
+	filter:  saturate(1.5) hue-rotate(300deg) opacity(.3);
 }
 #email-form{
-	position: relative;
-	top: 5%;
+	position: fixed;
+	/*top: 50%;*/
+	margin-top: 30px;
+	margin-bottom: 30px;
+	/*transform: translateY(-50%);*/
 	height: 50%;
 	width: 100%;
 	
+}
+.mask{
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: .5;
+	z-index: 1;
 }
 	input, textarea{
 		background: transparent;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
-		border-color: white;
-		width: 50%;
+		border-color: #02303E;
+		width: 80%;
 		margin-top: 15px;
 		font-family: 'Helvetica';
 		font-weight: light;	
 		cursor: text;
 		font-size: 1.5em;
 		padding: 12px;
-		color: white;
+		color: #02303E;
 		outline: none;
 		/*min-height: 100px;*/
 	}
@@ -34,6 +46,7 @@
 		border-right: none;
 		border-left: none;
 		border-top: none;
+		border-width: 1px;
 	}
 	#send{
 		cursor: pointer;
@@ -45,17 +58,17 @@
 		text-align: center;
 		padding: 15px;
 		border-style: solid;
-		border-color: white;
+		border-color: #02303E;
 		border-width: 2px;
 		margin-top: 30px;
 		margin-left: auto;
 		margin-right: auto;
-		color: white;
+		color: #02303E;
 		transition: all .7s ease;
 		min-width: 200px;
 	}
 	#send:hover{
-		background-color: white;
+		background-color: #BFCBCE;
 		color: black;
 	}
 		#loading{
@@ -73,9 +86,9 @@
 	#error{
 		opacity: 0;
 		position: relative;
-		width: 25%;
+		width: 50%;
 		padding: 15px;
-		margin-top: 30px;
+		margin-top: -200px;
 		text-align: center;
 		border-style: solid;
 		border-left: none;
@@ -94,20 +107,20 @@
 		margin-right: auto;
 		margin-left: auto;
 		text-align: center;
-		color: white;
+		color: #02303E;
 		font-size: 2em;
 	}
 /*STYLE PLACEHOLDER*/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: white;
+  color: #02303E;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: white;
+  color: #02303E;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: white;
+  color: #02303E;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: white;
+  color: #02303E;
 }
 

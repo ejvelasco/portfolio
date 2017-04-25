@@ -18,4 +18,22 @@
 	    	// $('#content-wrapper, canvas, #time').fadeIn(1000);
 	    }
 	});
+	$('#new-menu a').on('click', function(){
+	        let tab = $(this).attr('id');
+	        let section = tab.replace('-t', '');
+	        if(section === 'about'){
+	            $('html, body').stop().animate({scrollTop: $("#"+section).offset().top - 50},1000,'easeInOutCubic');
+	        }else if(section === 'projects'){
+	            $('html, body').stop().animate({scrollTop: $("#"+section).offset().top - 200},1000,'easeInOutCubic');
+	        }else if(section === 'contact'){
+	            $('.mask').fadeIn(800, 'swing');
+	            $('#contact').fadeIn(800, 'swing');   
+	        }else if(section === 'home'){
+	        	$('html, body').stop().animate({scrollTop: 0},1000,'easeInOutCubic');
+	        }
+	});
+	$('.mask').on("click", function(){
+		$('#contact').fadeOut(800);
+		$('.mask').fadeOut(800);
+	});
 })();

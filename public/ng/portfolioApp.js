@@ -41,13 +41,13 @@
 							}, 3000)
 						} else{
 							//if no errors change edit styles accordingly
-							$('#send').css('background-color', '#67FABD');
-							$('#send').css('border-color', 'black');
-							$('#send').css('color', 'black');
-							$('#send').text('SENT');
+							$('#send').css('background-color', '#67FABD').css('border-color', 'black').css('color', 'black').text('SENT');
 							$scope.details.name = '';
 							$scope.details.email = '';
 							$scope.details.msg = '';
+							setTimeout(function(){
+								$('#send').css('background-color', '').css('border-color', '').css('color', '').text('SEND');
+							}, 3500)
 
 						}
 					}
@@ -133,20 +133,43 @@
 				projectId = $(event.currentTarget).children().attr('id');
 				projectId = projectId.replace('owned-', '');
 				
-				console.log(leftMarginImg);
-				console.log(widthImg)
-				$('.project-img').stop().animate({left:-widthImg*Number(projectId) + leftMarginImg}, 900, 'easeInOutCubic');
-				$('#project-img-'+lastProjectId).removeClass('bright');
-				$('#showcase').stop().fadeOut(500, function(){
-					$('#project-img-'+projectId).addClass('bright');
-					$('#showcase-title').attr('href', $scope.projects[projectId].url);
-					$('#showcase-title').text($scope.projects[projectId].title);
-					$('#showcase-subtitle').text($scope.projects[projectId].subtitle);
-					$('#showcase-desc').html($scope.projects[projectId].desc);
-					$('#showcase').fadeIn(500);	
-					lastProjectId = projectId;
-				});
-				
+				// console.log(leftMarginImg);
+				// console.log(widthImg)
+				if(projectId !== lastProjectId){
+					// console.log(leftMarginImg);
+					// console.log(widthImg)
+					$('.project-img').stop().animate({left:-widthImg*Number(projectId) + leftMarginImg}, 900, 'easeInOutCubic');
+					$('#project-img-'+lastProjectId).removeClass('bright');
+					$('#showcase').stop().fadeOut(500, function(){
+						$('#project-img-'+projectId).addClass('bright');
+						$('#showcase-title').attr('href', $scope.projects[projectId].url);
+						$('#showcase-title').text($scope.projects[projectId].title);
+						$('#showcase-subtitle').text($scope.projects[projectId].subtitle);
+						$('#showcase-desc').html($scope.projects[projectId].desc);
+						$('#showcase').fadeIn(500);	
+						lastProjectId = projectId;
+					});	
+				}
+			});
+			$('.project-img').on('click', function(event){
+				projectId = $(event.currentTarget).attr('id');
+				projectId = projectId.replace('project-img-', '');
+				console.log(lastProjectId, projectId)
+				if(projectId !== lastProjectId){
+					// console.log(leftMarginImg);
+					// console.log(widthImg)
+					$('.project-img').stop().animate({left:-widthImg*Number(projectId) + leftMarginImg}, 900, 'easeInOutCubic');
+					$('#project-img-'+lastProjectId).removeClass('bright');
+					$('#showcase').stop().fadeOut(500, function(){
+						$('#project-img-'+projectId).addClass('bright');
+						$('#showcase-title').attr('href', $scope.projects[projectId].url);
+						$('#showcase-title').text($scope.projects[projectId].title);
+						$('#showcase-subtitle').text($scope.projects[projectId].subtitle);
+						$('#showcase-desc').html($scope.projects[projectId].desc);
+						$('#showcase').fadeIn(500);	
+						lastProjectId = projectId;
+					});	
+				}
 			});
 			$('#showcase-desc').text($scope.projects[0].desc);
 			$('#project-img-0').addClass('bright');

@@ -12,12 +12,14 @@ block head
 block content
 	body(ng-app='portfolioApp')
 		div(class="loader")
+		div(class="mask")
 		include partials-desk/new-menu
 		include partials-desk/home
 		include partials-desk/projects
 		include partials-desk/about
-		
-		//- include partials-desk/contact
+		include partials-desk/contact
+		script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js')
+		script(src='https://unpkg.com/scrollreveal/dist/scrollreveal.min.js')
 		script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/mo-js/0.288.1/mo.min.js')
 		script(src='/ng/portfolioApp.js')
