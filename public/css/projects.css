@@ -1,23 +1,4 @@
 
-div{
-  box-sizing:border-box;
-}
-
-
-.link{
-    color: #BABABA;
-    cursor: pointer;
-    padding: 0 !important;
-    margin: 0 !important;
-    text-decoration: none;
-    transition: all .3s ease;
-}
-.link:hover{
-    color: #DCDCDC;
-}
-.link:visited{
-    color: #BABABA;
-}
 .horizontal-scroll-wrapper{
   position:absolute;
   width:100%;
@@ -26,42 +7,85 @@ div{
   overflow-y: hidden;
   overflow-x: hidden;
   top: 8%;
-  /*display: none;*/
   transition: all 1s ease;
  
 }
-.images{
-    display: none;
-    margin-right:-999em;
-    white-space:nowrap;
-    list-style:none;
-    position: relative;
-}
-.project-img{
-    height: 100%;
-    width: 500px;
-    left: 250px;
-    position: relative;
-    opacity: .4;
-    transition:  filter.9s ease, opacity .9s ease;
-    -moz-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-}
-.bright{
-    filter: brightness(.5);
-    opacity: .9;
-}
-.horizontal-scroll-wrapper li{
-    float: left;
-    display: inline;
-    position: relative;
-}
-.bar-item:hover{
-    transform: scaleX(.95) scaleY(.90);
-    font-size: 18px;
-    border: none;
-}
+    .horizontal-scroll-wrapper li{
+        float: left;
+        display: inline;
+        position: relative;
+    }
+    .images{
+        display: none;
+        margin-right:-999em;
+        white-space:nowrap;
+        list-style:none;
+        position: relative;
+    }
+        .project-img{
+            height: 100%;
+            width: 500px;
+            min-width: 500px;
+            left: 250px;
+            position: relative;
+            opacity: .4;
+            transition:  filter.9s ease, opacity .9s ease;
+            -moz-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+        .bright{
+            filter: brightness(.5);
+            opacity: .9;
+        }
+    #showcase{
+        display: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: justify;
+        white-space: pre-wrap;
+        color: white;
+        width: 400;
+        left: 300px;
+    }
+        #showcase-title{
+            text-transform: uppercase;
+            font-size: 2.2em;
+            letter-spacing: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            transition: all .6s ease;
+        }
+        #showcase-title:hover{
+            color: #A4AEB1;
+        }
+        #showcase-subtitle{
+            font-weight: bold;
+            font-size: 1.2em;  
+            margin-top: -10px;
+        }
+        #showcase-desc{
+            margin-top: 15px;
+            line-height: 22px;
+            font-size: 1.1em;
+            font-family: Helvetica;
+        }
+            .link{
+                color: #BABABA;
+                cursor: pointer;
+                padding: 0 !important;
+                margin: 0 !important;
+                text-decoration: none;
+                transition: all .3s ease;
+            }
+            .link:hover{
+                color: #DCDCDC;
+            }
+            .link:visited{
+                color: #BABABA;
+            }
 #click-bar{
     display: none;
     position: absolute;
@@ -69,73 +93,40 @@ div{
     right: 0;
     left: 0;
     text-align: center;
-    /*overflow: hidden;*/
-
-
 }
-.project-info{
-    height: 140px;
-    position: absolute;
-    width: 250px;
-    border: none;
-    opacity: .6;
-    display: none;
-    background-color: black;
-}
-.project-info-title{
-    font-size: 18px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    right: 0;
-    left: 0;
-    font-weight: bold;
-    color: white;
-}
-.bar-item{
-    display: inline-block;
-    /*position: absolute;*/
-    width: 250px;
-    height: 140px;
-    cursor: pointer;
-    transition: all .2s ease-out;
-    box-shadow: 20px 20px 90px rgba(0,0,0, .2);
-}
-#showcase{
-    display: none;
-    position: absolute;
-    top: 11%;
-    text-align: justify;
-    white-space: pre-wrap;
-    /*background-color: white;*/
-    color: white;
-    width: 400;
-    left: 300px;
-}
-#showcase-title{
-    text-transform: uppercase;
-    font-size: 2.2em;
-    letter-spacing: 4px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    transition: all .6s ease;
-}
-#showcase-title:hover{
-    color: #A4AEB1;
-}
-#showcase-subtitle{
-    font-weight: bold;
-    font-size: 1.2em;  
-    margin-top: -10px;
-}
-#showcase-desc{
-    margin-top: 15px;
-    line-height: 22px;
-    font-size: 1.1em;
-    font-family: Helvetica;
-}
+    .bar-item{
+        display: inline-block;
+        width: 250px;
+        height: 140px;
+        cursor: pointer;
+        transition: all .2s ease-out;
+        box-shadow: 20px 20px 90px rgba(0,0,0, .2);
+    }
+    .bar-item:hover{
+        transform: scaleX(.95) scaleY(.90);
+        font-size: 18px;
+        border: none;
+    }
+        .project-info{
+            height: 140px;
+            position: absolute;
+            width: 250px;
+            border: none;
+            opacity: .6;
+            display: none;
+            background-color: black;
+        }
+        .project-info-title{
+            font-size: 18px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            right: 0;
+            left: 0;
+            font-weight: bold;
+            color: white;
+        }
 
 @media only screen and (max-width: 1500px){
     .bar-item, .project-info{
@@ -158,6 +149,7 @@ div{
     .project-img{
         left: 60px;
         width: 200px;
+        min-width: 200px;
     }
     .project-info-title{
         display: none !important;
@@ -165,8 +157,8 @@ div{
     #showcase{
         left: 80px;
         width: 160px;
-        font-size: 11px;  
-         
+        font-size: 8px;  
+        text-align: left !important;
     }
     #showcase-desc{
         line-height: 13px;
@@ -182,10 +174,3 @@ div{
         top: 6%;
     }
 }
-/*@media only screen and (max-width: 700px){
-    
-}
-
-@media only screen and (max-width: 500px){
-    
-}*/

@@ -20,6 +20,8 @@
 .about-1{
 	height: 55%;
 	width: 50%;
+	min-height: 550px;
+	min-width: 800px;
 	right: 0;
 	left: 0;
 	margin: 0 auto;
@@ -35,6 +37,7 @@
 		position: absolute;
 		background: url('/img/austin.jpg') no-repeat;
 		background-size: contain;
+		background-position: center;
 	}
 	.img-r{
 		width: 70%;
@@ -44,6 +47,27 @@
 		transform: translateY(-50%);
 		position: absolute;
 		background: url('/img/dallas.jpg') no-repeat;
+		background-size: contain;
+		background-position: center;
+	}
+	.img-l-2{
+		width: 70%;
+		height: 80%;
+		left: -30%;
+		top: 50%;
+		transform: translateY(-50%);
+		position: absolute;
+		background: url('/img/js.png') no-repeat;
+		background-size: contain;
+	}
+	.img-r-2{
+		width: 70%;
+		height: 80%;
+		right: -30%;
+		top: 50%;
+		transform: translateY(-50%);
+		position: absolute;
+		background: url('/img/workspace.jpg') no-repeat;
 		background-size: contain;
 		background-position: center;
 	}
@@ -85,27 +109,6 @@
 			text-align: left;
 			min-width: 200px;
 		}
-		.img-l-2{
-			width: 70%;
-			height: 80%;
-			left: -30%;
-			top: 50%;
-			transform: translateY(-50%);
-			position: absolute;
-			background: url('/img/js.png') no-repeat;
-			background-size: contain;
-		}
-		.img-r-2{
-			width: 70%;
-			height: 80%;
-			right: -30%;
-			top: 50%;
-			transform: translateY(-50%);
-			position: absolute;
-			background: url('/img/workspace.jpg') no-repeat;
-			background-size: contain;
-			background-position: center;
-		}
 .about-2{
 	height: 60%;
 	width: 55%;
@@ -129,8 +132,83 @@
 		top: 50%;
 		display: none;
 		transform: translateY(-50%);
+		overflow-x: scroll;
 	}
-	
+#mobile-footer{
+	height: 80px;
+	margin-top: 50px;
+	width: 100%;
+	background-color: transparent;
+	position: relative;
+}
+	#mobile-social{
+		text-align: center;
+	}
+	#mobile-social li{
+		font-size: 3em;
+		letter-spacing: 5px;
+		font-weight: bold;
+		margin-right: 20px;
+		display: inline-block;
+	}
+	#mobile-social li a{
+		text-decoration: none !important;
+		color: #02303E !important;
+	}
+	#contact-t-2{
+		padding: 10px;
+		border: solid 2px #02303E;
+		transition: all .3s ease;
+	}
+@media only screen and (max-width: 800px){
+	#about{
+		font-size: .5em;
+	}
+	.head, .about-1{
+		width: 75%;
+	}
+	.about-1{
+		min-height: 100px;
+		min-width: 200px;
+	}
+	.about-2, .msg-3{
+		display: none !important;
+	}
+	.head{
+		padding-top: 30px;
+		padding-bottom: 0px;
+		font-size: 3em;
+	}
+	.about{
+		line-height: 18px;
+	}
+	.img-l,.img-r{
+		width: 120%;
+		height: 120%;
+	}
+	.img-l-2{
+		height: 50%;
+		left: -35%;
+	}
+	.img-r-2{
+		height: 120%;
+		width: 120%;
+	}
+	.mission-title{
+		text-align: left;
+	}
+	#about{
+		
+		margin-bottom: 0
+	}
+	#contact{
+		font-size: .5em;
+		min-height: 200px;
+		line-height: 15px; 
+		width: 75%;
+	}
+}
+
 	
 
 	

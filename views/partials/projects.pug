@@ -1,0 +1,15 @@
+#projects(ng-controller="projectsGallery")
+	div(class="horizontal-scroll-wrapper squares")
+		ul(class="images")
+			li(ng-repeat="project in projects")
+				div(class="project-img" id="project-img-{{$index}}")
+		#showcase
+			a(id="showcase-title" href="https://github.com/velascoDev/hummingbird-dashboard" target="blank") Hummingbird
+			div(id="showcase-subtitle") Reinventing the Classroom Environment
+			div(id="showcase-desc")
+	#click-bar
+		div(class="bar-item" ng-repeat="project in projects")
+			div(class="project-item" id = "owned-{{$index}}")
+				div(class="project-info")
+					div(class="project-info-title") {{project.title}}
+				
