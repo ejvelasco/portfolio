@@ -4,7 +4,20 @@ div{
 }
 
 
-
+.link{
+    color: #BABABA;
+    cursor: pointer;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+.link:hover{
+    color: #DCDCDC;
+}
+.link:visited{
+    color: #BABABA;
+}
 .horizontal-scroll-wrapper{
   position:absolute;
   width:100%;

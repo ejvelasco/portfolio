@@ -30,6 +30,7 @@
 #home-bg{
 	background: url('/img/office.jpg');
 	background-size: cover;
+	background-position: center;
 	position: absolute;
 	z-index: -1;
 	height: 100%;
@@ -102,7 +103,7 @@
 		}
 			.mission li{
 				margin-top: 10px;
-				margin-right: 20px;
+				margin-right: 25px;
 				display: inline-block;
 			}
 				#caffeine{
@@ -124,13 +125,52 @@
 					transform: translateY(-10%);
 					font-size: .7em;
 					text-align: left;
-					margin-left: 40px;
+					margin-left: 35px;
 					letter-spacing: 0px;
-					filter: opacity(.8) brightness(.6) hue-rotate(180deg);
+					filter: brightness(.7) hue-rotate(180deg);
 				}
 
+@media only screen and (max-device-width: 760px) { 
+  #msg-container{
+  	font-size: .4em !important;
+  	top: 100px;
+ 	text-align: center;
+  }
+  .msg-1{
+  	margin-bottom: -5px;
+  	letter-spacing: 3px;
+  }
+  #bio-container,#bio-overlay{
+  	width: 90%;
+  	height: 120px;
+  	min-width: 250px !important;
+  }
+  #prof-pic{
+  	width: 120px;
+  	height: 120px;
+  }
+  #bio{
+  	margin-left: 120px;
+  	padding: 10px;
+  	letter-spacing: 2px;
+  }
+  .mission{
+  	margin-top: 0px;
+  	min-width: 150px !important;
+  }
+  .mission li{
+  	margin-right: 10px;
+  }
+  .snippet-1{
+  	font-size: .6em;
+  	margin-left: 5px;
+  }
+  #caffeine{
+  	height: 40px;
+  	width: 40px;
 
-
+  }
+}
 
 
 

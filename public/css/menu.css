@@ -5,6 +5,7 @@
 #new-menu{
 	position: fixed;
 	width: 100%;
+	min-width: 1000px !important;
 	background-color: transparent;
 	z-index: 2;
 	border: none;
