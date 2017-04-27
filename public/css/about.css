@@ -135,6 +135,7 @@
 		overflow-x: scroll;
 	}
 #mobile-footer{
+	display: none;
 	height: 80px;
 	margin-top: 50px;
 	width: 100%;
@@ -206,6 +207,9 @@
 		min-height: 200px;
 		line-height: 15px; 
 		width: 75%;
+	}
+	#mobile-footer{
+		display: block;
 	}
 }
 
