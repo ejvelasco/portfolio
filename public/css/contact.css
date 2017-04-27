@@ -2,14 +2,12 @@
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background: url('/img/bg-pattern.png');
 	box-shadow: 20px 20px 90px rgba(0,0,0, .2);
-	filter:  saturate(1.5) hue-rotate(300deg) opacity(.3);
 }
 #email-form{
 	position: fixed;
 	/*top: 50%;*/
-	margin-top: 30px;
+	margin-top: 45px;
 	margin-bottom: 30px;
 	/*transform: translateY(-50%);*/
 	height: 50%;
@@ -23,7 +21,7 @@
 	height: 100%;
 	background-color: black;
 	opacity: .5;
-	z-index: 1;
+	z-index: 3;
 }
 	input, textarea{
 		background: transparent;
@@ -63,6 +61,7 @@
 		margin-top: 30px;
 		margin-left: auto;
 		margin-right: auto;
+		/*background-color: #F8F8F8;*/
 		color: #02303E;
 		transition: all .7s ease;
 		min-width: 200px;
@@ -108,6 +107,7 @@
 		margin-left: auto;
 		text-align: center;
 		color: #02303E;
+		font-weight: bolder;
 		font-size: 2em;
 	}
 /*STYLE PLACEHOLDER*/

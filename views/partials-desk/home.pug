@@ -14,24 +14,12 @@
                         img(id="caffeine" src="/img/caffeine.png")
                     li
                         p(class="bio right")
-                            span(class="glyphicon glyphicon-chevron-right right")
+                            span(class="glyphicon glyphicon-chevron-right")
                     li
-                        p.snippet-1 //find nth fibonacci term <br>function fb(num,memo){<br>&nbsp;&nbsp;memo = memo || {}; <br>&nbsp;&nbsp;if(memo[num]){<br>&nbsp;&nbsp;&nbsp;&nbsp;return memo[num];<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;if(num&lt;=1){<br>&nbsp;&nbsp;&nbsp;&nbsp;return 1;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;let t = fb(num-1,memo)+fb(num-2,memo);<br>&nbsp;&nbsp;return memo[num] = t; <br> }
-                    
-                
-                    
+                        p.snippet-1 function fibonacci(num){<br>&nbsp;&nbsp;let a = 1, b = 0, temp;<br>&nbsp;&nbsp;while (num &ge; 0){<br>&nbsp;&nbsp;&nbsp;&nbsp;temp = a;<br>&nbsp;&nbsp;&nbsp;&nbsp;a = a + b;<br>&nbsp;&nbsp;&nbsp;&nbsp;b = temp;<br>&nbsp;&nbsp;&nbsp;&nbsp;num--;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;return b;<br>}
     #arrow
         span(class="glyphicon glyphicon-menu-down")
     
-    //- p(id='time')
-    
-        //- p(class='msg msg-1 msg-desk') I WILL #[span(class='code code-desk') ]
-        //- .mobile-msg
-            p(class='msg msg-1 msg-mobile') I AM #[span(class="white") EDUARDO] AND I WILL
-            p(class='msg msg-1') #[span(class='code' id="code-mobile") ]
-        //- div(class="button msg") MY PROJECTS
-    //- #content-wrapper
-    //- canvas(id="canvas" width="800" height="800")
     
 
     

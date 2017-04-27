@@ -33,7 +33,7 @@
 	        }
 	});
 	$('.mask').on("click", function(){
-		$('#contact').fadeOut(800);
-		$('.mask').fadeOut(800);
+		$('#contact').fadeOut(600);
+		$('.mask').fadeOut(600);
 	});
 })();

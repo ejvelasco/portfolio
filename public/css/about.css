@@ -11,12 +11,69 @@
 	margin-bottom: 30px;
 }
 .screen{
-	background: url('/img/linkedin.jpeg');
-	background-size: cover;
+	background: url('/img/linkedin.jpeg') no-repeat;
+	background-size: contain;
 	background-position: center;
 }
-.msg-1,.msg-2,.msg3{
+.msg-1,.msg-2,.msg3, .msg4{
 	display: none;
+}
+.about-2{
+	/*display: none;*/
+	height: 60%;
+	width: 55%;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	position: relative;
+}
+.img-l{
+	width: 70%;
+	height: 80%;
+	left: -35%;
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	background: url('/img/austin.jpg') no-repeat;
+	background-size: contain;
+}
+.img-r{
+	width: 70%;
+	height: 80%;
+	right: -35%;
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	background: url('/img/dallas.jpg') no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+.img-l-2{
+	width: 70%;
+	height: 80%;
+	left: -30%;
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	background: url('/img/js.png') no-repeat;
+	background-size: contain;
+}
+.img-r-2{
+	width: 70%;
+	height: 80%;
+	right: -30%;
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	background: url('/img/workspace.jpg') no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+canvas{
+	position: relative;
+	top: 50%;
+	display: none;
+	transform: translateY(-50%);
 }
 .about-1{
 	/*display: none;*/
@@ -26,8 +83,7 @@
 	left: 0;
 	margin: 0 auto;
 	position: relative;
-	background-color: #EFF5F8;
-	box-shadow: 20px 20px 90px rgba(0,0,0, .2);
+	
 }	.marvel-device{
 		transform: scale(.7);
 		-webkit-box-reflect: below 0px
@@ -37,11 +93,11 @@
 		height: 100%;
 		width: 100%;
 		position: absolute;
-		background: url('/img/bg-pattern.png');
-		filter:  saturate(1.5) hue-rotate(300deg) opacity(.3);
+		background-color: #EFF5F8;
+		box-shadow: 20px 20px 90px rgba(0,0,0, .2);
 	}
 	.link{
-		color: grey;
+		color: #BABABA;
 		cursor: pointer;
 		padding: 0 !important;
 		margin: 0 !important;
@@ -110,3 +166,13 @@
 
 	
 	
+#chelsea{
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+	background: url('/img/chelsea.png') no-repeat;
+	background-position: center;
+	background-size: contain;
+	opacity: .1;
+}

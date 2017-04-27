@@ -39,7 +39,7 @@ body {
 	/*background-color: blue;*/
 }
 .white{
-	color: #02303E;
+	color: #054052;
 	font-size: 1.1em;
 }
 #home-bg{
@@ -133,25 +133,21 @@ body {
 	height: 130px;
 	width: 150px;
 	float: left;
-	transform: translateY(-50%);
+	transform: translateY(-55%);
 }
-.glyphicon-chevron-right{
-	color: black !important;
-	font-size: 1.2em;
-	opacity: 1 !important;
-}
+
 .snippet-1{
 	font-weight: normal;
 	font-family: 'Courier';
 	transform: translateY(-10%);
 	/*white-space: pre;*/
-	font-size: .6em;
+	font-size: .7em;
 	/*margin-left: 10px;*/
 	text-align: left;
 	/*float: right;*/
 	margin-left: 40px;
 	letter-spacing: 0px;
-	filter: brightness(.7) saturate(1.4) hue-rotate(330deg);
+	filter: opacity(.8) brightness(.6) hue-rotate(180deg);
 }
 .mission{
 	min-width: 600px !important;
@@ -160,16 +156,20 @@ body {
 .mission li{
 	/*padding: 30px;*/
 	margin-top: 10px;
-	/*margin-right: 20px;*/
+	margin-right: 20px;
 	display: inline-block;
 	/*text-align: center;*/
 	/*line-height: 80px;*/
 	/*float: right;*/
 }
-.right{
+ .glyphicon-chevron-right{
 	position: absolute;
 	top: 50%;
 	text-align: center;
+	font-size: 1.2em;
+	color: #02303E !important;
+	/*opacity: .9 !important;*/
+	/*opacity: .2;*/
 	/*margin-right: 30px;*/
 	/*position: absolute;*/
 	/*transform: translateY(-50%);*/
