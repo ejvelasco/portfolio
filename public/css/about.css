@@ -204,7 +204,7 @@
 	}
 	#contact{
 		font-size: .45em;
-		min-height: 250px;
+		min-height: 400px;
 		line-height: 12px; 
 		width: 85%;
 		padding: 0 !important;
@@ -214,7 +214,63 @@
 		display: block;
 	}
 }
-
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) { 
+	#about{
+		font-size: .5em;
+	}
+	.head, .about-1{
+		width: 75%;
+	}
+	.about-1{
+		min-height: 100px;
+		min-width: 200px;
+	}
+	.about-2, .msg-3{
+		display: none !important;
+	}
+	.head{
+		padding-top: 30px;
+		padding-bottom: 0px;
+		font-size: 3em;
+	}
+	.about{
+		line-height: 18px;
+	}
+	.img-l,.img-r{
+		width: 120%;
+		height: 120%;
+	}
+	.img-l-2{
+		height: 50%;
+		left: -35%;
+	}
+	.img-r-2{
+		height: 120%;
+		width: 120%;
+	}
+	.mission-title{
+		text-align: left;
+	}
+	#about{
+		
+		margin-bottom: 0
+	}
+	#contact{
+		font-size: .45em;
+		line-height: 12px; 
+		width: 85%;
+		padding: 0 !important;
+		margin: 0 auto;
+	}
+	#email-form{
+		margin-top: 10px;
+	}
+	#mobile-footer{
+		display: block;
+	}
+}
 	
 
 	
