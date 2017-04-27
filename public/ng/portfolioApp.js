@@ -85,7 +85,7 @@
 			{	
 				title: "Portfolio", 
 				subtitle: "Always improving my workspace",
-				desc: "Like it? Check out the code and feel free to use it however you want. It would be cool if you gave me a shout out on <a class='link' href=#>Twitter!</a> Sharing is caring.", 
+				desc: "Like it? Check out the code and feel free to use it however you want. It would be cool if you gave me a shout out on <a class='link' href='https://twitter.com/velascoDev' target='blank'>Twitter!</a> Sharing is caring.", 
 				img: "/img/portfolio.jpeg", 
 				url: "https://github.com/velascoDev/portfolio"
 			},

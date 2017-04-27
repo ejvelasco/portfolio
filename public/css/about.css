@@ -101,11 +101,14 @@ canvas{
 		cursor: pointer;
 		padding: 0 !important;
 		margin: 0 !important;
+		text-decoration: none;
 		transition: all .3s ease;
 	}
 	.link:hover{
 		color: #DCDCDC;
-		text-decoration: none;
+	}
+	.link:visited{
+		color: #BABABA;
 	}
 	.glyphicon{
 		/*color: #02303E;*/
