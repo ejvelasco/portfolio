@@ -67,12 +67,8 @@
   display: none;
 }
 
-@media only screen  
-  and (max-device-width: 800px) { 
+@media only screen and (max-device-width: 800px) { 
   #new-menu{
   	display: none !important;
-  }
-  .mobile-msg{
-    display: block;
   }
 }
