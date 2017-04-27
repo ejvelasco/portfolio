@@ -52,5 +52,5 @@ body{
 }
 #about{
 	margin-bottom: 150px;
-	overflow: visible;
+	overflow-y: visible;
 }

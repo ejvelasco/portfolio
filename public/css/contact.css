@@ -26,7 +26,6 @@
 	box-shadow: 20px 20px 90px rgba(0,0,0, .2);
 }
 #email-form{
-	position: fixed;
 	margin-top: 45px;
 	margin-bottom: 30px;
 	height: 50%;
@@ -35,8 +34,6 @@
 	#message{
 		display: block;
 		width: 95%;
-		margin-right: auto;
-		margin-left: auto;
 		text-align: center;
 		color: #02303E;
 		font-weight: bolder;

@@ -203,10 +203,12 @@
 		margin-bottom: 0
 	}
 	#contact{
-		font-size: .5em;
+		font-size: .45em;
 		min-height: 200px;
-		line-height: 15px; 
-		width: 75%;
+		line-height: 12px; 
+		width: 85%;
+		padding: 0 !important;
+		margin: 0 auto;
 	}
 	#mobile-footer{
 		display: block;
