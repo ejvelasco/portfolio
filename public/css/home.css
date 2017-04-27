@@ -72,7 +72,7 @@ body {
 	background-color: white;
 	opacity: .5;
 	width: 50%;
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	min-width: 900px !important;
 	height: 300px;
 	position: absolute;
@@ -83,7 +83,7 @@ body {
 	box-shadow: 20px 20px 90px rgba(0,0,0, 1);
 }
 #bio-overlay{
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	background-color: transparent;
 	width: 50%;
 	min-width: 900px !important;
@@ -96,7 +96,7 @@ body {
 	/*box-shadow: 20px 20px 90px rgba(0,0,0,.6);*/
 }
 #prof-pic{
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	position: absolute;
 	width: 300px;
 	height: 300px;
