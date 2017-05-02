@@ -9,7 +9,7 @@ var livereload = require('gulp-livereload');
 
 gulp.task('js', function() {
     return (
-        browserify('./public/js/index.js')
+        browserify('./public/js/portfolio.js')
         .transform("babelify", {presets: ["es2015"]})
         .bundle()
         .pipe(source('portfolio.js'))
@@ -27,6 +27,7 @@ gulp.task('minify-css', function () {
 
 gulp.task('watch', function() {
   livereload.listen();
+  gulp.watch('./public/css/*.css', ['js']);
   gulp.watch('./public/css/*.css', ['minify-css']);
 });
 
