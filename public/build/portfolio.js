@@ -60477,31 +60477,6 @@ src = bg.replace(/(^url\()|(\)$|[\"\'])/g, ''), $img = (0, _jquery2.default)('<i
 },{"jquery":50}],55:[function(require,module,exports){
 'use strict';
 
-var _about = require('./about');
-
-var _about2 = _interopRequireDefault(_about);
-
-var _bar_chart = require('./bar_chart');
-
-var _bar_chart2 = _interopRequireDefault(_bar_chart);
-
-var _home = require('./home');
-
-var _home2 = _interopRequireDefault(_home);
-
-var _menu = require('./menu');
-
-var _menu2 = _interopRequireDefault(_menu);
-
-var _ngApp = require('./ngApp');
-
-var _ngApp2 = _interopRequireDefault(_ngApp);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-},{"./about":52,"./bar_chart":53,"./home":54,"./menu":56,"./ngApp":57}],56:[function(require,module,exports){
-'use strict';
-
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
@@ -60534,16 +60509,12 @@ var expanded = true;
         (0, _jquery2.default)('html, body').stop().animate({ scrollTop: 0 }, 1000, 'swing');
     }
 });
-(0, _jquery2.default)('#contact-t-2').on("click", function () {
-    (0, _jquery2.default)('.mask').fadeIn(800, 'swing');
-    (0, _jquery2.default)('#contact').fadeIn(800, 'swing');
-});
 (0, _jquery2.default)('.mask').on("click", function () {
     (0, _jquery2.default)('#contact').fadeOut(600);
     (0, _jquery2.default)('.mask').fadeOut(600);
 });
 
-},{"jquery":50}],57:[function(require,module,exports){
+},{"jquery":50}],56:[function(require,module,exports){
 'use strict';
 
 var _angular = require('angular');
@@ -60706,4 +60677,29 @@ var portfolioApp = _angular2.default.module('portfolioApp', []).controller('send
 	});
 }]);
 
-},{"angular":2,"jquery":50}]},{},[55]);
+},{"angular":2,"jquery":50}],57:[function(require,module,exports){
+'use strict';
+
+var _about = require('./about');
+
+var _about2 = _interopRequireDefault(_about);
+
+var _bar_chart = require('./bar_chart');
+
+var _bar_chart2 = _interopRequireDefault(_bar_chart);
+
+var _home = require('./home');
+
+var _home2 = _interopRequireDefault(_home);
+
+var _menu = require('./menu');
+
+var _menu2 = _interopRequireDefault(_menu);
+
+var _ngApp = require('./ngApp');
+
+var _ngApp2 = _interopRequireDefault(_ngApp);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+},{"./about":52,"./bar_chart":53,"./home":54,"./menu":55,"./ngApp":56}]},{},[57]);

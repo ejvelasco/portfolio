@@ -14,9 +14,13 @@ gulp.task('js', function() {
         .bundle()
         .pipe(source('portfolio.js'))
         .pipe(gulp.dest('./public/build/'))
+        .pipe(livereload())
     );
 });
-
+gulp.task('pug', function(){
+  gulp.src('./views/*.pug')
+    .pipe(livereload());
+})
 gulp.task('minify-css', function () {
   gulp.src('./public/css/portfolio.css')
     .pipe(importCss())
@@ -27,8 +31,9 @@ gulp.task('minify-css', function () {
 
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch('./public/css/*.css', ['js']);
+  gulp.watch('./views/*.pug', ['pug']);
+  gulp.watch('./public/js/*.js', ['js']);
   gulp.watch('./public/css/*.css', ['minify-css']);
 });
 
-gulp.task('default', ['js', 'minify-css', 'watch']);
+gulp.task('default', ['js', 'minify-css', 'watch', 'pug']);

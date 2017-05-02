@@ -26,10 +26,6 @@ $('#new-menu a').on('click', function(){
         	$('html, body').stop().animate({scrollTop: 0},1000,'swing');
         }
 });
-$('#contact-t-2').on("click", function(){
-	$('.mask').fadeIn(800, 'swing');
-    $('#contact').fadeIn(800, 'swing');
-});
 $('.mask').on("click", function(){
 	$('#contact').fadeOut(600);
 	$('.mask').fadeOut(600);
