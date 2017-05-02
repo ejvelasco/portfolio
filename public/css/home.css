@@ -63,8 +63,8 @@
 	background-color: white;
 	opacity: .5;
 	width: 50%;
-	min-width: 900px !important;
-	height: 300px;
+	min-width: 100% !important;
+	min-height: 100%;
 	position: absolute;
 	right: 0;
 	left: 0;
@@ -75,8 +75,8 @@
 #bio-overlay{
 	background-color: transparent;
 	width: 50%;
-	min-width: 900px !important;
-	height: 300px;
+	min-width: 100% !important;
+	min-height: 100%;
 	position: absolute;
 	right: 0;
 	left: 0;
@@ -85,8 +85,8 @@
 }
 	#prof-pic{
 		position: absolute;
-		width: 300px;
-		height: 300px;
+		/*width: 300px;*/
+		min-height: 100%;
 		background: url('/img/prof.png');
 		background-size: cover;
 	}
@@ -109,7 +109,7 @@
 				#caffeine{
 					height: 130px;
 					width: 150px;
-					float: left;
+					/*float: left;*/
 					transform: translateY(-55%);
 				}
 				.glyphicon-chevron-right{

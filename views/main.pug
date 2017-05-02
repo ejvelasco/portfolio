@@ -1,13 +1,7 @@
 extends layout
 block head
 	title='Eduardo Velasco'
-	link(rel='stylesheet', href='/css/main.css', \='')
-	link(rel='stylesheet', href='/css/menu.css', \='')
-	link(rel='stylesheet', href='/css/home.css', \='')
-	link(rel='stylesheet', href='/css/about.css', \='')
-	link(rel='stylesheet', href='/css/contact.css', \='')
-	link(rel='stylesheet', href='/css/projects.css', \='')
-	link(rel='stylesheet', href='/css/libraries/syntax-highlight.css', \='')
+	link(rel='stylesheet', href='/build/portfolio.css', \='')
 block content
 	body(ng-app='portfolioApp')
 		div(class="loader")
@@ -17,13 +11,5 @@ block content
 		include partials/projects
 		include partials/about
 		include partials/contact
-		script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js')
 		script(src='https://unpkg.com/scrollreveal/dist/scrollreveal.min.js')
-		script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js')
-		script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js')
-		script(src='/ng/portfolioApp.js')
-		script(src='/js/menu.js')
-		script(src='/js/home.js')
-		script(src='/js/about.js')
-		script(src="/js/bar_chart.js")
-		
+		script(src='/build/portfolio.js')
