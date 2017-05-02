@@ -69,6 +69,11 @@
   display: none;
 }
 
+@media only screen and (max-device-width: 1000px) { 
+  #home-t{
+  	display: none;
+  }
+}
 @media only screen and (max-device-width: 800px) { 
   #new-menu{
   	display: none !important;

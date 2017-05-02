@@ -161,7 +161,7 @@
 		border: solid 2px #02303E;
 		transition: all .3s ease;
 	}
-@media only screen and (max-width: 800px){
+/*@media only screen and (max-width: 800px){
 	#about{
 		font-size: .5em;
 	}
@@ -270,7 +270,7 @@ and (max-device-width : 736px) {
 	#mobile-footer{
 		display: block;
 	}
-}
+}*/
 	
 
 	

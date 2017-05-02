@@ -128,49 +128,92 @@
             color: white;
         }
 
-@media only screen and (max-width: 1500px){
+@media only screen and (max-width: 1515px){
     .bar-item, .project-info{
         height: 105px !important;
         width: 187px !important;
     }
 }
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1130px){
     .bar-item, .project-info{
         height: 70px !important;
         width: 125px !important;
         font-size: .8em;
     }
 }
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 767px){
     .bar-item, .project-info{
-        height: 35px !important;
-        width: 50px !important;
+        height: 50px !important;
+        width: 90px !important;
     }
     .project-img{
         left: 60px;
-        width: 200px;
-        min-width: 200px;
     }
     .project-info-title{
         display: none !important;
     }
     #showcase{
-        left: 80px;
-        width: 160px;
+        left: 90px;
+        width: 220px !important;
         font-size: 8px;  
-        text-align: left !important;
-    }
-    #showcase-desc{
-        line-height: 13px;
     }
     #showcase-subtitle{
         margin-top: -5px;
     }
-    #click-bar{
-        top: 86%;
+}
+@media only screen and (max-width: 560px){
+    .bar-item, .project-info{
+        height: 35px !important;
+        width: 63px !important;
+        font-size: .8em;
     }
-    .horizontal-scroll-wrapper{
-        height: 80%;
-        top: 6%;
+    .project-img{
+        /*left: 60px;*/
+        width: 400px;
+        min-width: 400px;
+    }
+    #showcase{
+        width: 300px;
+        text-align: left;
+    }
+    #showcase-desc{
+        line-height: 15px;
+    }
+}
+
+@media only screen and (max-width: 413px){
+    .bar-item, .project-info{
+        height: 28px !important;
+        width: 50px !important;
+        font-size: .8em;
+    }
+    .project-img{
+        /*left: 60px;*/
+        width: 400px;
+        min-width: 400px;
+    }
+    #showcase{
+        width: 300px;
+        text-align: left;
+    }
+    #showcase-desc{
+        line-height: 15px;
+    }
+}
+@media only screen and (max-height: 830px) and (min-width: 1200px){
+    #showcase{
+        font-size: .8em;
+        line-height: 0px;
+    }
+    #showcase-subtitle{
+        margin-top: 10px;
+    }
+}
+@media only screen and (max-height: 680px) and (min-width: 1200px){
+    #showcase{
+        font-size: .6em;
+    }
+    #showcase-subtitle{
+        margin-top: 10px;
     }
 }

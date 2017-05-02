@@ -130,7 +130,7 @@
 					filter: brightness(.7) hue-rotate(180deg);
 				}
 
-@media only screen and (max-device-width: 760px) { 
+/*@media only screen and (max-device-width: 760px) { 
   #msg-container{
   	font-size: .4em !important;
   	top: 100px;
@@ -170,7 +170,7 @@
   	width: 40px;
 
   }
-}
+}*/
 
 
 
