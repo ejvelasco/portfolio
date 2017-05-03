@@ -13,17 +13,12 @@ body{
 	top: 50%;
 	transform: translateY(-50%) translateX(-18.5px);
 	z-index: 9999;
-	background: url('/img/logo-2.png') no-repeat;
 	background-size: contain;
 }
 #home, #about,#contact{
 	position: relative;
 	display: block;
-	font-family: 'Raleway', sans-serif;	
-	/*overflow: hidden;*/
-}
-#home, #contact{
-	/*overflow: hidden;*/
+	font-family: 'Raleway', sans-serif;
 }
 #projects{
 	position: relative;

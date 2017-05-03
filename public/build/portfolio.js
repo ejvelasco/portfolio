@@ -60403,8 +60403,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     'use-strict';
     //draw interests chart
 
-    var ctx = document.getElementById("myChart");
-    data = {
+    var ctx = document.getElementById("myChart"),
+        data = {
         labels: ["Software Entrepreneurship", "Artificial Intelligence", "Algorithm Design", "Premiere League Football", "Web App Architecture", "UI/UX Design", "Research-Oriented Software"],
         datasets: [{
             backgroundColor: "rgba(179,181,198,0.3)",
@@ -60450,189 +60450,27 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import hljs from 'hljs';
+(function () {
+    'use-strict';
+    //wait for background image to load before revealing
 
-var $div = (0, _jquery2.default)('#home-bg');
-var bg = $div.css('background-image');
-var src = void 0,
-    $img = void 0;
-src = bg.replace(/(^url\()|(\)$|[\"\'])/g, ''), $img = (0, _jquery2.default)('<img>').attr('src', src).on('load', function () {
-    $div.fadeIn(2500);
-    if ((0, _jquery2.default)(window).scrollTop() === 0) {
-        (0, _jquery2.default)('#new-menu, #arrow').fadeIn(2500);
-    } else {
-        (0, _jquery2.default)('#new-menu').fadeIn(2500);
-    }
-    (0, _jquery2.default)('.loader').fadeOut(2500);
-    setTimeout(function () {
-        (0, _jquery2.default)('.msg').show();
-        window.sr = ScrollReveal({ origin: 'left', opacity: 0, duration: 1000 });
-        sr.reveal('.msg', { delay: 1000, distance: '50px' }, 350);
-    }, 1000);
-
-    var deg = 150;
-    setTimeout(function () {
-        setInterval(function () {
-            // $('#home-bg').css('filter', 'hue-rotate('+deg+'deg)');
-            deg = deg + .2;
-        }, 30);
-    }, 3000);
-});
-(0, _jquery2.default)('.snippet-1').each(function (i, block) {
-    hljs.highlightBlock(block);
-});
-(0, _jquery2.default)('.glyphicon-menu-down').on('click', function () {
-    (0, _jquery2.default)('html, body').stop().animate({ scrollTop: (0, _jquery2.default)("#projects").offset().top - 200 }, 1000, 'swing');
-});
-
-// $(document).ready(function() {
-//   /*
-//    * Main variables
-//    */
-//   var content = [{
-//     title: "Eduardo Velasco",
-//     desc: "Welcome to my alphabet soup demo!"
-//   }, {
-//     title: "Lorem ipsum",
-//     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-//   }, {
-//     title: "dolor sit amet",
-//     desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-//   }];
-//   var currentPage = 0;
-//   //generate content
-//   for (var i = 0; i < content.length; i++) {
-//     //split content letters to array
-//     for (var obj in content[i]) {
-//       //if string
-//       if (typeof content[i][obj] === "string") {
-//         content[i][obj] = content[i][obj].split("");
-//         continue;
-//       }
-//       //if array (grouped text)
-//       else if (typeof content[i][obj] === "object") {
-//         var toPush = [];
-//         for(var j = 0; j < content[i][obj].length; j++) {
-//           for(var k = 0; k < content[i][obj][j].length; k++) {
-//             toPush.push(content[i][obj][j][k]);
-//           }
-//         }
-//         content[i][obj] = toPush;
-//       }
-//     }
-//     //set text to 
-//     $("#segments").append("<div class=\"letters-wrap mutable\"><div class=\"soup-title\"></div><div class=\"soup-desc\"></div></div>");
-//     setText();
-//     //clone to data
-//     $("#segments").append("<div class=\"letters-wrap position-data\"><div class=\"soup-title\"></div><div class=\"soup-desc\"></div></div>");
-//     setText();
-//   }
-//   //initial arrangement
-//   arrangeCurrentPage();
-//   scrambleOthers();
-//   /*
-//    * Event handlers
-//    */
-//   $(window).resize(function() {
-//     arrangeCurrentPage();
-//     scrambleOthers();
-//   });
-//   $("#soup-prev").hide();
-//   $("#soup-prev").click(function() {
-//     $('#soup-nav').fadeOut('fast');
-//     $("#soup-next").show();
-//     $('#soup-nav').fadeIn('fast');
-//     currentPage--;
-//     if (currentPage === 0) {
-//       $('.glyphicon-menu-right').addClass('bounce');
-//       // $('#soup-nav').fadeOut('fast');
-//       $("#soup-prev").fadeOut('fast');
-//       // $('#soup-nav').fadeIn('fast');
-//     }
-//     arrangeCurrentPage();
-//     scrambleOthers();
-//   });
-//   $("#soup-next").click(function() {
-//     $('.glyphicon-menu-right').removeClass('bounce');
-//     // $('#soup-nav').fadeOut('fast');
-//     $("#soup-prev").fadeIn('slow');
-//     // $('#soup-nav').fadeIn('fast');
-//     currentPage++;
-//     if (currentPage === content.length - 1) {
-//       $("#soup-next").stop().fadeOut('slow');
-//     }
-//     arrangeCurrentPage();
-//     scrambleOthers();
-//   });
-//   /*
-//    * Functions
-//    */
-//   function arrangeCurrentPage() {
-//     for (var i = 0; i < content[currentPage].title.length; i++) {
-//       $(".mutable:eq(" + currentPage + ") > .soup-title > .letter").eq(i).css({
-//         left: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().left + "px",
-//         top: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().top + "px",
-//         color: "white",
-//         zIndex: 9001
-//       });
-//     }
-//     for (var i = 0; i < content[currentPage].desc.length; i++) {
-//       $(".mutable:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).css({
-//         left: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().left + "px",
-//         top: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().top + "px",
-//         color: "white",
-//         zIndex: 9001
-//       });
-//     }
-//   }
-
-//   function setText() {
-//     var j;
-//     for (j = 0; j < content[i].title.length; j++) {
-//       $(".soup-title").last().append("<span class=\"letter\">" + content[i].title[j] + "</span>");
-//     }
-//     for (j = 0; j < content[i].desc.length; j++) {
-//       $(".soup-desc").last().append("<span class=\"letter\">" + content[i].desc[j] + "</span>");
-//     }
-//   }
-
-//   function scrambleOthers() {
-//     for (var i = 0; i < content.length; i++) {
-//       //don't scramble currentPage
-//       if (currentPage === i)
-//         continue;
-//       var parts = [
-//         ["title", ".soup-title"],
-//         ["desc", ".soup-desc"]
-//       ];
-//       //apply to .title h1s and .desc ps
-//       for (var j = 0; j < parts.length; j++) {
-//         for (var k = 0; k < content[i][parts[j][0]].length; k++) {
-//           //define random position on screen
-//           var randLeft = Math.floor(Math.random() * $(window).width());
-//           var randTop = Math.floor(Math.random() * $(window).height());
-//           //defining boundaries
-//           var offset = $(".position-data").eq(currentPage).offset();
-//           var bounds = {
-//             left: offset.left,
-//             top: offset.top,
-//             right: $(window).width() - offset.left,
-//             bottom: $(window).height() - offset.top
-//           };
-//           var middleX = bounds.left + $(".position-data").eq(currentPage).width() / 2;
-//           var middleY = bounds.top + $(".position-data").eq(currentPage).height() / 2;
-//           //finally, apply all the scrambles
-//           $(".mutable:eq(" + i + ") > " + parts[j][1] + " > .letter").eq(k).css({
-//             left: randLeft,
-//             top: randTop,
-//             color: "transparent",
-//             zIndex: "initial"
-//           });
-//         }
-//       }
-//     }
-//   }
-// });
+    var $div = (0, _jquery2.default)('#home-bg'),
+        bg = $div.css('background-image'),
+        src = bg.replace(/(^url\()|(\)$|[\"\'])/g, ''),
+        $img = (0, _jquery2.default)('<img>').attr('src', src).on('load', function () {
+        var deg = 0;
+        $div.fadeIn(2000);
+        (0, _jquery2.default)('#new-menu').fadeIn(2000);
+        (0, _jquery2.default)('.loader').fadeOut(2000);
+        //change hue of background
+        setTimeout(function () {
+            setInterval(function () {
+                (0, _jquery2.default)('#home-bg').css('filter', 'hue-rotate(' + deg + 'deg)');
+                deg = deg + .2;
+            }, 30);
+        }, 3000);
+    });
+})();
 
 },{"jquery":50}],55:[function(require,module,exports){
 'use strict';
@@ -60675,6 +60513,146 @@ var expanded = true;
 });
 
 },{"jquery":50}],56:[function(require,module,exports){
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+	'use-strict';
+	//handle message effect
+
+	(0, _jquery2.default)("#soup-prev, #soup-next").hide();
+	(0, _jquery2.default)(document).ready(function () {
+		setTimeout(function () {
+			(0, _jquery2.default)('#soup-next').fadeIn('slow');
+			var content = [{
+				title: "Eduardo Velasco",
+				desc: "Welcome to my alphabet soup demo!"
+			}, {
+				title: "Lorem ipsum",
+				desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+			}, {
+				title: "dolor sit amet",
+				desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+			}];
+			var currentPage = 0;
+			for (var i = 0; i < content.length; i++) {
+				for (var obj in content[i]) {
+					if (typeof content[i][obj] === "string") {
+						content[i][obj] = content[i][obj].split("");
+						continue;
+					} else if (_typeof(content[i][obj]) === "object") {
+						var toPush = [];
+						for (var j = 0; j < content[i][obj].length; j++) {
+							for (var k = 0; k < content[i][obj][j].length; k++) {
+								toPush.push(content[i][obj][j][k]);
+							}
+						}
+						content[i][obj] = toPush;
+					}
+				}
+				(0, _jquery2.default)("#segments").append("<div class=\"letters-wrap mutable\"><div class=\"soup-title\"></div><div class=\"soup-desc\"></div></div>");
+				setText();
+				(0, _jquery2.default)("#segments").append("<div class=\"letters-wrap position-data\"><div class=\"soup-title\"></div><div class=\"soup-desc\"></div></div>");
+				setText();
+			}
+			arrangeCurrentPage();
+			scrambleOthers();
+			(0, _jquery2.default)(window).resize(function () {
+				arrangeCurrentPage();
+				scrambleOthers();
+			});
+			(0, _jquery2.default)("#soup-prev").hide();
+			(0, _jquery2.default)("#soup-prev").click(function () {
+				(0, _jquery2.default)('#soup-nav').fadeOut('fast');
+				(0, _jquery2.default)("#soup-next").show();
+				(0, _jquery2.default)('#soup-nav').fadeIn('fast');
+				currentPage--;
+				if (currentPage === 0) {
+					(0, _jquery2.default)('.glyphicon-menu-right').addClass('bounce');
+					(0, _jquery2.default)("#soup-prev").fadeOut('fast');
+				}
+				arrangeCurrentPage();
+				scrambleOthers();
+			});
+			(0, _jquery2.default)("#soup-next").click(function () {
+				(0, _jquery2.default)('.glyphicon-menu-right').removeClass('bounce');
+				(0, _jquery2.default)("#soup-prev").fadeIn('slow');
+				currentPage++;
+				if (currentPage === content.length - 1) {
+					(0, _jquery2.default)("#soup-next").stop().fadeOut('slow');
+				}
+				arrangeCurrentPage();
+				scrambleOthers();
+			});
+
+			function arrangeCurrentPage() {
+				for (var i = 0; i < content[currentPage].title.length; i++) {
+					(0, _jquery2.default)(".mutable:eq(" + currentPage + ") > .soup-title > .letter").eq(i).css({
+						left: (0, _jquery2.default)(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().left + "px",
+						top: (0, _jquery2.default)(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().top + "px",
+						color: "white",
+						zIndex: 9001
+					});
+				}
+				for (var i = 0; i < content[currentPage].desc.length; i++) {
+					(0, _jquery2.default)(".mutable:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).css({
+						left: (0, _jquery2.default)(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().left + "px",
+						top: (0, _jquery2.default)(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().top + "px",
+						color: "white",
+						zIndex: 9001
+					});
+				}
+			}
+
+			function setText() {
+				var j;
+				for (j = 0; j < content[i].title.length; j++) {
+					(0, _jquery2.default)(".soup-title").last().append("<span class=\"letter\">" + content[i].title[j] + "</span>");
+				}
+				for (j = 0; j < content[i].desc.length; j++) {
+					(0, _jquery2.default)(".soup-desc").last().append("<span class=\"letter\">" + content[i].desc[j] + "</span>");
+				}
+			}
+
+			function scrambleOthers() {
+				for (var i = 0; i < content.length; i++) {
+					if (currentPage === i) continue;
+					var parts = [["title", ".soup-title"], ["desc", ".soup-desc"]];
+					for (var j = 0; j < parts.length; j++) {
+						for (var _k = 0; _k < content[i][parts[j][0]].length; _k++) {
+							var randLeft = Math.floor(Math.random() * (0, _jquery2.default)(window).width()),
+							    randTop = Math.floor(Math.random() * (0, _jquery2.default)(window).height()),
+							    offset = (0, _jquery2.default)(".position-data").eq(currentPage).offset(),
+							    bounds = {
+								left: offset.left,
+								top: offset.top,
+								right: (0, _jquery2.default)(window).width() - offset.left,
+								bottom: (0, _jquery2.default)(window).height() - offset.top
+							};
+							var middleX = bounds.left + (0, _jquery2.default)(".position-data").eq(currentPage).width() / 2,
+							    middleY = bounds.top + (0, _jquery2.default)(".position-data").eq(currentPage).height() / 2;
+							(0, _jquery2.default)(".mutable:eq(" + i + ") > " + parts[j][1] + " > .letter").eq(_k).css({
+								left: randLeft,
+								top: randTop,
+								color: "transparent",
+								zIndex: "initial"
+							});
+						}
+					}
+				}
+			}
+		}, 2000);
+	});
+})();
+
+},{"jquery":50}],57:[function(require,module,exports){
 'use strict';
 
 var _angular = require('angular');
@@ -60837,7 +60815,7 @@ var portfolioApp = _angular2.default.module('portfolioApp', []).controller('send
 	});
 }]);
 
-},{"angular":2,"jquery":50}],57:[function(require,module,exports){
+},{"angular":2,"jquery":50}],58:[function(require,module,exports){
 'use strict';
 
 var _about = require('./about');
@@ -60856,10 +60834,14 @@ var _menu = require('./menu');
 
 var _menu2 = _interopRequireDefault(_menu);
 
+var _message = require('./message');
+
+var _message2 = _interopRequireDefault(_message);
+
 var _ngApp = require('./ngApp');
 
 var _ngApp2 = _interopRequireDefault(_ngApp);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./about":52,"./bar_chart":53,"./home":54,"./menu":55,"./ngApp":56}]},{},[57]);
+},{"./about":52,"./bar_chart":53,"./home":54,"./menu":55,"./message":56,"./ngApp":57}]},{},[58]);

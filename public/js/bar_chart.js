@@ -3,7 +3,7 @@ import Chart from 'chart.js';
 (() => {
     'use-strict';
     //draw interests chart
-    let ctx = document.getElementById("myChart");
+    let ctx = document.getElementById("myChart"),
         data = {
             labels: ["Software Entrepreneurship","Artificial Intelligence","Algorithm Design","Premiere League Football","Web App Architecture", "UI/UX Design","Research-Oriented Software"],
             datasets: [
