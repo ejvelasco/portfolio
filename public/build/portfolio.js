@@ -60537,10 +60537,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 				desc: "Welcome to my portfolio."
 			}, {
 				title: "I AM A PROGRAMMER",
-				desc: "programmer n. \prō-gra-mer\ \nAn organism capable of turning caffeine into code."
+				desc: "programmer n. \prō-gra-mmer\ \nAn organism capable of turning caffeine into code."
 			}, {
-				title: "dolor sit amet",
-				desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+				title: "SEIZE THE DAY",
+				desc: "What are you waiting for? Get out there and make your dreams happen."
 			}];
 			var currentPage = 0;
 			for (var i = 0; i < content.length; i++) {
