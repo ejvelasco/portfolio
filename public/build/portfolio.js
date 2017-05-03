@@ -60540,7 +60540,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 				desc: "programmer n. \prō-gra-mmer\ \nAn organism capable of turning caffeine into code."
 			}, {
 				title: "SEIZE THE DAY",
-				desc: "What are you waiting for? Get out there and make your dreams happen."
+				desc: "What are you waiting for?\nGet out there and make your dreams happen."
 			}];
 			var currentPage = 0;
 			for (var i = 0; i < content.length; i++) {

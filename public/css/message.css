@@ -29,7 +29,7 @@
   right: 0;
   margin: 0 auto;
   text-align: center;
-  bottom: 275px;
+  bottom: 20%;
   z-index: 9002;
   font-size: 72px;
 }
@@ -45,7 +45,7 @@
   font-size: 22px;
   letter-spacing: 5px;
   font-weight: bolder;
-  text-align: left;
+  text-align: center;
   white-space: pre;
 }
 
@@ -57,7 +57,6 @@ html, body {
 #soup-container {
   width: 100%;
   height: 100%;
-  min-width: 320px;
   min-height: 480px;
   position: relative;
   color: white !important;
@@ -108,4 +107,36 @@ html, body {
 button {
   z-index: 9001;
   position: relative;
+}
+
+@media only screen and (max-height: 670px){
+    #soup-nav{
+      bottom: 5%;
+    }
+}
+@media only screen and (max-width: 800px) and (max-height: 800px){
+    #soup-nav{
+      bottom: 5%;
+    }
+    .soup-title{
+      font-size: 2em !important;
+      letter-spacing: 10px;
+    }
+    .soup-desc{
+      font-size: 1em !important;
+      letter-spacing: 3px;
+    }
+}
+@media only screen and (max-width: 510px) and (max-height: 800px){
+    #soup-nav{
+      bottom: 5%;
+    }
+    .soup-title{
+      font-size: 1.5em !important;
+      letter-spacing: 7px;
+    }
+    .soup-desc{
+      font-size: 1em !important;
+      letter-spacing: 0px;
+    }
 }
