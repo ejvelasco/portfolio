@@ -8,11 +8,11 @@ import $ from 'jquery';
 		setTimeout(() => {
 			$('#soup-next').fadeIn('slow');
 			let content = [{
-		    	title: "Eduardo Velasco",
-		    	desc: "Welcome to my alphabet soup demo!"
+		    	title: "EDUARDO VELASCO",
+		    	desc: "Welcome to my portfolio."
 		  	}, {
-		    	title: "Lorem ipsum",
-		    	desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+		    	title: "I AM A PROGRAMMER",
+		    	desc: "programmer n. \prō-gra-mer\ \nAn organism capable of turning caffeine into code."
 		  	}, {
 		    	title: "dolor sit amet",
 		    	desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -51,15 +51,15 @@ import $ from 'jquery';
 		    	$('#soup-nav').fadeIn('fast');
 		    	currentPage--;
 		    	if (currentPage === 0) {
-		      		$('.glyphicon-menu-right').addClass('bounce');
-		     		$("#soup-prev").fadeOut('fast');
+		      		$('.entypo-right-open-big').stop().addClass('bounce');
+		     		$("#soup-prev").stop().fadeOut('fast');
 		    	}
 		    	arrangeCurrentPage();
 		    	scrambleOthers();
 		  	});
 		  	$("#soup-next").click(() => {
-		    	$('.glyphicon-menu-right').removeClass('bounce');
-		    	$("#soup-prev").fadeIn('slow');
+		    	$('.entypo-right-open-big').stop().removeClass('bounce');
+		    	$("#soup-prev").stop().fadeIn('slow');
 		    	currentPage++;
 		    	if (currentPage === content.length - 1) {
 		      		$("#soup-next").stop().fadeOut('slow');

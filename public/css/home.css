@@ -1,27 +1,4 @@
-@keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {
-    transform: translateX(0);
-  }
-	40% {
-    transform: translateX(-30px);
-  }
-	60% {
-    transform: translateX(-15px);
-  }
-}
 
-.glyphicon-menu-right, .glyphicon-menu-left{
-	cursor: pointer;
-	color: white !important;
-	padding: 40px;
-	opacity: .5;
-	font-size: .4em;
-}
-.bounce{
-	animation-name: bounce;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-}
 #home-bg{
 	background: url('/img/apple.jpg');
 	background-size: cover;

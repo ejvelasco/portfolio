@@ -5,37 +5,39 @@
 	height: 100%;
 	background-color: black;
 	opacity: .5;
-	z-index: 3;
+	z-index: 9998;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #02303E;
+  color: white;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: #02303E;
+  color: white;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: #02303E;
+  color: white;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: #02303E;
+  color: white;
 }
-#contact-bg{
+.exit-contact{
+	font-size: 2.2em;
+	padding-left: 30px;
 	position: absolute;
-	height: 100%;
-	width: 100%;
-	box-shadow: 20px 20px 90px rgba(0,0,0, .2);
+	color: white !important;
+	/*opacity: .5;*/
 }
 #email-form{
 	margin-top: 45px;
 	margin-bottom: 30px;
 	height: 50%;
 	width: 100%;
+	z-index: 9999 !important;
 }
 	#message{
 		display: block;
 		width: 95%;
 		text-align: center;
-		color: #02303E;
+		color: white;
 		font-weight: bolder;
 		font-size: 2em;
 	}
@@ -44,7 +46,7 @@
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
-		border-color: #02303E;
+		border-color: white;
 		width: 80%;
 		margin-top: 15px;
 		font-family: 'Helvetica';
@@ -52,7 +54,7 @@
 		cursor: text;
 		font-size: 1.5em;
 		padding: 12px;
-		color: #02303E;
+		color: white;
 		outline: none;
 	}
 	input{
@@ -63,25 +65,25 @@
 	}
 	#send{
 		cursor: pointer;
-		letter-spacing: 4px;
-		font-size: .9em;
-		font-weight: bolder;
+		letter-spacing: 5px;
+		font-size: 1.3em;
+		font-weight: bolder !important;
 		display: block;
 		width: 5%;
 		text-align: center;
 		padding: 15px;
 		border-style: solid;
-		border-color: #02303E;
+		border-color: white;
 		border-width: 2px;
 		margin-top: 30px;
 		margin-left: auto;
 		margin-right: auto;
-		color: #02303E;
+		color: white;
 		transition: all .7s ease;
 		min-width: 200px;
 	}
 	#send:hover{
-		background-color: #BFCBCE;
+		background-color: white;
 		color: black;
 	}
 	#error{

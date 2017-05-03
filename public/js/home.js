@@ -15,7 +15,7 @@ import $ from 'jquery';
             setTimeout(() => {
                 setInterval(() => {
                     $('#home-bg').css('filter', 'hue-rotate('+deg+'deg)');
-                    deg = deg + .2;
+                    deg = deg + .4;
                 }, 30);    
             }, 3000);
         });

@@ -60466,7 +60466,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         setTimeout(function () {
             setInterval(function () {
                 (0, _jquery2.default)('#home-bg').css('filter', 'hue-rotate(' + deg + 'deg)');
-                deg = deg + .2;
+                deg = deg + .4;
             }, 30);
         }, 3000);
     });
@@ -60501,8 +60501,9 @@ var expanded = true;
     } else if (section === 'projects') {
         (0, _jquery2.default)('html, body').stop().animate({ scrollTop: (0, _jquery2.default)("#" + section).offset().top - 200 }, 1000, 'swing');
     } else if (section === 'contact') {
-        (0, _jquery2.default)('.mask').fadeIn(800, 'swing');
-        (0, _jquery2.default)('#contact').fadeIn(800, 'swing');
+        (0, _jquery2.default)('#soup-container, #soup-nav').fadeOut(800, 'swing', function () {
+            (0, _jquery2.default)('#contact').fadeIn(800, 'swing');
+        });
     } else if (section === 'home') {
         (0, _jquery2.default)('html, body').stop().animate({ scrollTop: 0 }, 1000, 'swing');
     }
@@ -60532,11 +60533,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		setTimeout(function () {
 			(0, _jquery2.default)('#soup-next').fadeIn('slow');
 			var content = [{
-				title: "Eduardo Velasco",
-				desc: "Welcome to my alphabet soup demo!"
+				title: "EDUARDO VELASCO",
+				desc: "Welcome to my portfolio."
 			}, {
-				title: "Lorem ipsum",
-				desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+				title: "I AM A PROGRAMMER",
+				desc: "programmer n. \prō-gra-mer\ \nAn organism capable of turning caffeine into code."
 			}, {
 				title: "dolor sit amet",
 				desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -60575,15 +60576,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 				(0, _jquery2.default)('#soup-nav').fadeIn('fast');
 				currentPage--;
 				if (currentPage === 0) {
-					(0, _jquery2.default)('.glyphicon-menu-right').addClass('bounce');
-					(0, _jquery2.default)("#soup-prev").fadeOut('fast');
+					(0, _jquery2.default)('.entypo-right-open-big').stop().addClass('bounce');
+					(0, _jquery2.default)("#soup-prev").stop().fadeOut('fast');
 				}
 				arrangeCurrentPage();
 				scrambleOthers();
 			});
 			(0, _jquery2.default)("#soup-next").click(function () {
-				(0, _jquery2.default)('.glyphicon-menu-right').removeClass('bounce');
-				(0, _jquery2.default)("#soup-prev").fadeIn('slow');
+				(0, _jquery2.default)('.entypo-right-open-big').stop().removeClass('bounce');
+				(0, _jquery2.default)("#soup-prev").stop().fadeIn('slow');
 				currentPage++;
 				if (currentPage === content.length - 1) {
 					(0, _jquery2.default)("#soup-next").stop().fadeOut('slow');

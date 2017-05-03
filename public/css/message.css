@@ -1,21 +1,22 @@
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
-    transform: translateX(0);
+    right: 0;
   }
   40% {
-    transform: translateX(-30px);
+    right: -30px;
   }
   60% {
-    transform: translateX(-15px);
+    right: -15px;
   }
 }
 
-.glyphicon-menu-right, .glyphicon-menu-left{
+.entypo-left-open-big, .entypo-right-open-big{
   cursor: pointer;
   color: white !important;
-  padding: 40px;
+  padding: 50px;
   opacity: .5;
-  font-size: .4em;
+  position: relative;
+  font-size: .8em;
 }
 .bounce{
   animation-name: bounce;
@@ -24,7 +25,7 @@
 }
 #soup-nav {
   position: absolute;
-  left: 0;
+  left: -50px;
   right: 0;
   margin: 0 auto;
   text-align: center;
@@ -36,15 +37,16 @@
 .soup-title {
   font-size: 60px;
   letter-spacing: 15px;
-  padding-bottom: 20px;
+  /*padding-bottom: 10px;*/
   font-weight: bolder;
   text-align: center;
 }
 .soup-desc {
-  font-size: 20px;
+  font-size: 22px;
   letter-spacing: 5px;
   font-weight: bolder;
   text-align: left;
+  white-space: pre;
 }
 
 html, body {

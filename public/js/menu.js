@@ -20,8 +20,9 @@ $('#new-menu a').on('click', function(){
         }else if(section === 'projects'){
             $('html, body').stop().animate({scrollTop: $("#"+section).offset().top - 200},1000,'swing');
         }else if(section === 'contact'){
-            $('.mask').fadeIn(800, 'swing');
-            $('#contact').fadeIn(800, 'swing');   
+            $('#soup-container, #soup-nav').fadeOut(800, 'swing', () => {
+                $('#contact').fadeIn(800, 'swing');    
+            });
         }else if(section === 'home'){
         	$('html, body').stop().animate({scrollTop: 0},1000,'swing');
         }
