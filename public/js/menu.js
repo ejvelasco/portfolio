@@ -4,7 +4,7 @@ let expanded = true;
 $(window).scroll(function() {
     if ($(this).scrollTop() > 0 && expanded) {
         expanded = false;
-        $('#new-menu').css('background-color', '#EFEFEF').css('padding-top', '30px').css('padding-left', '20px');
+        $('#new-menu').css('background-color', 'rgba(0,0,0,.7)').css('padding-top', '30px').css('padding-left', '20px');
         $('#arrow').stop().fadeOut('slow');
     } else if($(this).scrollTop() === 0){
     	expanded = true;

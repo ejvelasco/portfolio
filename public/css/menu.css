@@ -7,7 +7,7 @@
 	width: 100%;
 	min-width: 1000px !important;
 	background-color: transparent;
-	z-index: 2;
+	z-index: 9998;
 	border: none;
 	border-radius: 0px;
 	padding-top: 50px;
@@ -30,7 +30,7 @@
 	font-family: 'Raleway', sans-serif;	
 	margin-right: 20px;
 	letter-spacing: 5px;
-	color: #02303E;
+	color: white;
 	font-weight: bolder;
 	font-size: .9em;
 	transition: all .2s ease;
@@ -42,10 +42,11 @@
 .icon{
 	transform: scale(2);
 	opacity: .9em;
-	transition: all .4s ease;
+	padding-top: 8 !important;
+	padding-bottom: 0 !important;
+	transition: all .4s ease !important;
 }
 .icon:hover{
-	margin-top: -5px;
 	opacity: .6 !important;
 }
 #home-t{

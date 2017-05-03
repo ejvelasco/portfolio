@@ -20,7 +20,10 @@ body{
 	position: relative;
 	display: block;
 	font-family: 'Raleway', sans-serif;	
-	overflow: hidden;
+	/*overflow: hidden;*/
+}
+#home, #contact{
+	/*overflow: hidden;*/
 }
 #projects{
 	position: relative;
