@@ -12,7 +12,7 @@ import $ from 'jquery';
 		    	desc: "Welcome to my portfolio."
 		  	}, {
 		    	title: "I AM A PROGRAMMER",
-		    	desc: "programmer n. \prō-gra-mmer\ \nAn organism capable of turning caffeine into code."
+		    	desc: "programmer n. \prō-gram-mer\ \nAn organism capable of turning caffeine into code."
 		  	}, {
 		    	title: "SEIZE THE DAY",
 		    	desc: "What are you waiting for?\nGet out there and make your dreams happen."

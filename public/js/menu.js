@@ -12,20 +12,15 @@ $(window).scroll(function() {
     	$('#new-menu').css('background-color', '').css('padding', '').css('opacity', '');
     }
 });
+let lastSection = 'soup-container';
+
 $('#new-menu a').on('click', function(){
         let tab = $(this).attr('id');
         let section = tab.replace('-t', '');
-        if(section === 'about'){
-            $('html, body').stop().animate({scrollTop: $("#"+section).offset().top - 50},1000,'swing');
-        }else if(section === 'projects'){
-            $('html, body').stop().animate({scrollTop: $("#"+section).offset().top - 200},1000,'swing');
-        }else if(section === 'contact'){
-            $('#soup-container, #soup-nav').fadeOut(800, 'swing', () => {
-                $('#contact').fadeIn(800, 'swing');    
-            });
-        }else if(section === 'home'){
-        	$('html, body').stop().animate({scrollTop: 0},1000,'swing');
-        }
+        $('#'+section).stop().fadeIn(1200);
+        $('#'+lastSection).stop().fadeOut(1200);
+        lastSection = section;
+
 });
 $('.mask').on("click", function(){
 	$('#contact').fadeOut(600);

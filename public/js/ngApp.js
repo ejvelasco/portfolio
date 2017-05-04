@@ -86,7 +86,7 @@ const portfolioApp = angular.module('portfolioApp', [])
 		{	
 			title: "cBioPortal",
 			subtitle: "Cancer genomics at Memorial Sloan Kettering", 
-			desc: "I was lucky to get the opportunity to spend the summer of 2014 working with the team of programmers in charge of front-end development of the cBio-Portal web app. The portal provides many features that allow cancer researchers to analyze large-scale genomic data sets. During my time there, I implemented interactive Heat Map visualizations for the genomics data in D3.js. I also attended several seminars on the research led by this top-tier institution.", 
+			desc: "I had the great opportunity of spending the summer of 2014 working with the team of programmers in charge of front-end development of the cBio-Portal web app. The portal provides many features that allow cancer researchers to analyze large-scale genomic data sets. During my time there, I implemented interactive Heat Map visualizations for the genomics data in D3.js. I also attended several seminars on the research led by this top-tier institution.", 
 			img: "/img/zuckerman.jpg", 
 			url: "https://github.com/velascoDev/cbioportal"
 		},
