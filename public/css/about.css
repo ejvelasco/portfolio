@@ -1,6 +1,7 @@
-#about-slide{
-	font-size: 3em;
-	position: absolute;
+.about-slide{
+	font-size: 3em !important;
+	/*position: absolute;*/
+	float: right;
 }
 .glyphicon{
 	opacity: .9;

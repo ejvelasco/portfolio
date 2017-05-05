@@ -26,8 +26,8 @@ $('#new-menu a').on('click', function(){
             $('#'+section).stop().fadeIn(800, 'easeInOutCubic');
             $('#'+lastSection).stop().fadeOut(800, 'easeInOutCubic');
         } else{
-            $('#'+section).stop().fadeIn(1500, 'easeInOutCubic');
-            $('#'+lastSection).stop().fadeOut(1500, 'easeInOutCubic');
+            $('#'+section).stop().fadeIn(1800, 'easeInOutCubic');
+            $('#'+lastSection).stop().fadeOut(1800, 'easeInOutCubic');
         }
         lastSection = section;
 
