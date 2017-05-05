@@ -30,6 +30,7 @@ body{
 	background-color: transparent;
 	top: 50%;
 	transform: translateY(-50%);
+	z-index: 9999;
 }
 #home{	
 	width: 100%;
@@ -46,6 +47,7 @@ body{
 	margin: 0 auto;
 	top: 50%;
 	transform: translateY(-50%);
+	padding-top: 30px;
 	height: 60%;
 	width: 50%;
 	z-index: 9998;

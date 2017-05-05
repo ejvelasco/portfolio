@@ -1,14 +1,18 @@
-/*@import url("http://weloveiconfonts.com/api/?family=entypo");*/
+#about-slide{
+	font-size: 3em;
+	position: absolute;
+}
 .glyphicon{
 	opacity: .9;
 	margin-right: 15px;
 }
 .head{
 	font-size: 3.5em;
+	letter-spacing: 12px;
 	color: white;
 	font-weight: bolder;
-	width: 50%;
 	padding-top: 30px;
+	padding-bottom: 30px;
 	position: relative;
 	left: 0;
 	right: 0;
@@ -16,7 +20,7 @@
 }
 .about-container{
 	top: 50%;
-	width: 60%;
+	width: 50%;
 	right: 0;
 	left: 0;
 	margin: 0 auto;
@@ -83,14 +87,9 @@
 	}
 	.about-me{
 		position: relative;
-		/*width: 50%;*/
-		padding-right: 70px;
-		padding-left: 70px;
 		right: 0;
 		left: 0;
 		margin: 0 auto;
-		/*top: 50%;*/
-		/*transform: translateY(-51%);*/
 		font-weight: bold;
 		font-size: 1.1em;
 	}
@@ -101,7 +100,7 @@
 			font-size: 1.3em;
 			line-height: 38px;
 			text-align: justify;
-			padding-bottom: 20px;
+			padding-bottom: 10px;
 		}
 		.title{
 			width: 100%;

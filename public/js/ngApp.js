@@ -14,40 +14,32 @@ const portfolioApp = angular.module('portfolioApp', [])
 			} else{
 				$('#send').text('SENDING..');
 				$http.post('/send-email', $scope.details)
-				.success(function(data){
-					if(data.error){
+				.then(function(data){
+					if(data.data.error){
 						$('#send').text('SEND');
 						if(data.error != 'msg'){
-							$('#error').text('Whoops! Please enter a valid '+data.error+'.');
-							$('#error').fadeTo(500, .8);
-						} else{
+							$('#error').text('Whoops! Please enter a valid '+data.data.error+'.');
+							$('#error').stop().fadeTo(500, .8);
+						}else if(data.data.error === 'service'){
+							$('#error').text('Whoops! Looks like there was a validation error. The message was not sent.');
+							$('#error').stop().fadeTo(500, .8);
+						} 
+						else{
 							$('#error').text('Whoops! Please enter a valid message.');
-							$('#error').fadeTo(500, .8);
+							$('#error').stop().fadeTo(500, .8);
 						}
-						window.setTimeout(function(){
-							$('#error').fadeTo(500, 0);
+						window.setTimeout(() => {
+							$('#error').stop().fadeTo(500, 0);
 						}, 3000);
 					}else{
-						if(data.error === 'service'){
-							$('#error').text('Whoops! Looks like there was a validation error. The message was not sent.');
-							$('#error').fadeTo(500, .8);
-							window.setTimeout(function(){
-								$('#error').fadeTo(500, 0);
-							}, 3000);
-						} else{
-							$('#send').css('background-color', '#67FABD').css('border-color', 'black').css('color', 'black').text('SENT');
-							$scope.details.name = '';
-							$scope.details.email = '';
-							$scope.details.msg = '';
-							setTimeout(function(){
-								$('#send').css('background-color', '').css('border-color', '').css('color', '').text('SEND');
-							}, 3500)
-
-						}
+						$('#send').css('background-color', '#67FABD').css('color', 'black').css('border-color', '#67FABD').text('SENT');
+						$scope.details.name = '';
+						$scope.details.email = '';
+						$scope.details.msg = '';
+						window.setTimeout(() => {
+							$('#send').css('background-color', '').css('color', '').css('border-color', '').text('SEND');
+						}, 3500);
 					}
-				})
-				.error(function(data){
-					console.log("error");
 				});
 			}
 		};
@@ -109,7 +101,7 @@ const portfolioApp = angular.module('portfolioApp', [])
 			let lastProjectId = 0;
 			let projectIdThumb;
 			let widthImg = $('#project-img-0').width();
-			let leftMarginImg = Number($('#project-img-0').css('left').replace('px', ''));
+			let leftMarginImg = Number($('.project-img-0').css('left').replace('px', ''));
 			$('.bar-item').css('background-size', 'center');
 			$('.bar-item').on('mouseenter', function(event){
 				projectIdThumb = $(event.currentTarget).children().attr('id');
@@ -125,7 +117,7 @@ const portfolioApp = angular.module('portfolioApp', [])
 				projectId = $(event.currentTarget).children().attr('id');
 				projectId = projectId.replace('owned-', '');
 				if(projectId !== lastProjectId){
-					$('.project-img').stop().animate({left:-widthImg*Number(projectId) + leftMarginImg}, 900, 'swing');
+					$('.horizontal-scroll-wrapper li').stop().animate({left:-widthImg*Number(projectId) + leftMarginImg}, 1200, 'easeInOutCubic');
 					$('#project-img-'+lastProjectId).removeClass('bright');
 					$('#showcase').stop().fadeOut(500, function(){
 						$('#project-img-'+projectId).addClass('bright');
@@ -143,7 +135,7 @@ const portfolioApp = angular.module('portfolioApp', [])
 				projectId = projectId.replace('project-img-', '');
 				console.log(lastProjectId, projectId)
 				if(projectId !== lastProjectId){
-					$('.project-img').stop().animate({left:-widthImg*Number(projectId) + leftMarginImg}, 900, 'swing');
+					$('.horizontal-scroll-wrapper li').stop().animate({left:-widthImg*Number(projectId) + leftMarginImg}, 1200, 'easeInOutCubic');
 					$('#project-img-'+lastProjectId).removeClass('bright');
 					$('#showcase').stop().fadeOut(500, function(){
 						$('#project-img-'+projectId).addClass('bright');

@@ -4,12 +4,9 @@ block head
 	link(rel='stylesheet', href='/build/portfolio.css', \='')
 block content
 	body(ng-app='portfolioApp')
-		div(class="loader")
-		div(class="mask")
 		include partials/new-menu
 		include partials/home
 		include partials/projects
 		include partials/about
 		include partials/contact
-		script(src='https://unpkg.com/scrollreveal/dist/scrollreveal.min.js')
-		script(src='/build/portfolio.js')
+		script(src='/build/portfolio.js' type="text/javascript")

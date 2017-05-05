@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import 'jquery-ui';
 
 let expanded = true;
 $(window).scroll(function() {
@@ -17,8 +18,17 @@ let lastSection = 'soup-container';
 $('#new-menu a').on('click', function(){
         let tab = $(this).attr('id');
         let section = tab.replace('-t', '');
-        $('#'+section).stop().fadeIn(1200);
-        $('#'+lastSection).stop().fadeOut(1200);
+        
+        if(section === lastSection){
+            return;
+        }
+        if(section !== 'projects'){
+            $('#'+section).stop().fadeIn(800, 'easeInOutCubic');
+            $('#'+lastSection).stop().fadeOut(800, 'easeInOutCubic');
+        } else{
+            $('#'+section).stop().fadeIn(1500, 'easeInOutCubic');
+            $('#'+lastSection).stop().fadeOut(1500, 'easeInOutCubic');
+        }
         lastSection = section;
 
 });

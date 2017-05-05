@@ -14,6 +14,7 @@
         float: left;
         display: inline;
         position: relative;
+        left: 250px;
     }
     .images{
         display: none;
@@ -26,20 +27,20 @@
             height: 100%;
             width: 500px;
             min-width: 500px;
-            left: 250px;
             position: relative;
-            opacity: .4;
+            opacity: .3;
             transition:  filter.9s ease, opacity .9s ease;
             -moz-transform: translateZ(0);
             transform: translateZ(0);
             -webkit-transform: translateZ(0);
+            cursor: pointer;
         }
         .bright{
             filter: brightness(.5);
             opacity: .9;
         }
     #showcase{
-        display: none;
+        /*display: none;*/
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -51,25 +52,24 @@
     }
         #showcase-title{
             text-transform: uppercase;
-            font-size: 2.2em;
+            font-size: 2em;
             letter-spacing: 4px;
             font-weight: bold;
             text-decoration: none;
             color: white;
-            transition: all .6s ease;
+            transition: all .3s ease;
         }
         #showcase-title:hover{
             color: #A4AEB1;
         }
         #showcase-subtitle{
             font-weight: bold;
-            font-size: 1.2em;  
-            margin-top: -10px;
+            font-size: 1em; 
         }
         #showcase-desc{
             margin-top: 15px;
             line-height: 22px;
-            font-size: 1.1em;
+            font-size: .9em;
             font-family: Helvetica;
         }
             .link{
@@ -104,7 +104,7 @@
     }
     .bar-item:hover{
         transform: scaleX(.95) scaleY(.90);
-        font-size: 18px;
+        font-size: 20px;
         border: none;
     }
         .project-info{
@@ -117,7 +117,7 @@
             background-color: black;
         }
         .project-info-title{
-            font-size: 18px;
+            font-size: 22px;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);

@@ -1,7 +1,7 @@
 #projects(ng-controller="projectsGallery")
 	div(class="horizontal-scroll-wrapper squares")
 		ul(class="images")
-			li(ng-repeat="project in projects")
+			li(ng-repeat="project in projects" class="project-img-{{$index}}")
 				div(class="project-img" id="project-img-{{$index}}")
 		#showcase
 			a(id="showcase-title" href="https://github.com/velascoDev/hummingbird-dashboard" target="blank") Hummingbird

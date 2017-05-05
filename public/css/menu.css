@@ -7,76 +7,55 @@
 	width: 100%;
 	min-width: 1000px !important;
 	background-color: transparent;
-	z-index: 9997;
+	z-index: 9999;
 	border: none;
 	border-radius: 0px;
-	padding-top: 50px;
-	padding-left: 80px;
+	padding-top: 80px;
+	padding-left: 200px;
 	padding-bottom: none;
 	cursor: pointer;
 	transition: padding .4s ease, color .4s ease, background .4s ease;
 	display: none;
 
 }
-#new-menu .container{
-	margin-left: 30px;
-}
-#mobile-brand{
-	top: 55;
-	display: none;
-  background-color: transparent !important;
+ul li{
+	display: inline-block;
+
 }
 #new-menu a{
 	font-family: 'Raleway', sans-serif;	
-	margin-right: 20px;
+	margin-right: 60px;
 	letter-spacing: 5px;
 	color: white;
 	font-weight: bolder;
 	font-size: .9em;
 	transition: all .2s ease;
+	display: inline-block;
 }
 .menu-item:hover{
-	margin-top: -5px;
+	letter-spacing: 7px !important;
 	opacity: .6;
 }
 .icon{
 	transform: scale(2);
-	opacity: .9em;
-	padding-top: 8 !important;
+	/*opacity: .9em;*/
+	text-decoration: none;
+	margin-right: 60px !important;
 	padding-bottom: 0 !important;
-	transition: all .4s ease !important;
+	transition: all .3s ease !important;
 }
 .icon:hover{
 	opacity: .6 !important;
-}
-#soup-container-t{
-	background: url('/img/logo-2.png');
-	height: 80px;
-	width: 100px;
-	margin: 0 !important;
-	padding: 0 !important;
-	transform: translateY(-18%);
-	opacity: .8;
-	background-size: cover;
-	transition: all .7s ease-out;
-}
-#home-t:hover{
-	opacity: .4;
-}
-#empty{
-	margin: 0 !important;
-}
-.mobile-msg{
-  display: none;
+	transform: scale(2.3);
 }
 
 @media only screen and (max-device-width: 1000px) { 
   #home-t{
-  	display: none;
+  	/*display: none;*/
   }
 }
 @media only screen and (max-device-width: 800px) { 
   #new-menu{
-  	display: none !important;
+  	/*display: none !important;*/
   }
 }

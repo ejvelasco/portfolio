@@ -14,6 +14,9 @@ import $ from 'jquery';
 		    	title: "I AM A PROGRAMMER",
 		    	desc: "programmer n. \prō-gram-mer\ \nAn organism capable of turning caffeine into code."
 		  	}, {
+		    	title: "I AM A DESIGNER",
+		    	desc: "designer n. \deˈzīner\ \nA person who stares at color codes for way too long."
+		  	}, {
 		    	title: "SEIZE THE DAY",
 		    	desc: "What are you waiting for?\nGet out there and make your dreams happen."
 		  	}];
