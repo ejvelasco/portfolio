@@ -10,36 +10,50 @@
   transition: all 1s ease;
  
 }
-    .horizontal-scroll-wrapper li{
-        float: left;
-        display: inline;
-        position: relative;
-        left: 250px;
-    }
-    .images{
-        display: none;
-        margin-right:-999em;
-        white-space:nowrap;
-        list-style:none;
-        position: relative;
-    }
-        .project-img{
-            height: 100%;
-            width: 500px;
-            min-width: 500px;
-            position: relative;
-            opacity: .3;
-            transition:  filter.9s ease, opacity .9s ease;
-            -moz-transform: translateZ(0);
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
-            cursor: pointer;
-        }
-        .bright{
-            filter: brightness(.5);
-            opacity: .9;
-        }
-    #showcase{
+.horizontal-scroll-wrapper li{
+    float: left;
+    display: inline;
+    position: relative;
+    left: 250px;
+}
+.images{
+    display: none;
+    margin-right:-999em;
+    white-space:nowrap;
+    list-style:none;
+    position: relative;
+}
+.link{
+    color: #BABABA;
+    cursor: pointer;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+.link:hover{
+    color: #DCDCDC;
+}
+.link:visited{
+    color: #BABABA;
+}
+.project-img{
+    height: 100%;
+    width: 500px;
+    min-width: 500px;
+    position: relative;
+    opacity: .3;
+    transition:  filter.9s ease, opacity .9s ease;
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    cursor: pointer;
+}
+.bright{
+    filter: brightness(.5);
+    opacity: .9;
+}
+#showcase{
         /*display: none;*/
         position: absolute;
         top: 50%;
@@ -49,43 +63,30 @@
         color: white;
         width: 400;
         left: 300px;
-    }
-        #showcase-title{
-            text-transform: uppercase;
-            font-size: 2em;
-            letter-spacing: 4px;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-            transition: all .3s ease;
-        }
-        #showcase-title:hover{
-            color: #A4AEB1;
-        }
-        #showcase-subtitle{
-            font-weight: bold;
-            font-size: 1em; 
-        }
-        #showcase-desc{
-            margin-top: 15px;
-            line-height: 22px;
-            font-size: .9em;
-            font-family: Helvetica;
-        }
-            .link{
-                color: #BABABA;
-                cursor: pointer;
-                padding: 0 !important;
-                margin: 0 !important;
-                text-decoration: none;
-                transition: all .3s ease;
-            }
-            .link:hover{
-                color: #DCDCDC;
-            }
-            .link:visited{
-                color: #BABABA;
-            }
+}
+#showcase-title{
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: all .3s ease;
+}
+#showcase-title:hover{
+    color: #A4AEB1;
+}
+#showcase-subtitle{
+    font-weight: bold;
+    font-size: 1em; 
+}
+#showcase-desc{
+    margin-top: 15px;
+    line-height: 22px;
+    font-size: .9em;
+    font-family: Helvetica;
+}
+
 #click-bar{
     display: none;
     position: absolute;
@@ -94,39 +95,39 @@
     left: 0;
     text-align: center;
 }
-    .bar-item{
-        display: inline-block;
-        width: 250px;
-        height: 140px;
-        cursor: pointer;
-        transition: all .2s ease-out;
-        box-shadow: 20px 20px 90px rgba(0,0,0, .2);
-    }
-    .bar-item:hover{
-        transform: scaleX(.95) scaleY(.90);
-        font-size: 20px;
-        border: none;
-    }
-        .project-info{
-            height: 140px;
-            position: absolute;
-            width: 250px;
-            border: none;
-            opacity: .6;
-            display: none;
-            background-color: black;
-        }
-        .project-info-title{
-            font-size: 22px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            text-align: center;
-            right: 0;
-            left: 0;
-            font-weight: bold;
-            color: white;
-        }
+.bar-item{
+    display: inline-block;
+    width: 250px;
+    height: 140px;
+    cursor: pointer;
+    transition: all .2s ease-out;
+    box-shadow: 20px 20px 90px rgba(0,0,0, .2);
+}
+.bar-item:hover{
+    transform: scaleX(.95) scaleY(.90);
+    font-size: 20px;
+    border: none;
+}
+.project-info{
+    height: 140px;
+    position: absolute;
+    width: 250px;
+    border: none;
+    opacity: .6;
+    display: none;
+    background-color: black;
+}
+.project-info-title{
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    right: 0;
+    left: 0;
+    font-weight: bold;
+    color: white;
+}
 
 @media only screen and (max-width: 1515px){
     .bar-item, .project-info{
