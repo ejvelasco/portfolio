@@ -2,7 +2,6 @@ import $ from 'jquery';
 
 (() => {
 	'use-strict';
-	//handle message effect
 	$("#soup-prev, #soup-next").hide();
 	$(document).ready(() => {
 		setTimeout(() => {

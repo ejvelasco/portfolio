@@ -1,4 +1,28 @@
-
+.bar-item{
+    display: inline-block;
+    width: 250px;
+    height: 140px;
+    cursor: pointer;
+    transition: all .2s ease-out;
+    box-shadow: 20px 20px 90px rgba(0,0,0, .2);
+}
+.bar-item:hover{
+    transform: scaleX(.95) scaleY(.90);
+    font-size: 20px;
+    border: none;
+}
+.bright{
+    filter: brightness(.7);
+    opacity: .9;
+}
+#click-bar{
+    display: none;
+    position: absolute;
+    top: 68.9%;
+    right: 0;
+    left: 0;
+    text-align: center;
+}
 .horizontal-scroll-wrapper{
   position:absolute;
   width:100%;
@@ -49,12 +73,27 @@
     -webkit-transform: translateZ(0);
     cursor: pointer;
 }
-.bright{
-    filter: brightness(.5);
-    opacity: .9;
+.project-info{
+    height: 140px;
+    position: absolute;
+    width: 250px;
+    border: none;
+    opacity: .6;
+    display: none;
+    background-color: black;
+}
+.project-info-title{
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    right: 0;
+    left: 0;
+    font-weight: bold;
+    color: white;
 }
 #showcase{
-        /*display: none;*/
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -85,48 +124,6 @@
     line-height: 22px;
     font-size: .9em;
     font-family: Helvetica;
-}
-
-#click-bar{
-    display: none;
-    position: absolute;
-    top: 68.9%;
-    right: 0;
-    left: 0;
-    text-align: center;
-}
-.bar-item{
-    display: inline-block;
-    width: 250px;
-    height: 140px;
-    cursor: pointer;
-    transition: all .2s ease-out;
-    box-shadow: 20px 20px 90px rgba(0,0,0, .2);
-}
-.bar-item:hover{
-    transform: scaleX(.95) scaleY(.90);
-    font-size: 20px;
-    border: none;
-}
-.project-info{
-    height: 140px;
-    position: absolute;
-    width: 250px;
-    border: none;
-    opacity: .6;
-    display: none;
-    background-color: black;
-}
-.project-info-title{
-    font-size: 22px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    right: 0;
-    left: 0;
-    font-weight: bold;
-    color: white;
 }
 
 @media only screen and (max-width: 1515px){
@@ -169,7 +166,6 @@
         font-size: .8em;
     }
     .project-img{
-        /*left: 60px;*/
         width: 400px;
         min-width: 400px;
     }
@@ -189,7 +185,6 @@
         font-size: .8em;
     }
     .project-img{
-        /*left: 60px;*/
         width: 400px;
         min-width: 400px;
     }

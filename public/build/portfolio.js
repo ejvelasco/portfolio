@@ -58210,6 +58210,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (function () {
 	'use-strict';
 
+	var idx = 1;
 	var aboutArr = [{
 		title: 'ABOUT ME',
 		desc: "<p class='about'> I'm a twenty-two year old programmer currently based in Dallas, but I call Austin, Texas home. I developed a passion for programming in high school, and I have come a long way since. I embrace new opportunities to learn independently, and I'm all about a hands-on approach to development.</p><br><p class='about'>Don't let my portfolio fool you into thinking I'm only about coding! It is my interest in Mathematics that gives rise to my interest in the theoretical aspect of CS. I like to take an analytical approach when solving programming problems. Here's a cool <a href='#' class='link'> example.</a> When I'm away from the keyboard, I like to stay fit, read anything from non-fiction to high fantasy, and play chess.</p>"
@@ -58217,7 +58218,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		title: 'GETTING TECHNICAL',
 		desc: "<p class='about'> I aim to develop applications that are scalable, reliable, and mantainable. I like to work with Node and the rich ecosystem of libraries that the NPM offers. I have built apps with the powerful Meteor framework, as well as the classic Express. I am comfortable implementing robust unit tests with Mocha and Chai. To use, or not to use a relational data model? No problem! I feel confident working with either MongoDB or MySQL.</p><br><p class='about'>I strive to implement applications that look and feel great across devices. Anytime design is involved, I let my creativity run free to create elegant interfaces that feature a smooth user experience. When it comes to data visualization, I like to use D3.js or Chart.js. I usually let Angular do the power lifting, but I am currently having fun learning React. In the end, frameworks are sweet, but sometimes pure JS is the way to go.</p>"
 	}];
-	var idx = 1;
 	(0, _jquery2.default)('.right').on("click", function () {
 		(0, _jquery2.default)('.about-slide').removeClass('bounce');
 		(0, _jquery2.default)('.head, .about-me').fadeOut(700, 'easeInOutCubic', function () {
@@ -58240,7 +58240,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (function () {
     'use-strict';
-    //wait for background image to load before revealing
 
     var $div = (0, _jquery2.default)('#home-bg'),
         bg = $div.css('background-image'),
@@ -58250,7 +58249,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         $div.fadeIn(2000);
         (0, _jquery2.default)('#new-menu').fadeIn(2000);
         (0, _jquery2.default)('.loader').fadeOut(2000);
-        //change hue of background
         setTimeout(function () {
             setInterval(function () {
                 (0, _jquery2.default)('#home-bg').css('filter', 'hue-rotate(' + deg + 'deg)');
@@ -58345,7 +58343,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (function () {
 	'use-strict';
-	//handle message effect
 
 	(0, _jquery2.default)("#soup-prev, #soup-next").hide();
 	(0, _jquery2.default)(document).ready(function () {
@@ -58567,17 +58564,17 @@ var portfolioApp = _angular2.default.module('portfolioApp', []).controller('send
 		url: "https://github.com/velascoDev/esfiddle"
 	}];
 	$timeout(function () {
+		var projectId = void 0,
+		    lastProjectId = 0,
+		    projectIdThumb = void 0,
+		    widthImg = (0, _jquery2.default)('#project-img-0').width(),
+		    leftMarginImg = Number((0, _jquery2.default)('.project-img-0').css('left').replace('px', ''));
 		for (var i = 0; i < $scope.projects.length; i++) {
 			(0, _jquery2.default)('#project-img-' + i).css('background', 'url(' + $scope.projects[i].img + ')').css('background-size', 'cover').css('background-position', 'center');
 		}
 		for (var _i = 0; _i < $scope.projects.length; _i++) {
 			(0, _jquery2.default)('#owned-' + _i).parent().css('background', 'url(' + $scope.projects[_i].img + ')').css('background-size', 'cover');
 		}
-		var projectId = void 0;
-		var lastProjectId = 0;
-		var projectIdThumb = void 0;
-		var widthImg = (0, _jquery2.default)('#project-img-0').width();
-		var leftMarginImg = Number((0, _jquery2.default)('.project-img-0').css('left').replace('px', ''));
 		(0, _jquery2.default)('.bar-item').css('background-size', 'center');
 		(0, _jquery2.default)('.bar-item').on('mouseenter', function (event) {
 			projectIdThumb = (0, _jquery2.default)(event.currentTarget).children().attr('id');
@@ -58592,42 +58589,33 @@ var portfolioApp = _angular2.default.module('portfolioApp', []).controller('send
 		(0, _jquery2.default)('.bar-item').on('click', function (event) {
 			projectId = (0, _jquery2.default)(event.currentTarget).children().attr('id');
 			projectId = projectId.replace('owned-', '');
-			if (projectId !== lastProjectId) {
-				(0, _jquery2.default)('.horizontal-scroll-wrapper li').stop().animate({ left: -widthImg * Number(projectId) + leftMarginImg }, 1200, 'easeInOutCubic');
-				(0, _jquery2.default)('#project-img-' + lastProjectId).removeClass('bright');
-				(0, _jquery2.default)('#showcase').stop().fadeOut(500, function () {
-					(0, _jquery2.default)('#project-img-' + projectId).addClass('bright');
-					(0, _jquery2.default)('#showcase-title').attr('href', $scope.projects[projectId].url);
-					(0, _jquery2.default)('#showcase-title').text($scope.projects[projectId].title);
-					(0, _jquery2.default)('#showcase-subtitle').text($scope.projects[projectId].subtitle);
-					(0, _jquery2.default)('#showcase-desc').html($scope.projects[projectId].desc);
-					(0, _jquery2.default)('#showcase').fadeIn(500);
-					lastProjectId = projectId;
-				});
-			}
+			carouselSlide(projectId, lastProjectId);
 		});
 		(0, _jquery2.default)('.project-img').on('click', function (event) {
 			projectId = (0, _jquery2.default)(event.currentTarget).attr('id');
 			projectId = projectId.replace('project-img-', '');
-			console.log(lastProjectId, projectId);
-			if (projectId !== lastProjectId) {
-				(0, _jquery2.default)('.horizontal-scroll-wrapper li').stop().animate({ left: -widthImg * Number(projectId) + leftMarginImg }, 1200, 'easeInOutCubic');
-				(0, _jquery2.default)('#project-img-' + lastProjectId).removeClass('bright');
-				(0, _jquery2.default)('#showcase').stop().fadeOut(500, function () {
-					(0, _jquery2.default)('#project-img-' + projectId).addClass('bright');
-					(0, _jquery2.default)('#showcase-title').attr('href', $scope.projects[projectId].url);
-					(0, _jquery2.default)('#showcase-title').text($scope.projects[projectId].title);
-					(0, _jquery2.default)('#showcase-subtitle').text($scope.projects[projectId].subtitle);
-					(0, _jquery2.default)('#showcase-desc').html($scope.projects[projectId].desc);
-					(0, _jquery2.default)('#showcase').fadeIn(500);
-					lastProjectId = projectId;
-				});
-			}
+			carouselSlide(projectId, lastProjectId);
 		});
 		(0, _jquery2.default)('#showcase-desc').text($scope.projects[0].desc);
 		(0, _jquery2.default)('#project-img-0').addClass('bright');
 		(0, _jquery2.default)('.images, #click-bar').fadeIn(1000);
 		(0, _jquery2.default)('#showcase').fadeIn(200);
+
+		function carouselSlide(id, lastId) {
+			if (id !== lastId) {
+				(0, _jquery2.default)('.horizontal-scroll-wrapper li').stop().animate({ left: -widthImg * Number(id) + leftMarginImg }, 1200, 'easeInOutCubic');
+				(0, _jquery2.default)('#project-img-' + lastId).removeClass('bright');
+				(0, _jquery2.default)('#showcase').stop().fadeOut(500, function () {
+					(0, _jquery2.default)('#project-img-' + id).addClass('bright');
+					(0, _jquery2.default)('#showcase-title').attr('href', $scope.projects[id].url);
+					(0, _jquery2.default)('#showcase-title').text($scope.projects[id].title);
+					(0, _jquery2.default)('#showcase-subtitle').text($scope.projects[id].subtitle);
+					(0, _jquery2.default)('#showcase-desc').html($scope.projects[id].desc);
+					(0, _jquery2.default)('#showcase').fadeIn(500);
+					lastId = id;
+				});
+			}
+		}
 	});
 }]);
 

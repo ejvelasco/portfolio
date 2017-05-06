@@ -1,8 +1,5 @@
-module.exports = function(app){
-	app.get('/', function(req, res){
+export default = (app) => {
+	app.get('/', (req, res) => {
 	    	res.render('main');
-  	});
-  	app.get('/polynomial-division', function(){
-  		res.render('polynomial');
   	});
 };

@@ -1,6 +1,5 @@
-module.exports = function(app, nodemailer){
-	app.post('/send-email', function(req, res){
-	    //mini input authentication
+export default (app, nodemailer) => {
+	app.post('/send-email', (req, res) => {
 	    var details = req.body;
 	    var re = {
 	    	name: /^[a-zA-Z ]+$/, 
@@ -15,7 +14,6 @@ module.exports = function(app, nodemailer){
 	    	}
 	    }
 	    if(!errors){
-	    // create reusable transporter object using the default SMTP transport
 	    var transporter = nodemailer.createTransport({
 	        service: 'Gmail',
 	        auth: {
@@ -23,8 +21,6 @@ module.exports = function(app, nodemailer){
 	            pass: 'getafe.99'
 	        }
 	    });
-	    
-	    // send mail with defined transport object
 	    transporter.sendMail({
 	        to: 'eduardo.velasco@mavs.uta.edu', 
 	        subject: 'PORTFOLIO CONTACT', 

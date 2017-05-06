@@ -1,7 +1,7 @@
 import angular from 'angular';
 import $ from 'jquery';
 
-const portfolioApp = angular.module('portfolioApp', [])
+let portfolioApp = angular.module('portfolioApp', [])
 	.controller('sendEmail',['$scope', '$http', function($scope, $http){
 		$scope.details = {
 			name: '',
@@ -14,7 +14,7 @@ const portfolioApp = angular.module('portfolioApp', [])
 			} else{
 				$('#send').text('SENDING..');
 				$http.post('/send-email', $scope.details)
-				.then(function(data){
+				.then((data) => {
 					if(data.data.error){
 						$('#send').text('SEND');
 						if(data.error != 'msg'){
@@ -44,7 +44,7 @@ const portfolioApp = angular.module('portfolioApp', [])
 			}
 		};
 	}])
-	.controller('projectsGallery', ['$scope','$timeout', function($scope, $timeout){
+	.controller('projectsGallery', ['$scope','$timeout', ($scope, $timeout) => {
 		$scope.projects = [
 		{	
 			title: "Hummingbird", 
@@ -90,67 +90,58 @@ const portfolioApp = angular.module('portfolioApp', [])
 			url: "https://github.com/velascoDev/esfiddle"
 		}, 
 		];
-		$timeout(function(){
+		$timeout(() => {
+			let projectId,
+			lastProjectId = 0,
+			projectIdThumb,
+			widthImg = $('#project-img-0').width(),
+			leftMarginImg = Number($('.project-img-0').css('left').replace('px', ''));
 			for(let i=0;i<$scope.projects.length;i++){
 				$('#project-img-'+i).css('background', 'url('+$scope.projects[i].img+')').css('background-size', 'cover').css('background-position', 'center');
 			}
 			for(let i=0;i<$scope.projects.length;i++){
 				$('#owned-'+i).parent().css('background', 'url('+$scope.projects[i].img+')').css('background-size', 'cover');
 			}
-			let projectId;
-			let lastProjectId = 0;
-			let projectIdThumb;
-			let widthImg = $('#project-img-0').width();
-			let leftMarginImg = Number($('.project-img-0').css('left').replace('px', ''));
 			$('.bar-item').css('background-size', 'center');
-			$('.bar-item').on('mouseenter', function(event){
+			$('.bar-item').on('mouseenter', (event) => {
 				projectIdThumb = $(event.currentTarget).children().attr('id');
 				$('#'+projectIdThumb+' .project-info').stop().fadeIn(300);
 				$('#'+projectIdThumb+' .project-info-title').stop().fadeIn(500);
 			});
-			$('.bar-item').on('mouseleave', function(event){
+			$('.bar-item').on('mouseleave', (event) =>{
 				projectIdThumb = $(event.currentTarget).children().attr('id');
 				$('#'+projectIdThumb+' .project-info').stop().fadeOut(300);
 				$('#'+projectIdThumb+' .project-info-title').stop().hide();
 			});
-			$('.bar-item').on('click', function(event){
+			$('.bar-item').on('click', (event) =>{
 				projectId = $(event.currentTarget).children().attr('id');
 				projectId = projectId.replace('owned-', '');
-				if(projectId !== lastProjectId){
-					$('.horizontal-scroll-wrapper li').stop().animate({left:-widthImg*Number(projectId) + leftMarginImg}, 1200, 'easeInOutCubic');
-					$('#project-img-'+lastProjectId).removeClass('bright');
-					$('#showcase').stop().fadeOut(500, function(){
-						$('#project-img-'+projectId).addClass('bright');
-						$('#showcase-title').attr('href', $scope.projects[projectId].url);
-						$('#showcase-title').text($scope.projects[projectId].title);
-						$('#showcase-subtitle').text($scope.projects[projectId].subtitle);
-						$('#showcase-desc').html($scope.projects[projectId].desc);
-						$('#showcase').fadeIn(500);	
-						lastProjectId = projectId;
-					});	
-				}
+				carouselSlide(projectId, lastProjectId);
 			});
-			$('.project-img').on('click', function(event){
+			$('.project-img').on('click', (event) =>{
 				projectId = $(event.currentTarget).attr('id');
 				projectId = projectId.replace('project-img-', '');
-				console.log(lastProjectId, projectId)
-				if(projectId !== lastProjectId){
-					$('.horizontal-scroll-wrapper li').stop().animate({left:-widthImg*Number(projectId) + leftMarginImg}, 1200, 'easeInOutCubic');
-					$('#project-img-'+lastProjectId).removeClass('bright');
-					$('#showcase').stop().fadeOut(500, function(){
-						$('#project-img-'+projectId).addClass('bright');
-						$('#showcase-title').attr('href', $scope.projects[projectId].url);
-						$('#showcase-title').text($scope.projects[projectId].title);
-						$('#showcase-subtitle').text($scope.projects[projectId].subtitle);
-						$('#showcase-desc').html($scope.projects[projectId].desc);
-						$('#showcase').fadeIn(500);	
-						lastProjectId = projectId;
-					});	
-				}
+				carouselSlide(projectId, lastProjectId);
 			});
 			$('#showcase-desc').text($scope.projects[0].desc);
 			$('#project-img-0').addClass('bright');
 			$('.images, #click-bar').fadeIn(1000);
 			$('#showcase').fadeIn(200);
+
+			function carouselSlide(id, lastId){
+				if(id !== lastId){
+					$('.horizontal-scroll-wrapper li').stop().animate({left:-widthImg*Number(id) + leftMarginImg}, 1200, 'easeInOutCubic');
+					$('#project-img-'+lastId).removeClass('bright');
+					$('#showcase').stop().fadeOut(500, () => {
+						$('#project-img-'+id).addClass('bright');
+						$('#showcase-title').attr('href', $scope.projects[id].url);
+						$('#showcase-title').text($scope.projects[id].title);
+						$('#showcase-subtitle').text($scope.projects[id].subtitle);
+						$('#showcase-desc').html($scope.projects[id].desc);
+						$('#showcase').fadeIn(500);	
+						lastId = id;
+					});	
+				}
+			} 
 		});
 	}]);
