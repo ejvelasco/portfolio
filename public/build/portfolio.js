@@ -58296,8 +58296,8 @@ var section = void 0;
 
     if (section === lastSection) {
         if ((0, _jquery2.default)(window).width() < 510) {
-            (0, _jquery2.default)('#new-menu a').hide();
-            (0, _jquery2.default)('#new-menu').animate({ height: '0', opacity: 0 }, 700);
+            (0, _jquery2.default)('#new-menu a').stop().hide();
+            (0, _jquery2.default)('#new-menu').stop().animate({ height: '0', opacity: 0 }, 700);
         }
         return;
     }
@@ -58312,7 +58312,7 @@ var section = void 0;
     }
 
     if (clicked === true) {
-        (0, _jquery2.default)('#new-menu').animate({ height: '0', opacity: 0 }, 700);
+        (0, _jquery2.default)('#new-menu').stop().animate({ height: '0', opacity: 0 }, 700);
     }
 
     lastSection = section;
@@ -58321,14 +58321,15 @@ var section = void 0;
 
 (0, _jquery2.default)('#menu-toggle').on("click", function () {
     if (clicked === false) {
-        (0, _jquery2.default)('#projects, #contact').fadeOut('fast');
-        (0, _jquery2.default)('#new-menu a').show();
-        (0, _jquery2.default)('#new-menu').animate({ height: '100%', opacity: 1 }, 700);
-        clicked = !clicked;
+        (0, _jquery2.default)('#projects, #contact').stop().fadeOut('fast');
+        (0, _jquery2.default)('#new-menu a').stop().show();
+        (0, _jquery2.default)('#new-menu').stop().animate({ height: '100%', opacity: 1 }, 700);
     } else {
-        (0, _jquery2.default)('#new-menu a').hide();
-        (0, _jquery2.default)('#new-menu').animate({ height: '0', opacity: 0 }, 700);
+        (0, _jquery2.default)('#new-menu').stop().animate({ height: '0', opacity: 0 }, 700, function () {
+            (0, _jquery2.default)('#new-menu a').stop().hide();
+        });
     }
+    clicked = !clicked;
 });
 
 },{"jquery":4,"jquery-ui":3}],8:[function(require,module,exports){
