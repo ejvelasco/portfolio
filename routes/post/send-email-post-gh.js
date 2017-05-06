@@ -1,4 +1,4 @@
-export default (app, nodemailer) => {
+module.exports = (app, nodemailer) => {
 	app.post('/send-email', (req, res) => {
 	    var details = req.body;
 	    var re = {
