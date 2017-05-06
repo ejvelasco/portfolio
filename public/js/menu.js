@@ -17,27 +17,34 @@ $(window).scroll(function() {
     }
 });
 
+let section;
 
 $('.menu-item').on('click', function(){
+        
+        
+        let tab = $(this).attr('id');
+        section = tab.replace('-t', '');
+        
         if(section === lastSection){
-            clicked = false;
+            if($(window).width() < 510){
+                $('#new-menu a').hide();
+                $('#new-menu').animate({height: '0', opacity: 0}, 700);
+            }
             return;
         }
 
-        let tab = $(this).attr('id');
-        let section = tab.replace('-t', '');
     
         if(section !== 'projects'){
-            $('#'+section).stop().fadeIn(900, 'easeInOutCubic');
-            $('#'+lastSection).stop().fadeOut(900, 'easeInOutCubic');
+            $('#'+section).stop().fadeIn(800, 'easeInOutCubic');
+            $('#'+lastSection).stop().fadeOut(800, 'easeInOutCubic');
         } else{
-            $('#'+lastSection).stop().fadeOut(900, 'easeInOutCubic', () => {
+            $('#'+lastSection).stop().fadeOut(800, 'easeInOutCubic', () => {
                 $('#'+section).stop().slideDown(1500, 'easeInOutCubic');
             });
         }
 
         if(clicked === true){
-            $('#new-menu').stop().animate({height: '0', opacity: 0}, 700);    
+            $('#new-menu').animate({height: '0', opacity: 0}, 700);    
         }
 
         lastSection = section;
@@ -47,14 +54,12 @@ $('.menu-item').on('click', function(){
 
 $('#menu-toggle').on("click", () =>{
     if(clicked === false){
-        $('#projects, #contact').stop().fadeOut('fast');
-        $('#new-menu a').stop().show();
-        $('#new-menu').stop().animate({height: '100%', opacity: 1}, 700, () => {
-
-        });
+        $('#projects, #contact').fadeOut('fast');
+        $('#new-menu a').show();
+        $('#new-menu').animate({height: '100%', opacity: 1}, 700);
         clicked = !clicked;    
     } else{
-        $('#new-menu a').stop().hide();
-        $('#new-menu').stop().animate({height: '0', opacity: 0}, 700);
+        $('#new-menu a').hide();
+        $('#new-menu').animate({height: '0', opacity: 0}, 700);
     }
 });
