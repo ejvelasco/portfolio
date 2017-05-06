@@ -17,12 +17,12 @@ export default (app, nodemailer) => {
 	    var transporter = nodemailer.createTransport({
 	        service: 'Gmail',
 	        auth: {
-	            user: 'velasco810@gmail.com',
-	            pass: 'getafe.99'
+	            user: 'YOUR_EMAIL',
+	            pass: 'YOUR_PWD'
 	        }
 	    });
 	    transporter.sendMail({
-	        to: 'eduardo.velasco@mavs.uta.edu', 
+	        to: 'DESTINATION_EMAIL', 
 	        subject: 'PORTFOLIO CONTACT', 
 	        text: details.msg+'\nName: '+details.name +'\nEmail: '+details.email
 	    }, function(err){
