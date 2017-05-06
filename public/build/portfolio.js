@@ -58199,59 +58199,59 @@ return jQuery;
 }));
 
 },{}],5:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _jquery = require('jquery');
+var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (function () {
-	'use-strict';
+	"use-strict";
 
 	var idx = 1;
 	var aboutArr = [{
-		title: 'ABOUT ME',
+		title: "ABOUT ME",
 		desc: "<p class='about'> I'm a twenty-two year old programmer currently based in Dallas, but I call Austin, Texas home. I developed a passion for programming in high school, and I have come a long way since. I embrace new opportunities to learn independently, and I'm all about a hands-on approach to development.</p><br><p class='about'>Don't let my portfolio fool you into thinking I'm only about coding! It is my interest in Mathematics that gives rise to my interest in the theoretical aspect of CS. I like to take an analytical approach when solving programming problems. Here's a cool <a href='#' class='link'> example.</a> When I'm away from the keyboard, I like to stay fit, read anything from non-fiction to high fantasy, and play chess.</p>"
 	}, {
-		title: 'GETTING TECHNICAL',
+		title: "GETTING TECHNICAL",
 		desc: "<p class='about'> I aim to develop applications that are scalable, reliable, and mantainable. I like to work with Node and the rich ecosystem of libraries that the NPM offers. I have built apps with the powerful Meteor framework, as well as the classic Express. I am comfortable implementing robust unit tests with Mocha and Chai. To use, or not to use a relational data model? No problem! I feel confident working with either MongoDB or MySQL.</p><br><p class='about'>I strive to implement applications that look and feel great across devices. Anytime design is involved, I let my creativity run free to create elegant interfaces that feature a smooth user experience. When it comes to data visualization, I like to use D3.js or Chart.js. I usually let Angular do the power lifting, but I am currently having fun learning React. In the end, frameworks are sweet, but sometimes pure JS is the way to go.</p>"
 	}];
-	(0, _jquery2.default)('.right').on("click", function () {
-		(0, _jquery2.default)('.about-slide').removeClass('bounce');
-		(0, _jquery2.default)('.head, .about-me').fadeOut(700, 'easeInOutCubic', function () {
-			(0, _jquery2.default)('.head').text(aboutArr[idx]['title']);
-			(0, _jquery2.default)('.about-me').html(aboutArr[idx]['desc']);
-			(0, _jquery2.default)('.head, .about-me').stop().fadeIn(700, 'easeInOutCubic');
+	(0, _jquery2.default)(".right").on("click", function () {
+		(0, _jquery2.default)(".about-slide").removeClass("bounce");
+		(0, _jquery2.default)(".head, .about-me").fadeOut(700, "easeInOutCubic", function () {
+			(0, _jquery2.default)(".head").text(aboutArr[idx]["title"]);
+			(0, _jquery2.default)(".about-me").html(aboutArr[idx]["desc"]);
+			(0, _jquery2.default)(".head, .about-me").stop().fadeIn(700, "easeInOutCubic");
 			idx = (idx + 1) % 2;
 		});
 	});
 })();
 
 },{"jquery":4}],6:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _jquery = require('jquery');
+var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (function () {
-    'use-strict';
+    "use-strict";
 
-    var $div = (0, _jquery2.default)('#home-bg'),
-        bg = $div.css('background-image'),
-        src = bg.replace(/(^url\()|(\)$|[\"\'])/g, ''),
-        $img = (0, _jquery2.default)('<img>').attr('src', src).on('load', function () {
+    var $div = (0, _jquery2.default)("#home-bg"),
+        bg = $div.css("background-image"),
+        src = bg.replace(/(^url\()|(\)$|[\"\"])/g, ""),
+        $img = (0, _jquery2.default)("<img>").attr("src", src).on("load", function () {
         var deg = 0;
         $div.fadeIn(2000);
-        (0, _jquery2.default)('#new-menu').fadeIn(2000);
-        (0, _jquery2.default)('.loader').fadeOut(2000);
+        (0, _jquery2.default)("#new-menu").fadeIn(2000);
+        (0, _jquery2.default)(".loader").fadeOut(2000);
         setTimeout(function () {
             setInterval(function () {
-                (0, _jquery2.default)('#home-bg').css('filter', 'hue-rotate(' + deg + 'deg)');
+                (0, _jquery2.default)("#home-bg").css("filter", "hue-rotate(" + deg + "deg)");
                 deg = deg + .4;
             }, 30);
         }, 3000);
@@ -58259,95 +58259,78 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 })();
 
 },{"jquery":4}],7:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _jquery = require('jquery');
+var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-require('jquery-ui');
+require("jquery-ui");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var expanded = true;
 var clicked = false;
-var lastSection = 'soup-container';
-
-(0, _jquery2.default)(window).scroll(function () {
-    if ((0, _jquery2.default)(this).scrollTop() > 0 && expanded) {
-        expanded = false;
-        (0, _jquery2.default)('#new-menu').css('background-color', 'rgba(0,0,0,.7)').css('padding-top', '30px').css('padding-left', '20px');
-        (0, _jquery2.default)('#arrow').stop().fadeOut('slow');
-    } else if ((0, _jquery2.default)(this).scrollTop() === 0) {
-        expanded = true;
-        (0, _jquery2.default)('#arrow').stop().fadeIn('slow');
-        (0, _jquery2.default)('#new-menu').css('background-color', '').css('padding', '').css('opacity', '');
-    }
-});
-
+var lastSection = "soup-container";
 var section = void 0;
 
-(0, _jquery2.default)('.menu-item').on('click', function () {
-
-    var tab = (0, _jquery2.default)(this).attr('id');
-    section = tab.replace('-t', '');
-
+(0, _jquery2.default)(".menu-item").on("click", function () {
+    var tab = (0, _jquery2.default)(undefined).attr("id");
+    section = tab.replace("-t", "");
     if (section === lastSection) {
         if ((0, _jquery2.default)(window).width() < 510) {
-            (0, _jquery2.default)('#new-menu a').stop().hide();
-            (0, _jquery2.default)('#new-menu').stop().animate({ height: '0', opacity: 0 }, 700);
+            (0, _jquery2.default)("#new-menu a").stop().hide();
+            (0, _jquery2.default)("#new-menu").stop().animate({ height: "0", opacity: 0 }, 700);
         }
         return;
     }
-
-    if (section !== 'projects') {
-        (0, _jquery2.default)('#' + section).stop().fadeIn(800, 'easeInOutCubic');
-        (0, _jquery2.default)('#' + lastSection).stop().fadeOut(800, 'easeInOutCubic');
+    if (section !== "projects") {
+        (0, _jquery2.default)("#" + section).stop().fadeIn(800, "easeInOutCubic");
+        (0, _jquery2.default)("#" + lastSection).stop().fadeOut(800, "easeInOutCubic");
+    } else if (section = "contact") {
+        (0, _jquery2.default)("#contact").fadeIn("slow");
     } else {
-        (0, _jquery2.default)('#' + lastSection).stop().fadeOut(800, 'easeInOutCubic', function () {
-            (0, _jquery2.default)('#' + section).stop().slideDown(1500, 'easeInOutCubic');
+        (0, _jquery2.default)("#" + lastSection).stop().fadeOut(800, "easeInOutCubic", function () {
+            (0, _jquery2.default)("#" + section).stop().slideDown(1500, "easeInOutCubic");
         });
     }
 
     if (clicked === true) {
-        (0, _jquery2.default)('#new-menu').stop().animate({ height: '0', opacity: 0 }, 700);
+        (0, _jquery2.default)("#new-menu").stop().animate({ height: "0", opacity: 0 }, 700);
     }
-
     lastSection = section;
     clicked = false;
 });
-
-(0, _jquery2.default)('#menu-toggle').on("click", function () {
+(0, _jquery2.default)("#menu-toggle").on("click", function () {
     if (clicked === false) {
-        (0, _jquery2.default)('#projects, #contact').stop().fadeOut('fast');
-        (0, _jquery2.default)('#new-menu a').stop().show();
-        (0, _jquery2.default)('#new-menu').stop().animate({ height: '100%', opacity: 1 }, 700);
+        (0, _jquery2.default)("#projects, #contact").stop().fadeOut("fast");
+        (0, _jquery2.default)("#new-menu a").stop().show();
+        (0, _jquery2.default)("#new-menu").stop().animate({ height: "100%", opacity: 1 }, 700);
     } else {
-        (0, _jquery2.default)('#new-menu').stop().animate({ height: '0', opacity: 0 }, 700, function () {
-            (0, _jquery2.default)('#new-menu a').stop().hide();
+        (0, _jquery2.default)("#new-menu").stop().animate({ height: "0", opacity: 0 }, 700, function () {
+            (0, _jquery2.default)("#new-menu a").stop().hide();
         });
     }
     clicked = !clicked;
 });
 
 },{"jquery":4,"jquery-ui":3}],8:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _jquery = require('jquery');
+var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (function () {
-	'use-strict';
+	"use-strict";
 
 	(0, _jquery2.default)("#soup-prev, #soup-next").hide();
 	(0, _jquery2.default)(document).ready(function () {
 		setTimeout(function () {
-			(0, _jquery2.default)('#soup-next').fadeIn('slow');
+			(0, _jquery2.default)("#soup-next").fadeIn("slow");
 			var content = [{
 				title: "EDUARDO VELASCO",
 				desc: "Welcome to my portfolio."
@@ -58390,23 +58373,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			});
 			(0, _jquery2.default)("#soup-prev").hide();
 			(0, _jquery2.default)("#soup-prev").click(function () {
-				(0, _jquery2.default)('#soup-nav').fadeOut('fast');
+				(0, _jquery2.default)("#soup-nav").fadeOut("fast");
 				(0, _jquery2.default)("#soup-next").show();
-				(0, _jquery2.default)('#soup-nav').fadeIn('fast');
+				(0, _jquery2.default)("#soup-nav").fadeIn("fast");
 				currentPage--;
 				if (currentPage === 0) {
-					(0, _jquery2.default)('.entypo-right-open-big').stop().addClass('bounce');
-					(0, _jquery2.default)("#soup-prev").stop().fadeOut('fast');
+					(0, _jquery2.default)(".entypo-right-open-big").stop().addClass("bounce");
+					(0, _jquery2.default)("#soup-prev").stop().fadeOut("fast");
 				}
 				arrangeCurrentPage();
 				scrambleOthers();
 			});
 			(0, _jquery2.default)("#soup-next").click(function () {
-				(0, _jquery2.default)('.entypo-right-open-big').stop().removeClass('bounce');
-				(0, _jquery2.default)("#soup-prev").stop().fadeIn('slow');
+				(0, _jquery2.default)(".entypo-right-open-big").stop().removeClass("bounce");
+				(0, _jquery2.default)("#soup-prev").stop().fadeIn("slow");
 				currentPage++;
 				if (currentPage === content.length - 1) {
-					(0, _jquery2.default)("#soup-next").stop().fadeOut('slow');
+					(0, _jquery2.default)("#soup-next").stop().fadeOut("slow");
 				}
 				arrangeCurrentPage();
 				scrambleOthers();

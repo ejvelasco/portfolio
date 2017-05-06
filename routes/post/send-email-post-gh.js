@@ -1,5 +1,5 @@
 module.exports = (app, nodemailer) => {
-	app.post('/send-email', (req, res) => {
+	app.post("/send-email", (req, res) => {
 	    var details = req.body;
 	    var re = {
 	    	name: /^[a-zA-Z ]+$/, 
@@ -15,19 +15,19 @@ module.exports = (app, nodemailer) => {
 	    }
 	    if(!errors){
 	    var transporter = nodemailer.createTransport({
-	        service: 'Gmail',
+	        service: "Gmail",
 	        auth: {
-	            user: 'YOUR_EMAIL',
-	            pass: 'YOUR_PWD'
+	            user: "YOUR_EMAIL",
+	            pass: "YOUR_PWD"
 	        }
 	    });
 	    transporter.sendMail({
-	        to: 'DESTINATION_EMAIL', 
-	        subject: 'PORTFOLIO CONTACT', 
-	        text: details.msg+'\nName: '+details.name +'\nEmail: '+details.email
+	        to: "DESTINATION_EMAIL", 
+	        subject: "PORTFOLIO CONTACT", 
+	        text: details.msg+"\nName: "+details.name +"\nEmail: "+details.email
 	    }, (err) =>{
 	    	if(err && errors == false){
-	    		res.json({error: 'service'});
+	    		res.json({error: "service"});
 	    	}else{
 	    		res.json({error: false});
 	    	}

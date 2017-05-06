@@ -1,7 +1,7 @@
-let express = require('express'),
-path = require('path'),
-bodyParser = require('body-parser'),
-nodemailer = require('nodemailer'),
+let express = require("express"),
+path = require("path"),
+bodyParser = require("body-parser"),
+nodemailer = require("nodemailer"),
 port = process.env.PORT || 5000,
 app = express();
 
@@ -11,13 +11,13 @@ app.use((req, res, next) => {
   next();
 });
 app.use(bodyParser.json());
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/bower_components",  express.static(__dirname + "/bower_components"));
 
-require('./routes/get/views-get')(app);
-require('./routes/post/send-email-post')(app, nodemailer);
+require("./routes/get/views-get")(app);
+require("./routes/post/send-email-post")(app, nodemailer);
 
 app.listen(port, () => {
   console.log("Web server listening on port " + port);

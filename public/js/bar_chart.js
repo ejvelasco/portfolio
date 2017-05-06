@@ -1,7 +1,7 @@
-import Chart from 'chart.js';
+import Chart from "chart.js";
 
 (() => {
-    'use-strict';
+    "use-strict";
     let ctx = document.getElementById("myChart"),
         data = {
             labels: ["Software Entrepreneurship","Artificial Intelligence","Algorithm Design","Premiere League Football","Web App Architecture", "UI/UX Design","Research-Oriented Software"],
@@ -19,23 +19,23 @@ import Chart from 'chart.js';
         };
     Chart.defaults.global.legend.display = false;
     let myChart = new Chart(ctx, {
-        type: 'radar',
+        type: "radar",
         data: data,
         options:{
             scale:{
                 ticks: {
                     fontSize: 14,
                     beginAtZero: true,
-                    fontColor: 'rgba(2, 48, 62, .3)',
+                    fontColor: "rgba(2, 48, 62, .3)",
                     backdropPadding: 10,
                     maxTicksLimit: 5,
-                    backdropColor: 'transparent'
+                    backdropColor: "transparent"
                 },
                 pointLabels: {
                     fontSize: 22,
-                    fontColor: 'rgba(2, 48, 62, .5',
-                    fontFamily: 'Raleway',
-                    fontStyle: 'bold'  
+                    fontColor: "rgba(2, 48, 62, .5",
+                    fontFamily: "Raleway",
+                    fontStyle: "bold"  
                 }
             }
         }

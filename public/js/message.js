@@ -1,11 +1,11 @@
-import $ from 'jquery';
+import $ from "jquery";
 
 (() => {
-	'use-strict';
+	"use-strict";
 	$("#soup-prev, #soup-next").hide();
 	$(document).ready(() => {
 		setTimeout(() => {
-			$('#soup-next').fadeIn('slow');
+			$("#soup-next").fadeIn("slow");
 			let content = [{
 		    	title: "EDUARDO VELASCO",
 		    	desc: "Welcome to my portfolio."
@@ -48,23 +48,23 @@ import $ from 'jquery';
 		  	});
 		  	$("#soup-prev").hide();
 		  	$("#soup-prev").click(() => {
-		    	$('#soup-nav').fadeOut('fast');
+		    	$("#soup-nav").fadeOut("fast");
 		    	$("#soup-next").show();
-		    	$('#soup-nav').fadeIn('fast');
+		    	$("#soup-nav").fadeIn("fast");
 		    	currentPage--;
 		    	if (currentPage === 0) {
-		      		$('.entypo-right-open-big').stop().addClass('bounce');
-		     		$("#soup-prev").stop().fadeOut('fast');
+		      		$(".entypo-right-open-big").stop().addClass("bounce");
+		     		$("#soup-prev").stop().fadeOut("fast");
 		    	}
 		    	arrangeCurrentPage();
 		    	scrambleOthers();
 		  	});
 		  	$("#soup-next").click(() => {
-		    	$('.entypo-right-open-big').stop().removeClass('bounce');
-		    	$("#soup-prev").stop().fadeIn('slow');
+		    	$(".entypo-right-open-big").stop().removeClass("bounce");
+		    	$("#soup-prev").stop().fadeIn("slow");
 		    	currentPage++;
 		    	if (currentPage === content.length - 1) {
-		      		$("#soup-next").stop().fadeOut('slow');
+		      		$("#soup-next").stop().fadeOut("slow");
 		    	}
 		    	arrangeCurrentPage();
 		    	scrambleOthers();
