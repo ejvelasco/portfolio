@@ -1,0 +1,17 @@
+#chelsea{
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+	background: url('/img/chelsea.png') no-repeat;
+	background-position: center;
+	background-size: contain;
+	opacity: .1;
+}
+canvas{
+	position: relative;
+	top: 50%;
+	display: none;
+	transform: translateY(-50%);
+	overflow-x: scroll;
+}

@@ -1,11 +1,10 @@
-var gulp = require('gulp');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
-var importCss = require('gulp-import-css');
-var cleanCSS = require('gulp-clean-css');
-var livereload = require('gulp-livereload');
- 
+var gulp = require('gulp'),
+browserify = require('browserify'),
+babelify = require('babelify'),
+source = require('vinyl-source-stream'),
+importCss = require('gulp-import-css'),
+cleanCSS = require('gulp-clean-css'),
+livereload = require('gulp-livereload');
 
 gulp.task('js', function() {
     return (
