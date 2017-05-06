@@ -58212,7 +58212,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 	var aboutArr = [{
 		title: 'ABOUT ME',
-		desc: "<p class='about'> I'm a twenty-two year old programmer currently based in Dallas, but I call Austin, Texas home. I developed a passion for programming in high school, and I have come a long way since. I embrace new opportunities to learn independently, and I am all about a hands-on approach to development.</p><br><p class='about'>Don't let my portfolio fool you into thinking I'm only about coding! It is my interest in Mathematics that gives rise to my interest in the theoretical aspect of CS. I like to take an analytical approach when solving programming problems. Here's a cool <a href='#' class='link'> example.</a> When I'm away from the keyboard, I like to stay fit, read anything from non-fiction to high fantasy, and play chess.</p>"
+		desc: "<p class='about'> I'm a twenty-two year old programmer currently based in Dallas, but I call Austin, Texas home. I developed a passion for programming in high school, and I have come a long way since. I embrace new opportunities to learn independently, and I'm all about a hands-on approach to development.</p><br><p class='about'>Don't let my portfolio fool you into thinking I'm only about coding! It is my interest in Mathematics that gives rise to my interest in the theoretical aspect of CS. I like to take an analytical approach when solving programming problems. Here's a cool <a href='#' class='link'> example.</a> When I'm away from the keyboard, I like to stay fit, read anything from non-fiction to high fantasy, and play chess.</p>"
 	}, {
 		title: 'GETTING TECHNICAL',
 		desc: "<p class='about'> I aim to develop applications that are scalable, reliable, and mantainable. I like to work with Node and the rich ecosystem of libraries that the NPM offers. I have built apps with the powerful Meteor framework, as well as the classic Express. I am comfortable implementing robust unit tests with Mocha and Chai. To use, or not to use a relational data model? No problem! I feel confident working with either MongoDB or MySQL.</p><br><p class='about'>I strive to implement applications that look and feel great across devices. Anytime design is involved, I let my creativity run free to create elegant interfaces that feature a smooth user experience. When it comes to data visualization, I like to use D3.js or Chart.js. I usually let Angular do the power lifting, but I am currently having fun learning React. In the end, frameworks are sweet, but sometimes pure JS is the way to go.</p>"
@@ -58272,6 +58272,9 @@ require('jquery-ui');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var expanded = true;
+var clicked = false;
+var lastSection = 'soup-container';
+
 (0, _jquery2.default)(window).scroll(function () {
     if ((0, _jquery2.default)(this).scrollTop() > 0 && expanded) {
         expanded = false;
@@ -58283,27 +58286,43 @@ var expanded = true;
         (0, _jquery2.default)('#new-menu').css('background-color', '').css('padding', '').css('opacity', '');
     }
 });
-var lastSection = 'soup-container';
 
-(0, _jquery2.default)('#new-menu a').on('click', function () {
+(0, _jquery2.default)('.menu-item').on('click', function () {
+    if (section === lastSection) {
+        clicked = false;
+        return;
+    }
+
     var tab = (0, _jquery2.default)(this).attr('id');
     var section = tab.replace('-t', '');
 
-    if (section === lastSection) {
-        return;
-    }
     if (section !== 'projects') {
-        (0, _jquery2.default)('#' + section).stop().fadeIn(800, 'easeInOutCubic');
-        (0, _jquery2.default)('#' + lastSection).stop().fadeOut(800, 'easeInOutCubic');
+        (0, _jquery2.default)('#' + section).stop().fadeIn(900, 'easeInOutCubic');
+        (0, _jquery2.default)('#' + lastSection).stop().fadeOut(900, 'easeInOutCubic');
     } else {
-        (0, _jquery2.default)('#' + section).stop().fadeIn(1800, 'easeInOutCubic');
-        (0, _jquery2.default)('#' + lastSection).stop().fadeOut(1800, 'easeInOutCubic');
+        (0, _jquery2.default)('#' + lastSection).stop().fadeOut(900, 'easeInOutCubic', function () {
+            (0, _jquery2.default)('#' + section).stop().slideDown(1500, 'easeInOutCubic');
+        });
     }
+
+    if (clicked === true) {
+        (0, _jquery2.default)('#new-menu').stop().animate({ height: '0', opacity: 0 }, 700);
+    }
+
     lastSection = section;
+    clicked = false;
 });
-(0, _jquery2.default)('.mask').on("click", function () {
-    (0, _jquery2.default)('#contact').fadeOut(600);
-    (0, _jquery2.default)('.mask').fadeOut(600);
+
+(0, _jquery2.default)('#menu-toggle').on("click", function () {
+    if (clicked === false) {
+        (0, _jquery2.default)('#projects, #contact').stop().fadeOut('fast');
+        (0, _jquery2.default)('#new-menu a').stop().show();
+        (0, _jquery2.default)('#new-menu').stop().animate({ height: '100%', opacity: 1 }, 700, function () {});
+        clicked = !clicked;
+    } else {
+        (0, _jquery2.default)('#new-menu a').stop().hide();
+        (0, _jquery2.default)('#new-menu').stop().animate({ height: '0', opacity: 0 }, 700);
+    }
 });
 
 },{"jquery":4,"jquery-ui":3}],8:[function(require,module,exports){

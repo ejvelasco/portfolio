@@ -47,10 +47,10 @@ body{
 	margin: 0 auto;
 	top: 50%;
 	transform: translateY(-50%);
-	padding-top: 30px;
+	margin-top: 50px;
 	height: 60%;
 	width: 50%;
-	z-index: 9998;
+	z-index: 9999;
 }
 #about{
 	display: none;

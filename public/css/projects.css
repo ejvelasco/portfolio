@@ -146,7 +146,7 @@
         height: 50px !important;
         width: 90px !important;
     }
-    .project-img{
+    .horizontal-scroll-wrapper li{
         left: 60px;
     }
     .project-info-title{

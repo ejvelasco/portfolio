@@ -2,6 +2,9 @@ import $ from 'jquery';
 import 'jquery-ui';
 
 let expanded = true;
+let clicked = false;
+let lastSection = 'soup-container';
+
 $(window).scroll(function() {
     if ($(this).scrollTop() > 0 && expanded) {
         expanded = false;
@@ -13,26 +16,45 @@ $(window).scroll(function() {
     	$('#new-menu').css('background-color', '').css('padding', '').css('opacity', '');
     }
 });
-let lastSection = 'soup-container';
 
-$('#new-menu a').on('click', function(){
-        let tab = $(this).attr('id');
-        let section = tab.replace('-t', '');
-        
+
+$('.menu-item').on('click', function(){
         if(section === lastSection){
+            clicked = false;
             return;
         }
+
+        let tab = $(this).attr('id');
+        let section = tab.replace('-t', '');
+    
         if(section !== 'projects'){
-            $('#'+section).stop().fadeIn(800, 'easeInOutCubic');
-            $('#'+lastSection).stop().fadeOut(800, 'easeInOutCubic');
+            $('#'+section).stop().fadeIn(900, 'easeInOutCubic');
+            $('#'+lastSection).stop().fadeOut(900, 'easeInOutCubic');
         } else{
-            $('#'+section).stop().fadeIn(1800, 'easeInOutCubic');
-            $('#'+lastSection).stop().fadeOut(1800, 'easeInOutCubic');
+            $('#'+lastSection).stop().fadeOut(900, 'easeInOutCubic', () => {
+                $('#'+section).stop().slideDown(1500, 'easeInOutCubic');
+            });
         }
+
+        if(clicked === true){
+            $('#new-menu').stop().animate({height: '0', opacity: 0}, 700);    
+        }
+
         lastSection = section;
+        clicked = false;
 
 });
-$('.mask').on("click", function(){
-	$('#contact').fadeOut(600);
-	$('.mask').fadeOut(600);
+
+$('#menu-toggle').on("click", () =>{
+    if(clicked === false){
+        $('#projects, #contact').stop().fadeOut('fast');
+        $('#new-menu a').stop().show();
+        $('#new-menu').stop().animate({height: '100%', opacity: 1}, 700, () => {
+
+        });
+        clicked = !clicked;    
+    } else{
+        $('#new-menu a').stop().hide();
+        $('#new-menu').stop().animate({height: '0', opacity: 0}, 700);
+    }
 });

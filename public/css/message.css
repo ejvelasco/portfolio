@@ -114,29 +114,27 @@ button {
       bottom: 5%;
     }
 }
-@media only screen and (max-width: 800px) and (max-height: 1340px){
-    #soup-nav{
-      bottom: 5%;
-    }
-    .soup-title{
-      font-size: 2.3em !important;
-      letter-spacing: 10px;
-    }
-    .soup-desc{
-      font-size: 1.3em !important;
-      letter-spacing: 4px;
-    }
-}
 @media only screen and (max-width: 510px) and (max-height: 1340px){
     #soup-nav{
       bottom: 5%;
     }
     .soup-title{
-      font-size: 1.5em !important;
+      font-size: 1em !important;
       letter-spacing: 7px;
     }
     .soup-desc{
-      font-size: 1em !important;
+      font-size: .8em !important;
       letter-spacing: 0px;
+    }
+    ul li{
+      display: block;
+      margin-bottom: 5px;
+    }
+    #new-menu{
+      padding-top: 30px;
+      padding-left: 30px;
+    }
+    #new-menu a{
+      z-index: 0;
     }
 }
