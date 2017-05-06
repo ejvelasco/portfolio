@@ -71,7 +71,7 @@ let portfolioApp = angular.module("portfolioApp", [])
 		{	
 			title: "Portfolio", 
 			subtitle: "Always improving my workspace",
-			desc: "Like it? Check out the code and feel free to use it however you want. It would be cool if you gave me a shout out on <a class="link" href="https://twitter.com/velascoDev" target="blank">Twitter!</a> Sharing is caring.", 
+			desc: "Like it? Check out the code and feel free to use it however you want. It would be cool if you gave me a shout out on <a class='link' href='https://twitter.com/velascoDev' target='blank'>Twitter!</a> Sharing is caring.", 
 			img: "/img/portfolio.jpeg", 
 			url: "https://github.com/velascoDev/portfolio"
 		},
@@ -85,7 +85,7 @@ let portfolioApp = angular.module("portfolioApp", [])
 		{	
 			title: "ES Fiddle", 
 			subtitle: "Try the latest ES6 features in your browser",
-			desc: "This is a neat side project I ocassionally contribute to on GitHub:\nES6 - or ECMAScript 2015 - is the latest JavaScript specification. It includes exciting features like arrow functions and a new class syntax. With ESFiddle, trying out these awesome features in the browser couldn"t be easier. Our vision is to help programmers transition to ES6 by providing a reliable testing environment, along with a rich library of example code.",
+			desc: "This is a neat side project I ocassionally contribute to on GitHub:\nES6 - or ECMAScript 2015 - is the latest JavaScript specification. It includes exciting features like arrow functions and a new class syntax. With ESFiddle, trying out these awesome features in the browser couldn't be easier. Our vision is to help programmers transition to ES6 by providing a reliable testing environment, along with a rich library of example code.",
 			img: "/img/ES6.jpeg", 
 			url: "https://github.com/velascoDev/esfiddle"
 		}, 

@@ -5,7 +5,7 @@ let clicked = false;
 let lastSection = "soup-container";
 let section;
 
-$(".menu-item").on("click", () => {
+$(".menu-item").on("click", function(){
         let tab = $(this).attr("id");
         section = tab.replace("-t", "");
         if(section === lastSection){
@@ -15,11 +15,12 @@ $(".menu-item").on("click", () => {
             }
             return;
         }
-        if(section !== "projects"){
+        if(section !== "projects" && section !== 'contact'){
             $("#"+section).stop().fadeIn(800, "easeInOutCubic");
             $("#"+lastSection).stop().fadeOut(800, "easeInOutCubic");
-        } else if(section = "contact"){
-            $("#contact").fadeIn("slow");
+        } else if(section === "contact"){
+             $("#"+lastSection).stop().fadeOut(800, "easeInOutCubic");
+            $("#contact").stop().fadeIn(800, "easeInOutCubic");
         }else{
             $("#"+lastSection).stop().fadeOut(800, "easeInOutCubic", () => {
                 $("#"+section).stop().slideDown(1500, "easeInOutCubic");

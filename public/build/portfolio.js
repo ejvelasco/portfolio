@@ -58274,7 +58274,7 @@ var lastSection = "soup-container";
 var section = void 0;
 
 (0, _jquery2.default)(".menu-item").on("click", function () {
-    var tab = (0, _jquery2.default)(undefined).attr("id");
+    var tab = (0, _jquery2.default)(this).attr("id");
     section = tab.replace("-t", "");
     if (section === lastSection) {
         if ((0, _jquery2.default)(window).width() < 510) {
@@ -58283,11 +58283,12 @@ var section = void 0;
         }
         return;
     }
-    if (section !== "projects") {
+    if (section !== "projects" && section !== 'contact') {
         (0, _jquery2.default)("#" + section).stop().fadeIn(800, "easeInOutCubic");
         (0, _jquery2.default)("#" + lastSection).stop().fadeOut(800, "easeInOutCubic");
-    } else if (section = "contact") {
-        (0, _jquery2.default)("#contact").fadeIn("slow");
+    } else if (section === "contact") {
+        (0, _jquery2.default)("#" + lastSection).stop().fadeOut(800, "easeInOutCubic");
+        (0, _jquery2.default)("#contact").stop().fadeIn(800, "easeInOutCubic");
     } else {
         (0, _jquery2.default)("#" + lastSection).stop().fadeOut(800, "easeInOutCubic", function () {
             (0, _jquery2.default)("#" + section).stop().slideDown(1500, "easeInOutCubic");
@@ -58456,58 +58457,58 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 })();
 
 },{"jquery":4}],9:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _angular = require('angular');
+var _angular = require("angular");
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _jquery = require('jquery');
+var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var portfolioApp = _angular2.default.module('portfolioApp', []).controller('sendEmail', ['$scope', '$http', function ($scope, $http) {
+var portfolioApp = _angular2.default.module("portfolioApp", []).controller("sendEmail", ["$scope", "$http", function ($scope, $http) {
 	$scope.details = {
-		name: '',
-		email: '',
-		msg: ''
+		name: "",
+		email: "",
+		msg: ""
 	};
 	$scope.sendEmailF = function () {
-		if ((0, _jquery2.default)('#send').text() === 'SENT') {
+		if ((0, _jquery2.default)("#send").text() === "SENT") {
 			return;
 		} else {
-			(0, _jquery2.default)('#send').text('SENDING..');
-			$http.post('/send-email', $scope.details).then(function (data) {
+			(0, _jquery2.default)("#send").text("SENDING..");
+			$http.post("/send-email", $scope.details).then(function (data) {
 				if (data.data.error) {
-					(0, _jquery2.default)('#send').text('SEND');
-					if (data.error != 'msg') {
-						(0, _jquery2.default)('#error').text('Whoops! Please enter a valid ' + data.data.error + '.');
-						(0, _jquery2.default)('#error').stop().fadeTo(500, .8);
-					} else if (data.data.error === 'service') {
-						(0, _jquery2.default)('#error').text('Whoops! Looks like there was a validation error. The message was not sent.');
-						(0, _jquery2.default)('#error').stop().fadeTo(500, .8);
+					(0, _jquery2.default)("#send").text("SEND");
+					if (data.error != "msg") {
+						(0, _jquery2.default)("#error").text("Whoops! Please enter a valid " + data.data.error + ".");
+						(0, _jquery2.default)("#error").stop().fadeTo(500, .8);
+					} else if (data.data.error === "service") {
+						(0, _jquery2.default)("#error").text("Whoops! Looks like there was a validation error. The message was not sent.");
+						(0, _jquery2.default)("#error").stop().fadeTo(500, .8);
 					} else {
-						(0, _jquery2.default)('#error').text('Whoops! Please enter a valid message.');
-						(0, _jquery2.default)('#error').stop().fadeTo(500, .8);
+						(0, _jquery2.default)("#error").text("Whoops! Please enter a valid message.");
+						(0, _jquery2.default)("#error").stop().fadeTo(500, .8);
 					}
 					window.setTimeout(function () {
-						(0, _jquery2.default)('#error').stop().fadeTo(500, 0);
+						(0, _jquery2.default)("#error").stop().fadeTo(500, 0);
 					}, 3000);
 				} else {
-					(0, _jquery2.default)('#send').css('background-color', '#67FABD').css('color', 'black').css('border-color', '#67FABD').text('SENT');
-					$scope.details.name = '';
-					$scope.details.email = '';
-					$scope.details.msg = '';
+					(0, _jquery2.default)("#send").css("background-color", "#67FABD").css("color", "black").css("border-color", "#67FABD").text("SENT");
+					$scope.details.name = "";
+					$scope.details.email = "";
+					$scope.details.msg = "";
 					window.setTimeout(function () {
-						(0, _jquery2.default)('#send').css('background-color', '').css('color', '').css('border-color', '').text('SEND');
+						(0, _jquery2.default)("#send").css("background-color", "").css("color", "").css("border-color", "").text("SEND");
 					}, 3500);
 				}
 			});
 		}
 	};
-}]).controller('projectsGallery', ['$scope', '$timeout', function ($scope, $timeout) {
+}]).controller("projectsGallery", ["$scope", "$timeout", function ($scope, $timeout) {
 	$scope.projects = [{
 		title: "Hummingbird",
 		subtitle: "Enriching the classroom environment",
@@ -58550,51 +58551,51 @@ var portfolioApp = _angular2.default.module('portfolioApp', []).controller('send
 		var projectId = void 0,
 		    lastProjectId = 0,
 		    projectIdThumb = void 0,
-		    widthImg = (0, _jquery2.default)('#project-img-0').width(),
-		    leftMarginImg = Number((0, _jquery2.default)('.project-img-0').css('left').replace('px', ''));
+		    widthImg = (0, _jquery2.default)("#project-img-0").width(),
+		    leftMarginImg = Number((0, _jquery2.default)(".project-img-0").css("left").replace("px", ""));
 		for (var i = 0; i < $scope.projects.length; i++) {
-			(0, _jquery2.default)('#project-img-' + i).css('background', 'url(' + $scope.projects[i].img + ')').css('background-size', 'cover').css('background-position', 'center');
+			(0, _jquery2.default)("#project-img-" + i).css("background", "url(" + $scope.projects[i].img + ")").css("background-size", "cover").css("background-position", "center");
 		}
 		for (var _i = 0; _i < $scope.projects.length; _i++) {
-			(0, _jquery2.default)('#owned-' + _i).parent().css('background', 'url(' + $scope.projects[_i].img + ')').css('background-size', 'cover');
+			(0, _jquery2.default)("#owned-" + _i).parent().css("background", "url(" + $scope.projects[_i].img + ")").css("background-size", "cover");
 		}
-		(0, _jquery2.default)('.bar-item').css('background-size', 'center');
-		(0, _jquery2.default)('.bar-item').on('mouseenter', function (event) {
-			projectIdThumb = (0, _jquery2.default)(event.currentTarget).children().attr('id');
-			(0, _jquery2.default)('#' + projectIdThumb + ' .project-info').stop().fadeIn(300);
-			(0, _jquery2.default)('#' + projectIdThumb + ' .project-info-title').stop().fadeIn(500);
+		(0, _jquery2.default)(".bar-item").css("background-size", "center");
+		(0, _jquery2.default)(".bar-item").on("mouseenter", function (event) {
+			projectIdThumb = (0, _jquery2.default)(event.currentTarget).children().attr("id");
+			(0, _jquery2.default)("#" + projectIdThumb + " .project-info").stop().fadeIn(300);
+			(0, _jquery2.default)("#" + projectIdThumb + " .project-info-title").stop().fadeIn(500);
 		});
-		(0, _jquery2.default)('.bar-item').on('mouseleave', function (event) {
-			projectIdThumb = (0, _jquery2.default)(event.currentTarget).children().attr('id');
-			(0, _jquery2.default)('#' + projectIdThumb + ' .project-info').stop().fadeOut(300);
-			(0, _jquery2.default)('#' + projectIdThumb + ' .project-info-title').stop().hide();
+		(0, _jquery2.default)(".bar-item").on("mouseleave", function (event) {
+			projectIdThumb = (0, _jquery2.default)(event.currentTarget).children().attr("id");
+			(0, _jquery2.default)("#" + projectIdThumb + " .project-info").stop().fadeOut(300);
+			(0, _jquery2.default)("#" + projectIdThumb + " .project-info-title").stop().hide();
 		});
-		(0, _jquery2.default)('.bar-item').on('click', function (event) {
-			projectId = (0, _jquery2.default)(event.currentTarget).children().attr('id');
-			projectId = projectId.replace('owned-', '');
+		(0, _jquery2.default)(".bar-item").on("click", function (event) {
+			projectId = (0, _jquery2.default)(event.currentTarget).children().attr("id");
+			projectId = projectId.replace("owned-", "");
 			carouselSlide(projectId, lastProjectId);
 		});
-		(0, _jquery2.default)('.project-img').on('click', function (event) {
-			projectId = (0, _jquery2.default)(event.currentTarget).attr('id');
-			projectId = projectId.replace('project-img-', '');
+		(0, _jquery2.default)(".project-img").on("click", function (event) {
+			projectId = (0, _jquery2.default)(event.currentTarget).attr("id");
+			projectId = projectId.replace("project-img-", "");
 			carouselSlide(projectId, lastProjectId);
 		});
-		(0, _jquery2.default)('#showcase-desc').text($scope.projects[0].desc);
-		(0, _jquery2.default)('#project-img-0').addClass('bright');
-		(0, _jquery2.default)('.images, #click-bar').fadeIn(1000);
-		(0, _jquery2.default)('#showcase').fadeIn(200);
+		(0, _jquery2.default)("#showcase-desc").text($scope.projects[0].desc);
+		(0, _jquery2.default)("#project-img-0").addClass("bright");
+		(0, _jquery2.default)(".images, #click-bar").fadeIn(1000);
+		(0, _jquery2.default)("#showcase").fadeIn(200);
 
 		function carouselSlide(id, lastId) {
 			if (id !== lastId) {
-				(0, _jquery2.default)('.horizontal-scroll-wrapper li').stop().animate({ left: -widthImg * Number(id) + leftMarginImg }, 1200, 'easeInOutCubic');
-				(0, _jquery2.default)('#project-img-' + lastId).removeClass('bright');
-				(0, _jquery2.default)('#showcase').stop().fadeOut(500, function () {
-					(0, _jquery2.default)('#project-img-' + id).addClass('bright');
-					(0, _jquery2.default)('#showcase-title').attr('href', $scope.projects[id].url);
-					(0, _jquery2.default)('#showcase-title').text($scope.projects[id].title);
-					(0, _jquery2.default)('#showcase-subtitle').text($scope.projects[id].subtitle);
-					(0, _jquery2.default)('#showcase-desc').html($scope.projects[id].desc);
-					(0, _jquery2.default)('#showcase').fadeIn(500);
+				(0, _jquery2.default)(".horizontal-scroll-wrapper li").stop().animate({ left: -widthImg * Number(id) + leftMarginImg }, 1200, "easeInOutCubic");
+				(0, _jquery2.default)("#project-img-" + lastId).removeClass("bright");
+				(0, _jquery2.default)("#showcase").stop().fadeOut(500, function () {
+					(0, _jquery2.default)("#project-img-" + id).addClass("bright");
+					(0, _jquery2.default)("#showcase-title").attr("href", $scope.projects[id].url);
+					(0, _jquery2.default)("#showcase-title").text($scope.projects[id].title);
+					(0, _jquery2.default)("#showcase-subtitle").text($scope.projects[id].subtitle);
+					(0, _jquery2.default)("#showcase-desc").html($scope.projects[id].desc);
+					(0, _jquery2.default)("#showcase").fadeIn(500);
 					lastId = id;
 				});
 			}
@@ -58603,25 +58604,25 @@ var portfolioApp = _angular2.default.module('portfolioApp', []).controller('send
 }]);
 
 },{"angular":2,"jquery":4}],10:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _about = require('./about');
+var _about = require("./about");
 
 var _about2 = _interopRequireDefault(_about);
 
-var _home = require('./home');
+var _home = require("./home");
 
 var _home2 = _interopRequireDefault(_home);
 
-var _menu = require('./menu');
+var _menu = require("./menu");
 
 var _menu2 = _interopRequireDefault(_menu);
 
-var _message = require('./message');
+var _message = require("./message");
 
 var _message2 = _interopRequireDefault(_message);
 
-var _ngApp = require('./ngApp');
+var _ngApp = require("./ngApp");
 
 var _ngApp2 = _interopRequireDefault(_ngApp);
 
