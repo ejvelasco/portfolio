@@ -58200,16 +58200,9 @@ return jQuery;
 
 },{}],5:[function(require,module,exports){
 "use strict";
+"use-strict";
 
-var _jquery = require("jquery");
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(function () {
-	"use-strict";
-
+module.exports = function ($) {
 	var idx = 1;
 	var aboutArr = [{
 		title: "ABOUT ME",
@@ -58218,18 +58211,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		title: "GETTING TECHNICAL",
 		desc: "<p class='about'> I aim to develop applications that are scalable, reliable, and mantainable. I like to work with Node and the rich ecosystem of libraries that the NPM offers. I have built apps with the powerful Meteor framework, as well as the classic Express. I am comfortable implementing robust unit tests with Mocha and Chai. To use, or not to use a relational data model? No problem! I feel confident working with either MongoDB or MySQL.</p><br><p class='about'>I strive to implement applications that look and feel great across devices. Anytime design is involved, I let my creativity run free to create elegant interfaces that feature a smooth user experience. When it comes to data visualization, I like to use D3.js or Chart.js. I usually let Angular do the power lifting, but I am currently having fun learning React. In the end, frameworks are sweet, but sometimes pure JS is the way to go.</p>"
 	}];
-	(0, _jquery2.default)(".right").on("click", function () {
-		(0, _jquery2.default)(".about-slide").removeClass("bounce");
-		(0, _jquery2.default)(".head, .about-me").fadeOut(700, "easeInOutCubic", function () {
-			(0, _jquery2.default)(".head").text(aboutArr[idx]["title"]);
-			(0, _jquery2.default)(".about-me").html(aboutArr[idx]["desc"]);
-			(0, _jquery2.default)(".head, .about-me").stop().fadeIn(700, "easeInOutCubic");
+	$(".right").on("click", function () {
+		$(".about-slide").removeClass("bounce");
+		$(".head, .about-me").fadeOut(700, "easeInOutCubic", function () {
+			$(".head").text(aboutArr[idx]["title"]);
+			$(".about-me").html(aboutArr[idx]["desc"]);
+			$(".head, .about-me").stop().fadeIn(700, "easeInOutCubic");
 			idx = (idx + 1) % 2;
 		});
 	});
-})();
+};
 
-},{"jquery":4}],6:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 
 var _jquery = require("jquery");
@@ -58606,10 +58599,6 @@ var portfolioApp = _angular2.default.module("portfolioApp", []).controller("send
 },{"angular":2,"jquery":4}],10:[function(require,module,exports){
 "use strict";
 
-var _about = require("./about");
-
-var _about2 = _interopRequireDefault(_about);
-
 var _home = require("./home");
 
 var _home2 = _interopRequireDefault(_home);
@@ -58628,4 +58617,8 @@ var _ngApp2 = _interopRequireDefault(_ngApp);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./about":5,"./home":6,"./menu":7,"./message":8,"./ngApp":9}]},{},[10]);
+var $ = require("jquery");
+
+require("./about")($);
+
+},{"./about":5,"./home":6,"./menu":7,"./message":8,"./ngApp":9,"jquery":4}]},{},[10]);
