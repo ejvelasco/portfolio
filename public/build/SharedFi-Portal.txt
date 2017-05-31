@@ -1,0 +1,10 @@
+Important Packages:
+
+Twilio
+Node-Arp
+Express
+Passport
+
+Captive Portal:
+
+Main functionality: The captive portal was meant 
