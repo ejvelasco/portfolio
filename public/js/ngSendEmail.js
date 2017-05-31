@@ -1,6 +1,6 @@
 "use-strict";
-module.exports = ($, angular) =>{
-		.controller("sendEmail",["$scope", "$http", function($scope, $http){
+module.exports = ($, app) =>{
+		app.controller("sendEmail",["$scope", "$http", function($scope, $http){
 			$scope.details = {
 				name: "",
 				email: "",

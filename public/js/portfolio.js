@@ -1,7 +1,14 @@
+"use-strict";
+
+const angular = require("angular");
 const $ = require("jquery");
+require("jquery-easing");
+
+const portfolioApp = angular.module("portfolioApp", [])
+require("./ngProjectsGallery")($, portfolioApp);
+require("./ngSendEmail")($, portfolioApp);
 
 require("./about")($);
-import home from "./home";
-import menu from "./menu";
-import message from "./message";
-import ngApp from "./ngApp";
+require("./home")($);
+require("./menu")($);
+require("./message")($);

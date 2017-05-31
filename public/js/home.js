@@ -1,7 +1,6 @@
-import $ from "jquery";
+"use-strict";
 
-(() => {
-    "use-strict";
+module.exports = ($) => {
     let $div = $("#home-bg"),
         bg = $div.css("background-image"),
         src = bg.replace(/(^url\()|(\)$|[\"\"])/g, ""),
@@ -14,7 +13,7 @@ import $ from "jquery";
                 setInterval(() => {
                     $("#home-bg").css("filter", "hue-rotate("+deg+"deg)");
                     deg = deg + .4;
-                }, 30);    
+                }, 30);
             }, 3000);
         });
-})();
+};

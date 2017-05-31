@@ -1,7 +1,6 @@
-import $ from "jquery";
+"use-strict";
 
-(() => {
-	"use-strict";
+module.exports = ($) => {
 	$("#soup-prev, #soup-next").hide();
 	$(document).ready(() => {
 		setTimeout(() => {
@@ -34,7 +33,7 @@ import $ from "jquery";
 		        		}
 		        		content[i][obj] = toPush;
 		      		}
-		    	} 
+		    	}
 			    $("#segments").append("<div class=\"letters-wrap mutable\"><div class=\"soup-title\"></div><div class=\"soup-desc\"></div></div>");
 			    setText();
 			    $("#segments").append("<div class=\"letters-wrap position-data\"><div class=\"soup-title\"></div><div class=\"soup-desc\"></div></div>");
@@ -132,4 +131,4 @@ import $ from "jquery";
 		  	}
 		}, 2000);
 	});
-})();
+};
