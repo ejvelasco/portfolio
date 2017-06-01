@@ -11,10 +11,10 @@ module.exports = ($) => {
 	}];
 	$(".right").on("click", () => {
 		$(".about-slide").removeClass("bounce");
-		$(".head, .about-me").fadeOut(700, "easeInOutCubic", () =>{
+		$(".about-1").fadeOut(700, "easeInOutCubic", () =>{
 			$(".head").text(aboutArr[idx]["title"]);
 			$(".about-me").html(aboutArr[idx]["desc"]);
-			$(".head, .about-me").stop().fadeIn(700, "easeInOutCubic");
+			$(".about-1").stop().fadeIn(700, "easeInOutCubic");
 			idx = (idx+1)%2;
 		});
 	});

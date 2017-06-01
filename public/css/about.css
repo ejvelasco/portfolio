@@ -10,6 +10,7 @@
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
+	animation: slideDown .7s 1;
 }
 .about-me{
 	position: relative;
@@ -18,7 +19,6 @@
 	margin: 0 auto;
 	font-weight: bold;
 	font-size: 1.1em;
-	animation: slideDown 1s 1;
 }
 .about{
 	width: 100%;

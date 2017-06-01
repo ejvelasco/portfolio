@@ -32,7 +32,7 @@
   overflow-x: hidden;
   top: 8%;
   transition: all 1s ease;
- 
+
 }
 .horizontal-scroll-wrapper li{
     float: left;
@@ -95,6 +95,7 @@
 }
 #showcase{
         position: absolute;
+		margin-left: 30px !important;
         top: 50%;
         transform: translateY(-50%);
         text-align: justify;
@@ -117,7 +118,7 @@
 }
 #showcase-subtitle{
     font-weight: bold;
-    font-size: 1em; 
+    font-size: 1em;
 }
 #showcase-desc{
     margin-top: 15px;
@@ -153,7 +154,7 @@
     #showcase{
         left: 90px;
         width: 220px !important;
-        font-size: 8px;  
+        font-size: 8px;
     }
     #showcase-subtitle{
         margin-top: -5px;
