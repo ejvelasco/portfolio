@@ -48,15 +48,13 @@ module.exports = ($, app) => {
 		},
 		];
 		$timeout(() => {
-			let projectId,
-			lastProjectId = 0,
-			projectIdThumb,
-			widthImg = $("#project-img-0").width(),
-			leftMarginImg = Number($(".project-img-0").css("left").replace("px", ""));
-			for(let i=0;i<$scope.projects.length;i++){
+			let projectId, lastProjectId, projectIdThumb;
+			const widthImg = $("#project-img-0").width();
+			const leftMarginImg = Number($(".project-img-0").css("left").replace("px", ""));
+			for( let i=0;i<$scope.projects.length;i++ ){
 				$("#project-img-"+i).css("background", "url("+$scope.projects[i].img+")").css("background-size", "cover").css("background-position", "center");
 			}
-			for(let i=0;i<$scope.projects.length;i++){
+			for( let i=0;i<$scope.projects.length;i++ ){
 				$("#owned-"+i).parent().css("background", "url("+$scope.projects[i].img+")").css("background-size", "cover");
 			}
 			$(".bar-item").css("background-size", "center");
@@ -86,7 +84,7 @@ module.exports = ($, app) => {
 			$("#showcase").fadeIn(200);
 
 			function carouselSlide(id, lastId){
-				if(id !== lastId){
+				if( id !== lastId ){
 					$(".horizontal-scroll-wrapper li").stop().animate({left:-widthImg*Number(id) + leftMarginImg}, 1200, "easeInOutCubic");
 					$("#project-img-"+lastId).removeClass("bright");
 					$("#showcase").stop().fadeOut(500, () => {

@@ -1,7 +1,7 @@
 "use-strict";
 
 module.exports = ($) => {
-    let $div = $("#home-bg"),
+    const $div = $("#home-bg"),
         bg = $div.css("background-image"),
         src = bg.replace(/(^url\()|(\)$|[\"\"])/g, ""),
         $img = $("<img>").attr("src", src).on("load", () => {

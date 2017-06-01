@@ -43464,53 +43464,51 @@ module.exports = function ($) {
 };
 
 },{}],7:[function(require,module,exports){
-"use strict";
-"use-strict";
+'use strict';
+'use-strict';
 
 module.exports = function ($) {
-	var clicked = false;
-	var lastSection = "soup-container";
-	var section = void 0;
-	$(".menu-item").on("click", function () {
-		var tab = $(this).attr("id");
-		section = tab.replace("-t", "");
-		if (section === lastSection) {
-			if ($(window).width() < 510) {
-				$("#new-menu a").stop().hide();
-				$("#new-menu").stop().animate({ height: "0", opacity: 0 }, 700);
-			}
-			return;
-		}
-		if (section !== "projects" && section !== 'contact') {
-			$("#" + section).stop().fadeIn(800, "easeInOutCubic");
-			$("#" + lastSection).stop().fadeOut(800, "easeInOutCubic");
-		} else if (section === "contact") {
-			$("#" + lastSection).stop().fadeOut(800, "easeInOutCubic");
-			$("#contact").stop().fadeIn(800, "easeInOutCubic");
-		} else {
-			$("#" + lastSection).stop().fadeOut(800, "easeInOutCubic", function () {
-				$("#" + section).stop().slideDown(1500, "easeInOutCubic");
-			});
-		}
+    var clicked = false;
+    var lastSection = 'soup-container';
+    var section = void 0,
+        tab = void 0;
+    $('.menu-item').on('click', function () {
+        tab = $(this).attr('id');
+        section = tab.replace('-t', '');
+        if (section === lastSection) {
+            if ($(window).width() < 510) {
+                $('#new-menu a').stop().hide();
+                $('#new-menu').stop().animate({ height: '0', opacity: 0 }, 700);
+            }
+            return;
+        }
+        if (section !== 'projects') {
+            $('#' + section).stop().fadeIn(800, 'easeInOutCubic');
+            $('#' + lastSection).stop().fadeOut(800, 'easeInOutCubic');
+        } else {
+            $('#' + lastSection).stop().fadeOut(800, 'easeInOutCubic', function () {
+                $('#' + section).stop().slideDown(1500, 'easeInOutCubic');
+            });
+        }
 
-		if (clicked === true) {
-			$("#new-menu").stop().animate({ height: "0", opacity: 0 }, 700);
-		}
-		lastSection = section;
-		clicked = false;
-	});
-	$("#menu-toggle").on("click", function () {
-		if (clicked === false) {
-			$("#projects, #contact").stop().fadeOut("fast");
-			$("#new-menu a").stop().show();
-			$("#new-menu").stop().animate({ height: "100%", opacity: 1 }, 700);
-		} else {
-			$("#new-menu").stop().animate({ height: "0", opacity: 0 }, 700, function () {
-				$("#new-menu a").stop().hide();
-			});
-		}
-		clicked = !clicked;
-	});
+        if (clicked === true) {
+            $('#new-menu').stop().animate({ height: '0', opacity: 0 }, 700);
+        }
+        lastSection = section;
+        clicked = false;
+    });
+    $('#menu-toggle').on('click', function () {
+        if (clicked === false) {
+            $('#projects, #contact').stop().fadeOut('fast');
+            $('#new-menu a').stop().show();
+            $('#new-menu').stop().animate({ height: '100%', opacity: 1 }, 700);
+        } else {
+            $('#new-menu').stop().animate({ height: '0', opacity: 0 }, 700, function () {
+                $('#new-menu a').stop().hide();
+            });
+        }
+        clicked = !clicked;
+    });
 };
 
 },{}],8:[function(require,module,exports){
@@ -43589,18 +43587,18 @@ module.exports = function ($) {
 			});
 
 			function arrangeCurrentPage() {
-				for (var i = 0; i < content[currentPage].title.length; i++) {
-					$(".mutable:eq(" + currentPage + ") > .soup-title > .letter").eq(i).css({
-						left: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().left + "px",
-						top: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().top + "px",
+				for (var _i = 0; _i < content[currentPage].title.length; _i++) {
+					$(".mutable:eq(" + currentPage + ") > .soup-title > .letter").eq(_i).css({
+						left: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(_i).offset().left + "px",
+						top: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(_i).offset().top + "px",
 						color: "white",
 						zIndex: 9001
 					});
 				}
-				for (var i = 0; i < content[currentPage].desc.length; i++) {
-					$(".mutable:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).css({
-						left: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().left + "px",
-						top: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().top + "px",
+				for (var _i2 = 0; _i2 < content[currentPage].desc.length; _i2++) {
+					$(".mutable:eq(" + currentPage + ") > .soup-desc > .letter").eq(_i2).css({
+						left: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(_i2).offset().left + "px",
+						top: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(_i2).offset().top + "px",
 						color: "white",
 						zIndex: 9001
 					});
@@ -43608,33 +43606,39 @@ module.exports = function ($) {
 			}
 
 			function setText() {
-				var j;
-				for (j = 0; j < content[i].title.length; j++) {
-					$(".soup-title").last().append("<span class=\"letter\">" + content[i].title[j] + "</span>");
+				for (var _j = 0; _j < content[i].title.length; _j++) {
+					$(".soup-title").last().append("<span class=\"letter\">" + content[i].title[_j] + "</span>");
 				}
-				for (j = 0; j < content[i].desc.length; j++) {
-					$(".soup-desc").last().append("<span class=\"letter\">" + content[i].desc[j] + "</span>");
+				for (var _j2 = 0; _j2 < content[i].desc.length; _j2++) {
+					$(".soup-desc").last().append("<span class=\"letter\">" + content[i].desc[_j2] + "</span>");
 				}
 			}
 
 			function scrambleOthers() {
-				for (var i = 0; i < content.length; i++) {
-					if (currentPage === i) continue;
-					var parts = [["title", ".soup-title"], ["desc", ".soup-desc"]];
-					for (var j = 0; j < parts.length; j++) {
-						for (var _k = 0; _k < content[i][parts[j][0]].length; _k++) {
-							var randLeft = Math.floor(Math.random() * $(window).width()),
-							    randTop = Math.floor(Math.random() * $(window).height()),
-							    offset = $(".position-data").eq(currentPage).offset(),
-							    bounds = {
+				var parts = void 0,
+				    randLeft = void 0,
+				    randTop = void 0,
+				    offset = void 0,
+				    bounds = void 0,
+				    middleX = void 0,
+				    middleY = void 0;
+				for (var _i3 = 0; _i3 < content.length; _i3++) {
+					if (currentPage === _i3) continue;
+					parts = [["title", ".soup-title"], ["desc", ".soup-desc"]];
+					for (var _j3 = 0; _j3 < parts.length; _j3++) {
+						for (var _k = 0; _k < content[_i3][parts[_j3][0]].length; _k++) {
+							randLeft = Math.floor(Math.random() * $(window).width());
+							randTop = Math.floor(Math.random() * $(window).height());
+							offset = $(".position-data").eq(currentPage).offset();
+							bounds = {
 								left: offset.left,
 								top: offset.top,
 								right: $(window).width() - offset.left,
 								bottom: $(window).height() - offset.top
 							};
-							var middleX = bounds.left + $(".position-data").eq(currentPage).width() / 2,
-							    middleY = bounds.top + $(".position-data").eq(currentPage).height() / 2;
-							$(".mutable:eq(" + i + ") > " + parts[j][1] + " > .letter").eq(_k).css({
+							middleX = bounds.left + $(".position-data").eq(currentPage).width() / 2;
+							middleY = bounds.top + $(".position-data").eq(currentPage).height() / 2;
+							$(".mutable:eq(" + _i3 + ") > " + parts[_j3][1] + " > .letter").eq(_k).css({
 								left: randLeft,
 								top: randTop,
 								color: "transparent",
@@ -43693,10 +43697,10 @@ module.exports = function ($, app) {
 		}];
 		$timeout(function () {
 			var projectId = void 0,
-			    lastProjectId = 0,
-			    projectIdThumb = void 0,
-			    widthImg = $("#project-img-0").width(),
-			    leftMarginImg = Number($(".project-img-0").css("left").replace("px", ""));
+			    lastProjectId = void 0,
+			    projectIdThumb = void 0;
+			var widthImg = $("#project-img-0").width();
+			var leftMarginImg = Number($(".project-img-0").css("left").replace("px", ""));
 			for (var i = 0; i < $scope.projects.length; i++) {
 				$("#project-img-" + i).css("background", "url(" + $scope.projects[i].img + ")").css("background-size", "cover").css("background-position", "center");
 			}
@@ -43806,7 +43810,7 @@ require("jquery-easing");
 var portfolioApp = angular.module("portfolioApp", []);
 require("./ngProjectsGallery")($, portfolioApp);
 require("./ngSendEmail")($, portfolioApp);
-
+//individual page scripts
 require("./about")($);
 require("./home")($);
 require("./menu")($);

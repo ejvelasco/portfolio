@@ -5,7 +5,7 @@ module.exports = ($) => {
 	$(document).ready(() => {
 		setTimeout(() => {
 			$("#soup-next").fadeIn("slow");
-			let content = [{
+			const content = [{
 		    	title: "EDUARDO VELASCO",
 		    	desc: "Welcome to my portfolio."
 		  	}, {
@@ -19,15 +19,15 @@ module.exports = ($) => {
 		    	desc: "What are you waiting for?\nGet out there and make your dreams happen."
 		  	}];
 		  	let currentPage = 0;
-		  	for (var i = 0; i < content.length; i++) {
-		    	for (var obj in content[i]) {
-		      		if (typeof content[i][obj] === "string") {
+		  	for ( var i = 0; i < content.length; i++ ) {
+		    	for ( var obj in content[i] ) {
+		      		if ( typeof content[i][obj] === "string" ) {
 		        		content[i][obj] = content[i][obj].split("");
 		        		continue;
-		      		} else if (typeof content[i][obj] === "object") {
+		      		} else if ( typeof content[i][obj] === "object" ) {
 		        		let toPush = [];
-		        		for(let j = 0; j < content[i][obj].length; j++) {
-		          			for(let k = 0; k < content[i][obj][j].length; k++) {
+		        		for( let j = 0; j < content[i][obj].length; j++ ) {
+		          			for( let k = 0; k < content[i][obj][j].length; k++ ) {
 		            			toPush.push(content[i][obj][j][k]);
 		          			}
 		        		}
@@ -62,7 +62,7 @@ module.exports = ($) => {
 		    	$(".entypo-right-open-big").stop().removeClass("bounce");
 		    	$("#soup-prev").stop().fadeIn("slow");
 		    	currentPage++;
-		    	if (currentPage === content.length - 1) {
+		    	if ( currentPage === content.length - 1 ) {
 		      		$("#soup-next").stop().fadeOut("slow");
 		    	}
 		    	arrangeCurrentPage();
@@ -70,7 +70,7 @@ module.exports = ($) => {
 		  	});
 
 		  	function arrangeCurrentPage() {
-		  	  	for (var i = 0; i < content[currentPage].title.length; i++) {
+		  	  	for ( let i = 0; i < content[currentPage].title.length; i++ ) {
 		      		$(".mutable:eq(" + currentPage + ") > .soup-title > .letter").eq(i).css({
 			        	left: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().left + "px",
 			        	top: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().top + "px",
@@ -78,7 +78,7 @@ module.exports = ($) => {
 			        	zIndex: 9001
 		      		});
 		    	}
-			    for (var i = 0; i < content[currentPage].desc.length; i++) {
+			    for ( let i = 0; i < content[currentPage].desc.length; i++ ) {
 			      	$(".mutable:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).css({
 			        	left: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().left + "px",
 			        	top: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().top + "px",
@@ -89,42 +89,42 @@ module.exports = ($) => {
 		  	}
 
 		  	function setText() {
-		    	var j;
-			    for (j = 0; j < content[i].title.length; j++) {
+			    for ( let j = 0; j < content[i].title.length; j++ ) {
 			      	$(".soup-title").last().append("<span class=\"letter\">" + content[i].title[j] + "</span>");
 			    }
-			    for (j = 0; j < content[i].desc.length; j++) {
+			    for ( let j = 0; j < content[i].desc.length; j++ ) {
 			      	$(".soup-desc").last().append("<span class=\"letter\">" + content[i].desc[j] + "</span>");
 			    }
 		  	}
 
 		  	function scrambleOthers() {
-			    for (var i = 0; i < content.length; i++) {
-			    	if (currentPage === i)
+				let parts, randLeft, randTop, offset, bounds, middleX, middleY;
+			    for ( let i = 0; i < content.length; i++ ) {
+			    	if ( currentPage === i )
 			        	continue;
-			      	let parts = [
+			      	parts = [
 			        	["title", ".soup-title"],
 			        	["desc", ".soup-desc"]
 			      	];
-			     	for (var j = 0; j < parts.length; j++) {
-			        	for (let k = 0; k < content[i][parts[j][0]].length; k++) {
-				          	let randLeft = Math.floor(Math.random() * $(window).width()),
-				          		randTop = Math.floor(Math.random() * $(window).height()),
-				          		offset = $(".position-data").eq(currentPage).offset(),
-				          		bounds = {
-					            	left: offset.left,
-					            	top: offset.top,
-					            	right: $(window).width() - offset.left,
-					            	bottom: $(window).height() - offset.top
-				          		};
-				         	let middleX = bounds.left + $(".position-data").eq(currentPage).width() / 2,
-				          		middleY = bounds.top + $(".position-data").eq(currentPage).height() / 2;
-					          	$(".mutable:eq(" + i + ") > " + parts[j][1] + " > .letter").eq(k).css({
-						            left: randLeft,
-						            top: randTop,
-						            color: "transparent",
-						            zIndex: "initial"
-					          	});
+			     	for ( let j = 0; j < parts.length; j++ ) {
+			        	for ( let k = 0; k < content[i][parts[j][0]].length; k++ ) {
+				          	randLeft = Math.floor(Math.random() * $(window).width());
+				          	randTop = Math.floor(Math.random() * $(window).height());
+				          	offset = $(".position-data").eq(currentPage).offset();
+				          	bounds = {
+								left: offset.left,
+								top: offset.top,
+								right: $(window).width() - offset.left,
+								bottom: $(window).height() - offset.top
+				          	};
+				         	middleX = bounds.left + $(".position-data").eq(currentPage).width() / 2;
+				          	middleY = bounds.top + $(".position-data").eq(currentPage).height() / 2;
+							$(".mutable:eq(" + i + ") > " + parts[j][1] + " > .letter").eq(k).css({
+								left: randLeft,
+								top: randTop,
+								color: "transparent",
+								zIndex: "initial"
+							});
 			        	}
 			      	}
 			    }

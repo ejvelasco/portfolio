@@ -7,7 +7,7 @@ require("jquery-easing");
 const portfolioApp = angular.module("portfolioApp", [])
 require("./ngProjectsGallery")($, portfolioApp);
 require("./ngSendEmail")($, portfolioApp);
-
+//individual page scripts
 require("./about")($);
 require("./home")($);
 require("./menu")($);
