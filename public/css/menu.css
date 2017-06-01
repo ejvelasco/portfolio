@@ -13,7 +13,7 @@
 	color: rgba(255, 255, 255, .7) !important;
 }
 .menu-item:hover{
-	letter-spacing: 7px !important;
+	letter-spacing: 6px !important;
 	opacity: .6;
 }
 
