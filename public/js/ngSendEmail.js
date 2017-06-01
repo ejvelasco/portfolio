@@ -12,13 +12,13 @@ module.exports = ($, app) =>{
 				} else{
 					$("#send").text("SENDING..");
 					$http.post("/send-email", $scope.details)
-					.then((data) => {
-						if(data.data.error){
+					.then((res) => {
+						if(res.data.error){
 							$("#send").text("SEND");
-							if(data.error != "msg"){
-								$("#error").text("Whoops! Please enter a valid "+data.data.error+".");
+							if(res.data.error != "msg"){
+								$("#error").text("Whoops! Please enter a valid "+res.data.error+".");
 								$("#error").stop().fadeTo(500, .8);
-							}else if(data.data.error === "service"){
+							}else if(res.data.error === "service"){
 								$("#error").text("Whoops! Looks like there was a validation error. The message was not sent.");
 								$("#error").stop().fadeTo(500, .8);
 							}
