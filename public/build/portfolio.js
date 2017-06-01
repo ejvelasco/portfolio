@@ -43487,7 +43487,7 @@ module.exports = function ($) {
             $('#' + lastSection).stop().fadeOut(800, 'easeInOutCubic');
         } else {
             $('#' + lastSection).stop().fadeOut(800, 'easeInOutCubic', function () {
-                $('#' + section).stop().slideDown(1500, 'easeInOutCubic');
+                $('#' + section).stop().slideDown(1000, 'easeInOutCubic');
             });
         }
 

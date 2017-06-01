@@ -15,9 +15,7 @@
 	font-size: 3em !important;
 }
 #email-form{
-	height: 60%;
-	width: 100%;
-	z-index: 9999 !important;
+	animation: slideDown .7s 1;
 }
 #error{
 	opacity: 0;
